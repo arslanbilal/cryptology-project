@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C7AB0D1C95D53100120A3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB0C1C95D53100120A3D /* LoginViewController.swift */; };
+		77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB111C95D68C00120A3D /* UIColorExtension.swift */; };
+		77C7AB231C95DC0600120A3D /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB221C95DC0600120A3D /* MessageView.swift */; };
+		77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB261C95DE1B00120A3D /* ALView+PureLayout.m */; };
+		77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB281C95DE1B00120A3D /* NSArray+PureLayout.m */; };
+		77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB2A1C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m */; };
 		77D0866C1C95D1F500DFD8A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0866B1C95D1F500DFD8A8 /* AppDelegate.swift */; };
-		77D0866E1C95D1F500DFD8A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0866D1C95D1F500DFD8A8 /* ViewController.swift */; };
 		77D086741C95D1F500DFD8A8 /* Cryptology_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77D086721C95D1F500DFD8A8 /* Cryptology_Project.xcdatamodeld */; };
 		77D086761C95D1F500DFD8A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D086751C95D1F500DFD8A8 /* Assets.xcassets */; };
 		77D086791C95D1F500DFD8A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D086771C95D1F500DFD8A8 /* LaunchScreen.storyboard */; };
 		77D086841C95D1F500DFD8A8 /* Cryptology_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D086831C95D1F500DFD8A8 /* Cryptology_ProjectTests.swift */; };
 		77D086961C95D33B00DFD8A8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D086951C95D33B00DFD8A8 /* Model.swift */; };
 		77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D086971C95D35E00DFD8A8 /* Helper.swift */; };
-		77D0869A1C95D37000DFD8A8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D086991C95D37000DFD8A8 /* View.swift */; };
+		77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202CA1C97542700FAAD74 /* LoginView.swift */; };
+		77E202CF1C9779C700FAAD74 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202CE1C9779C700FAAD74 /* MessagesController.swift */; };
+		77E202D21C977A0400FAAD74 /* MessagesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D11C977A0400FAAD74 /* MessagesTableView.swift */; };
+		77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */; };
+		77E202D81C977B8E00FAAD74 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D71C977B8E00FAAD74 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +38,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77C7AB0C1C95D53100120A3D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		77C7AB111C95D68C00120A3D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		77C7AB221C95DC0600120A3D /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		77C7AB241C95DE1A00120A3D /* Cryptology Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cryptology Project-Bridging-Header.h"; sourceTree = "<group>"; };
+		77C7AB251C95DE1B00120A3D /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		77C7AB261C95DE1B00120A3D /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		77C7AB271C95DE1B00120A3D /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		77C7AB281C95DE1B00120A3D /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		77C7AB291C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		77C7AB2A1C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		77C7AB2B1C95DE1B00120A3D /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		77C7AB2C1C95DE1B00120A3D /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		77C7AB2D1C95DE1B00120A3D /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		77D086681C95D1F500DFD8A8 /* Cryptology Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cryptology Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D0866B1C95D1F500DFD8A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77D0866D1C95D1F500DFD8A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		77D086731C95D1F500DFD8A8 /* Cryptology_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cryptology_Project.xcdatamodel; sourceTree = "<group>"; };
 		77D086751C95D1F500DFD8A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77D086781C95D1F500DFD8A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,7 +62,11 @@
 		77D086851C95D1F500DFD8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D086951C95D33B00DFD8A8 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		77D086971C95D35E00DFD8A8 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		77D086991C95D37000DFD8A8 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		77E202CA1C97542700FAAD74 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		77E202CE1C9779C700FAAD74 /* MessagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
+		77E202D11C977A0400FAAD74 /* MessagesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableView.swift; sourceTree = "<group>"; };
+		77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
+		77E202D71C977B8E00FAAD74 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +87,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77C7AB0B1C95D51600120A3D /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				77C7AB0C1C95D53100120A3D /* LoginViewController.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		77C7AB0E1C95D54A00120A3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				77C7AB111C95D68C00120A3D /* UIColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77C7AB151C95DBAE00120A3D /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				77C7AB251C95DE1B00120A3D /* ALView+PureLayout.h */,
+				77C7AB261C95DE1B00120A3D /* ALView+PureLayout.m */,
+				77C7AB271C95DE1B00120A3D /* NSArray+PureLayout.h */,
+				77C7AB281C95DE1B00120A3D /* NSArray+PureLayout.m */,
+				77C7AB291C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.h */,
+				77C7AB2A1C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m */,
+				77C7AB2C1C95DE1B00120A3D /* PureLayout+Internal.h */,
+				77C7AB2B1C95DE1B00120A3D /* PureLayout.h */,
+				77C7AB2D1C95DE1B00120A3D /* PureLayoutDefines.h */,
+			);
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
 		77D0865F1C95D1F500DFD8A8 = {
 			isa = PBXGroup;
 			children = (
@@ -102,10 +159,11 @@
 		77D0868E1C95D2E000DFD8A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				77D086921C95D30D00DFD8A8 /* Controllers */,
+				77C7AB0E1C95D54A00120A3D /* Extensions */,
 				77D086941C95D31700DFD8A8 /* Helpers */,
 				77D086931C95D31200DFD8A8 /* Models */,
 				77D086911C95D30800DFD8A8 /* Views */,
+				77D086921C95D30D00DFD8A8 /* Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -113,6 +171,7 @@
 		77D0868F1C95D2EB00DFD8A8 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				77C7AB151C95DBAE00120A3D /* PureLayout */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -122,6 +181,7 @@
 			children = (
 				77D0866B1C95D1F500DFD8A8 /* AppDelegate.swift */,
 				77D086751C95D1F500DFD8A8 /* Assets.xcassets */,
+				77C7AB241C95DE1A00120A3D /* Cryptology Project-Bridging-Header.h */,
 				77D086721C95D1F500DFD8A8 /* Cryptology_Project.xcdatamodeld */,
 				77D0867A1C95D1F500DFD8A8 /* Info.plist */,
 				77D086771C95D1F500DFD8A8 /* LaunchScreen.storyboard */,
@@ -132,7 +192,9 @@
 		77D086911C95D30800DFD8A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				77D086991C95D37000DFD8A8 /* View.swift */,
+				77E202C91C97541700FAAD74 /* LoginView */,
+				77E202CC1C9776E400FAAD74 /* MessageView */,
+				77E202D01C9779E100FAAD74 /* MessagesTableView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,7 +202,9 @@
 		77D086921C95D30D00DFD8A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				77D0866D1C95D1F500DFD8A8 /* ViewController.swift */,
+				77C7AB0B1C95D51600120A3D /* LoginController */,
+				77E202CD1C9779AC00FAAD74 /* MesseagesController */,
+				77E202D61C977B7000FAAD74 /* NavigationController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -159,6 +223,55 @@
 				77D086971C95D35E00DFD8A8 /* Helper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		77E202C91C97541700FAAD74 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				77E202CA1C97542700FAAD74 /* LoginView.swift */,
+			);
+			path = LoginView;
+			sourceTree = "<group>";
+		};
+		77E202CC1C9776E400FAAD74 /* MessageView */ = {
+			isa = PBXGroup;
+			children = (
+				77C7AB221C95DC0600120A3D /* MessageView.swift */,
+			);
+			path = MessageView;
+			sourceTree = "<group>";
+		};
+		77E202CD1C9779AC00FAAD74 /* MesseagesController */ = {
+			isa = PBXGroup;
+			children = (
+				77E202CE1C9779C700FAAD74 /* MessagesController.swift */,
+			);
+			path = MesseagesController;
+			sourceTree = "<group>";
+		};
+		77E202D01C9779E100FAAD74 /* MessagesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				77E202D31C977A3F00FAAD74 /* MessagesTableViewCell */,
+				77E202D11C977A0400FAAD74 /* MessagesTableView.swift */,
+			);
+			path = MessagesTableView;
+			sourceTree = "<group>";
+		};
+		77E202D31C977A3F00FAAD74 /* MessagesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */,
+			);
+			path = MessagesTableViewCell;
+			sourceTree = "<group>";
+		};
+		77E202D61C977B7000FAAD74 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				77E202D71C977B8E00FAAD74 /* NavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,11 +375,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D086741C95D1F500DFD8A8 /* Cryptology_Project.xcdatamodeld in Sources */,
-				77D0866E1C95D1F500DFD8A8 /* ViewController.swift in Sources */,
-				77D0869A1C95D37000DFD8A8 /* View.swift in Sources */,
+				77E202D21C977A0400FAAD74 /* MessagesTableView.swift in Sources */,
 				77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */,
+				77E202CF1C9779C700FAAD74 /* MessagesController.swift in Sources */,
 				77D0866C1C95D1F500DFD8A8 /* AppDelegate.swift in Sources */,
+				77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */,
+				77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */,
+				77E202D81C977B8E00FAAD74 /* NavigationController.swift in Sources */,
+				77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */,
+				77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */,
+				77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */,
+				77C7AB231C95DC0600120A3D /* MessageView.swift in Sources */,
 				77D086961C95D33B00DFD8A8 /* Model.swift in Sources */,
+				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,
+				77C7AB0D1C95D53100120A3D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,10 +508,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Cryptology Project/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bilalarslan.Cryptology-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cryptology Project/Supporting Files/Cryptology Project-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -397,10 +523,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Cryptology Project/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "bilalarslan.Cryptology-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cryptology Project/Supporting Files/Cryptology Project-Bridging-Header.h";
 			};
 			name = Release;
 		};

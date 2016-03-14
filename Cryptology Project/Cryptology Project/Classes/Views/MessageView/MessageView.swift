@@ -1,5 +1,5 @@
 //
-//  View.swift
+//  MessageView.swift
 //  Cryptology Project
 //
 //  Created by Bilal Arslan on 13/03/16.
@@ -8,6 +8,13 @@
 
 import UIKit
 
-class View: UIView {
+
+enum MessageType {
+    case IncomingMessage
+    case OutgoingMessage
+}
+
+
+class MessageView: UIView {
 
 }
