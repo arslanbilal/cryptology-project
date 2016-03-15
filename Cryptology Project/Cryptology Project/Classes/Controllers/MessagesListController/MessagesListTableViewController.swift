@@ -9,6 +9,8 @@
 import UIKit
 
 class MessagesListTableViewController: UITableViewController {
+    
+    let cellIdentifier = "messagesListTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,13 +18,13 @@ class MessagesListTableViewController: UITableViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationItem.title = "Chats"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: "didTapExitButton:")
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
         
-        tableView.registerClass(MessagesListTableViewCell.self, forCellReuseIdentifier: "messagesTableViewCell")
+        tableView.registerClass(MessagesListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .None
-        
     }
-    
+
     // MARK: UITableView Datasource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -37,18 +39,17 @@ class MessagesListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: MessagesListTableViewCell = tableView.dequeueReusableCellWithIdentifier("messagesTableViewCell", forIndexPath: indexPath) as! MessagesListTableViewCell
+        let cell: MessagesListTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesListTableViewCell
         
-        cell.profileNameLabel.text = "User \(indexPath.row + 1)"
-        cell.profileLastMessageLabel.text = "asdafkjbsfasdflhasdfhl aslhdfsadfasdashdvasj gdashldsdfsdf ha adfasdas dasas"
+        cell.profileNameLabel.text = "User Name\(indexPath.row + 1)"
+        cell.profileLastMessageLabel.text = "Last Message goes here..."
         cell.profileImageView.backgroundColor = UIColor.redColor()
         return cell
     }
     
     // MARK: UITableView Delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        print("Clicked the cell")
+        self.navigationController?.pushViewController(MessagesViewController(), animated: true)
     }
     
     // MARK: Button Actions

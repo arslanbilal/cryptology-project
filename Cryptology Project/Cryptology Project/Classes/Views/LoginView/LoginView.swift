@@ -11,9 +11,9 @@ import UIKit
 
 class LoginView: UIView {
     
-    let usernameTextField = UITextField()
-    let passwordTextField = UITextField()
-    let loginButton = UIButton()
+    let usernameTextField = UITextField.newAutoLayoutView()
+    let passwordTextField = UITextField.newAutoLayoutView()
+    let loginButton = UIButton.newAutoLayoutView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

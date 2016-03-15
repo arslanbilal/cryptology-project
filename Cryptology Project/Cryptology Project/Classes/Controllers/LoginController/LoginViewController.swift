@@ -24,6 +24,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginView.autoPinEdgesToSuperviewEdges()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        //didTapLoginButton(UIButton())
+    }
+    
     // MARK: Button Actions
     func didTapLoginButton(sender: UIButton) {
         self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)

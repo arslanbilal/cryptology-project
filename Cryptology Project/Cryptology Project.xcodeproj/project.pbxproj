@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		775CB2AF1C98AA1A00A38280 /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2AE1C98AA1A00A38280 /* MessagesListTableViewController.swift */; };
 		775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */; };
-		775CB2B71C98C48F00A38280 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B61C98C48F00A38280 /* MessagesTableViewController.swift */; };
+		775CB2B91C98D22800A38280 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B81C98D22800A38280 /* MessagesViewController.swift */; };
 		77C7AB0D1C95D53100120A3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB0C1C95D53100120A3D /* LoginViewController.swift */; };
 		77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB111C95D68C00120A3D /* UIColorExtension.swift */; };
 		77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB261C95DE1B00120A3D /* ALView+PureLayout.m */; };
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		775CB2AE1C98AA1A00A38280 /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewController.swift; sourceTree = "<group>"; };
 		775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewCell.swift; sourceTree = "<group>"; };
-		775CB2B61C98C48F00A38280 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
+		775CB2B81C98D22800A38280 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		77C7AB0C1C95D53100120A3D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77C7AB111C95D68C00120A3D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		77C7AB241C95DE1A00120A3D /* Cryptology Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cryptology Project-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -209,8 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				77E202C91C97541700FAAD74 /* LoginView */,
-				77E202D01C9779E100FAAD74 /* Messages */,
 				775CB2B01C98AD2E00A38280 /* Messages List */,
+				77E202D01C9779E100FAAD74 /* Messages */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			children = (
 				77C7AB0B1C95D51600120A3D /* LoginController */,
 				775CB2AD1C98A9E200A38280 /* MessagesListController */,
-				77E202CD1C9779AC00FAAD74 /* MesseagesController */,
+				77E202CD1C9779AC00FAAD74 /* MessagesController */,
 				77E202D61C977B7000FAAD74 /* NavigationController */,
 			);
 			path = Controllers;
@@ -250,11 +250,12 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
-		77E202CD1C9779AC00FAAD74 /* MesseagesController */ = {
+		77E202CD1C9779AC00FAAD74 /* MessagesController */ = {
 			isa = PBXGroup;
 			children = (
-				775CB2B61C98C48F00A38280 /* MessagesTableViewController.swift */,
+				775CB2B81C98D22800A38280 /* MessagesViewController.swift */,
 			);
+			name = MessagesController;
 			path = MesseagesController;
 			sourceTree = "<group>";
 		};
@@ -375,7 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				77D086741C95D1F500DFD8A8 /* Cryptology_Project.xcdatamodeld in Sources */,
-				775CB2B71C98C48F00A38280 /* MessagesTableViewController.swift in Sources */,
 				775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */,
 				77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */,
 				77D0866C1C95D1F500DFD8A8 /* AppDelegate.swift in Sources */,
@@ -388,6 +388,7 @@
 				775CB2AF1C98AA1A00A38280 /* MessagesListTableViewController.swift in Sources */,
 				77D086961C95D33B00DFD8A8 /* Model.swift in Sources */,
 				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,
+				775CB2B91C98D22800A38280 /* MessagesViewController.swift in Sources */,
 				77C7AB0D1C95D53100120A3D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,9 +11,9 @@ import UIKit
 
 class MessagesListTableViewCell: UITableViewCell {
 
-    var profileImageView = UIImageView()
-    var profileNameLabel = UILabel()
-    var profileLastMessageLabel = UILabel()
+    var profileImageView = UIImageView.newAutoLayoutView()
+    var profileNameLabel = UILabel.newAutoLayoutView()
+    var profileLastMessageLabel = UILabel.newAutoLayoutView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,7 +22,6 @@ class MessagesListTableViewCell: UITableViewCell {
         self.layer.borderWidth = 0.5
         self.selectionStyle = .None
         
-        profileImageView = UIImageView.newAutoLayoutView()
         profileImageView.layer.cornerRadius = 27.5
         self.addSubview(profileImageView)
         
@@ -37,7 +36,6 @@ class MessagesListTableViewCell: UITableViewCell {
         profileInfoView.autoPinEdge(.Left, toEdge: .Right, ofView: profileImageView, withOffset: 10.0)
         
         
-        profileNameLabel = UILabel.newAutoLayoutView()
         profileNameLabel.textColor = UIColor.blackColor()
         profileNameLabel.textAlignment = .Left
         profileNameLabel.numberOfLines = 1
@@ -48,7 +46,6 @@ class MessagesListTableViewCell: UITableViewCell {
         profileNameLabel.autoSetDimension(.Height, toSize: 20)
         
         
-        profileLastMessageLabel = UILabel.newAutoLayoutView()
         profileLastMessageLabel.textColor = UIColor.grayColor()
         profileLastMessageLabel.textAlignment = .Left
         profileLastMessageLabel.numberOfLines = 2
