@@ -11,7 +11,7 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    let loginView = LoginView(frame: CGRectMake(0,0,0,0))
+    let loginView = LoginView(frame: CGRectZero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Button Actions
     func didTapLoginButton(sender: UIButton) {
-        let navigationController = NavigationController(rootViewController: MessagesController())
-        self.presentViewController(navigationController, animated: true) { () -> Void in
-            
-        }
+        self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)
     }
 }
