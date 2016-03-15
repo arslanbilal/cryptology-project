@@ -17,7 +17,6 @@ class NavigationController: UINavigationController {
         self.navigationBar.barTintColor = UIColor.navigationBarBackgroundColor()
         self.navigationBar.tintColor = UIColor.whiteColor()
         
-        //        self.navigationItem.title
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
@@ -30,8 +29,6 @@ class NavigationController: UINavigationController {
     }
     
     func titleTextAttributes() -> [String : NSObject] {
-        return [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont(name: "Helvetica-Bold", size: 15.0)!]
+        return [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Helvetica-Bold", size: 15.0)!]
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MessagesTableView: UITableView {
     
     override init(frame: CGRect, style: UITableViewStyle) {
@@ -15,7 +16,6 @@ class MessagesTableView: UITableView {
         self.registerClass(MessagesTableViewCell.self, forHeaderFooterViewReuseIdentifier: "messagesTableViewCell")
         self.showsVerticalScrollIndicator = false
         self.separatorStyle = .None
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

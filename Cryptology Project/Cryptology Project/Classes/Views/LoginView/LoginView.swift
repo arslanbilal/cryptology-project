@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LoginView: UIView {
     
     let usernameTextField = UITextField()
@@ -111,12 +112,7 @@ class LoginView: UIView {
         loginButton.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
         loginButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
         loginButton.autoSetDimensionsToSize(CGSizeMake(120, distanceBetweenLoginElements * 1.7))
-
-    
-    
-    
     }
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

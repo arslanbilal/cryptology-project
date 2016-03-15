@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let loginView = LoginView(frame: CGRectMake(0,0,0,0))
@@ -25,22 +26,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Button Actions
     func didTapLoginButton(sender: UIButton) {
-        
         let navigationController = NavigationController(rootViewController: MessagesController())
         self.presentViewController(navigationController, animated: true) { () -> Void in
             
         }
-        
-//        if let username = loginView.usernameTextField.text {
-//            if let password = loginView.passwordTextField.text {
-//                print("Username: \(username)\nPassword: \(password)\n\n")
-//                
-//            } else {
-//                print("Password giriniz")
-//            }
-//        } else {
-//            print("Username giriniz")
-//        }
-        
     }
 }

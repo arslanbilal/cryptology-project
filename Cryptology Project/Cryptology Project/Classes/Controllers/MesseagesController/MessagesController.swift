@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MessagesController: UIViewController {
     
     override func viewDidLoad() {
@@ -15,8 +16,5 @@ class MessagesController: UIViewController {
         
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationItem.title = "Messages"
-        
-        
     }
-
 }

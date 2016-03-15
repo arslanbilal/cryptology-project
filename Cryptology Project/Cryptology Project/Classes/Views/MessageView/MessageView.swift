@@ -14,7 +14,6 @@ enum MessageType {
     case OutgoingMessage
 }
 
-
 class MessageView: UIView {
 
 }
