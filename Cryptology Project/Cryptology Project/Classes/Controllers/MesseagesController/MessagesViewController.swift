@@ -8,10 +8,12 @@
 
 import UIKit
 
-class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     let cellIdentifier = "messagesTableViewCell"
     let tableView = UITableView.newAutoLayoutView()
+    private let messageTextField = UITextField.newAutoLayoutView()
+    private let sendButton = UIButton.newAutoLayoutView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +33,35 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 0.0, 50.0, 0.0))
         
         let bottomView = UIView.newAutoLayoutView()
-        bottomView.backgroundColor = UIColor.grayColor()
+        bottomView.backgroundColor = UIColor ( red: 0.8982, green: 0.8982, blue: 0.8982, alpha: 1.0 )
         self.view.addSubview(bottomView)
         
         bottomView.autoPinEdge(.Top, toEdge: .Bottom, ofView: tableView)
         bottomView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0), excludingEdge: .Top)
+        
+        sendButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
+        //sendButton.enabled = false
+        sendButton.setTitle("Send", forState: .Normal)
+        sendButton.addTarget(self, action: "didTapSendButton:", forControlEvents: .TouchUpInside)
+        sendButton.setTitleColor(UIColor.sendMessageButtonTintColor(), forState: .Normal)
+        sendButton.setTitleColor(UIColor.grayColor(), forState: .Disabled)
+        sendButton.setTitleColor(UIColor ( red: 0.6078, green: 0.7176, blue: 0.8706, alpha: 1.0 ), forState: .Highlighted)
+        bottomView.addSubview(sendButton)
+        
+        sendButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(5.0, 0, 5.0, 5.0), excludingEdge: .Left)
+        sendButton.autoSetDimension(.Width, toSize: 50.0)
+        
+        
+        messageTextField.layer.borderWidth = 1.0
+        messageTextField.layer.borderColor = UIColor.grayColor().CGColor
+        messageTextField.layer.cornerRadius = 10.0
+        messageTextField.placeholder = " Message"
+        messageTextField.delegate = self
+        messageTextField.backgroundColor = UIColor.whiteColor()
+        bottomView.addSubview(messageTextField)
+        
+        messageTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(7.5, 5.0, 7.5, 0.0), excludingEdge: .Right)
+        messageTextField.autoPinEdge(.Right, toEdge: .Left, ofView: sendButton, withOffset: -5.0)
     }
     
     // MARK: UITableView Datasource
@@ -54,5 +80,36 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         cell.messageLabel.text = "#\(indexPath.row) Message goes here.."
         
         return cell
+    }
+    
+    // MARK: UITextField Delegate
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if let textFieldText = textField.text {
+            if (textFieldText.length > 0) && !(textFieldText.elementOfIndex(0) == " ") {
+                textField.text = " " + textFieldText
+            }
+        }
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        print("textFieldShouldBeginEditing")
+        return true
+    }
+    
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        print("textFieldShouldEndEditing")
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        print("textFieldShouldReturn")
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    // MARK: Button Actions
+    func didTapSendButton(sender: UIButton) {
+        messageTextField.resignFirstResponder()
     }
 }
