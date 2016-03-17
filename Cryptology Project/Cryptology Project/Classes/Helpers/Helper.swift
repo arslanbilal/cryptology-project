@@ -13,7 +13,7 @@ class Helper: UIViewController {
     
     class func getStringDateFromDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy at HH:mm"
+        dateFormatter.dateFormat = "dd MMM yyyy HH:mm"
         return dateFormatter.stringFromDate(date)
     }
 }

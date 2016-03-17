@@ -29,7 +29,11 @@ class MessagesListTableViewController: UITableViewController {
         tableView.registerClass(MessagesListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .None
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
         chatList = ActiveUser.sharedInstance.chatList
         tableView.reloadData()
     }

@@ -290,10 +290,10 @@
 		77D086921C95D30D00DFD8A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				77C7AB0B1C95D51600120A3D /* LoginController */,
-				77E202CD1C9779AC00FAAD74 /* MessagesController */,
-				775CB2AD1C98A9E200A38280 /* MessagesListController */,
 				77E202D61C977B7000FAAD74 /* NavigationController */,
+				77C7AB0B1C95D51600120A3D /* LoginController */,
+				775CB2AD1C98A9E200A38280 /* MessagesListController */,
+				77E202CD1C9779AC00FAAD74 /* MessagesController */,
 				77BAF1F71C9B255700DFA5C3 /* StartMessageController */,
 			);
 			path = Controllers;

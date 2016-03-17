@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     let cellIdentifier = "messagesTableViewCell"
     let tableView = UITableView.newAutoLayoutView()
+    
     private let messageTextField = UITextField.newAutoLayoutView()
     private let sendButton = UIButton.newAutoLayoutView()
+    private let realm = try! Realm()
     
     var messageList: MessageList!
     
@@ -26,7 +29,6 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
         
         loadViews()
-        
         tableView.reloadData()
     }
     
@@ -51,7 +53,6 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         bottomView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0), excludingEdge: .Top)
         
         sendButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
-        //sendButton.enabled = false
         sendButton.setTitle("Send", forState: .Normal)
         sendButton.addTarget(self, action: "didTapSendButton:", forControlEvents: .TouchUpInside)
         sendButton.setTitleColor(UIColor.sendMessageButtonTintColor(), forState: .Normal)
@@ -93,33 +94,42 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // MARK: UITextField Delegate
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if let textFieldText = textField.text {
-            if (textFieldText.length > 0) && !(textFieldText.elementOfIndex(0) == " ") {
-                textField.text = " " + textFieldText
-            }
-        }
-        return true
-    }
-    
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        print("textFieldShouldBeginEditing")
-        return true
-    }
-    
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        print("textFieldShouldEndEditing")
-        return true
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        print("textFieldShouldReturn")
         textField.resignFirstResponder()
         return false
     }
     
     // MARK: Button Actions
     func didTapSendButton(sender: UIButton) {
+        
+        if let message = messageTextField.text {
+            if message.length > 0 {
+                
+                let sendingMessage = Message()
+                sendingMessage.id = Message.messageId
+                sendingMessage.text = message
+                sendingMessage.date = NSDate()
+                
+                let chat = Chat()
+                chat.messageId = sendingMessage.id
+                chat.fromUserId = ActiveUser.sharedInstance.id
+                chat.toUserId = messageList.otherUser.id
+                
+                try! realm.write {
+                    realm.add(sendingMessage)
+                    realm.add(chat)
+                    ActiveUser.sharedInstance.loadUserChatData()
+                    messageList = ActiveUser.sharedInstance.getMesageListFromUserId(messageList.otherUser.id)
+                    tableView.reloadData()
+                    
+                    let messageCount = messageList.messages.count - 1
+                    let indexPath = NSIndexPath(forItem: messageCount, inSection: 0)
+                    tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+                    messageTextField.text = ""
+                }
+            }
+        }
+        
         messageTextField.resignFirstResponder()
     }
 }
