@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class UserTableViewCell: UITableViewCell {
     
     private var profileImageView = UIImageView.newAutoLayoutView()
@@ -41,6 +42,6 @@ class UserTableViewCell: UITableViewCell {
     
     func setContents(user: User) {
         self.profileNameLabel.text = user.name + " " + user.lastname
-        self.profileImageView.backgroundColor = UIColor ( red: 0.7054, green: 0.5915, blue: 1.0, alpha: 1.0 )
+        self.profileImageView.backgroundColor = UIColor.grayColor()
     }
 }

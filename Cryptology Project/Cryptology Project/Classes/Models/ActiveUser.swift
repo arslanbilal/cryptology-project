@@ -39,17 +39,26 @@ class ActiveUser: NSObject {
         let chats = realm.objects(Chat).filter("fromUserId = \(id) OR toUserId = \(id)")
         
         for chat in chats {
-            let selectedUserId = chat.fromUserId != id ? chat.fromUserId : chat.toUserId
+            let selectedUserId: Int!
+            let messageType: MessageType!
             
-            let message = realm.objects(Message).filter("id = '\(chat.messageId)'").first
-            let fromUser = realm.objects(User).filter("id = '\(selectedUserId)'").first
+            if  chat.fromUserId != id {
+                selectedUserId = chat.fromUserId
+                messageType = MessageType.IncomingMessage
+            } else {
+                selectedUserId = chat.toUserId
+                messageType = MessageType.OutgoingMessage
+            }
             
-            let result = chatList.filter { $0.id == fromUser?.id }.first
+            let message = realm.objects(Message).filter("id = \(chat.messageId)").first!
+            let otherUser = realm.objects(User).filter("id = \(selectedUserId)").first!
+            
+            let result = chatList.filter { $0.otherUser.id == otherUser.id }.first
             
             if result != nil {
-                result?.messages.append(message!)
+                result?.messages.append(message)
             } else {
-                chatList.append(MessageList(id: (fromUser?.id)!, name: (fromUser?.name)!, lastname: (fromUser?.lastname)!, username: (fromUser?.username)!, message: message!))
+                chatList.append(MessageList(otherUser: otherUser, message: message, messageType: messageType))
             }
         }
     }

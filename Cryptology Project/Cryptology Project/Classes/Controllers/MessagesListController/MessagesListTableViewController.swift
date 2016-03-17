@@ -57,7 +57,9 @@ class MessagesListTableViewController: UITableViewController {
     
     // MARK: UITableView Delegate
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.navigationController?.pushViewController(MessagesViewController(), animated: true)
+        let messagesViewController = MessagesViewController()
+        messagesViewController.messageList = chatList[indexPath.row]
+        self.navigationController?.pushViewController(messagesViewController, animated: true)
     }
     
     // MARK: Button Actions

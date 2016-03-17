@@ -6,7 +6,6 @@
 //  Copyright © 2016 Bilal Arslan. All rights reserved.
 //
 
-
 extension String {
     var length: Int {
         return characters.count

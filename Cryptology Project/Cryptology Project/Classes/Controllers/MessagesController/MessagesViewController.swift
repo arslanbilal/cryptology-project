@@ -16,12 +16,22 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     private let messageTextField = UITextField.newAutoLayoutView()
     private let sendButton = UIButton.newAutoLayoutView()
     
+    var messageList: MessageList!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
-        self.navigationItem.title = "Messages"
+        self.navigationItem.title = messageList.otherUser!.name + " " + messageList.otherUser.lastname
+        self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
         
+        loadViews()
+        
+        tableView.reloadData()
+    }
+    
+    // MARK: UI initialisation
+    func loadViews() {
         tableView.registerClass(MessagesTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .None
@@ -71,14 +81,13 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return messageList.messages.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: MessagesTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesTableViewCell
         
-        cell.messageDateLabel.text = "Date: 12 March 2016 12:34"
-        cell.messageLabel.text = "#\(indexPath.row) Message goes here.."
+        cell.setContent(messageList.messages[indexPath.row])
         
         return cell
     }

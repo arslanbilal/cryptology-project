@@ -9,7 +9,7 @@
 import UIKit
 
 
-enum MessageType {
+enum MessageType: Int {
     case IncomingMessage
     case OutgoingMessage
 }
@@ -17,8 +17,8 @@ enum MessageType {
 
 class MessagesTableViewCell: UITableViewCell {
     
-    var messageDateLabel = UILabel.newAutoLayoutView()
-    var messageLabel = UILabel.newAutoLayoutView()
+    private var messageDateLabel = UILabel.newAutoLayoutView()
+    private var messageLabel = UILabel.newAutoLayoutView()
     private var messageView = UIView.newAutoLayoutView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -68,5 +68,12 @@ class MessagesTableViewCell: UITableViewCell {
             messageView.backgroundColor = UIColor.outgoingMessageColor()
             break
         }
+    }
+    
+    func setContent(message: Message) {
+        self.messageDateLabel.text = Helper.getStringDateFromDate(message.date)
+        self.messageLabel.text = message.text
+        
+        self.setMessageType(message.type)
     }
 }

@@ -14,6 +14,7 @@ class Message: Object {
     dynamic var id = 0
     dynamic var text = ""
     dynamic var date = NSDate()
+    var type: MessageType = .OutgoingMessage // default
     
     override static func primaryKey() -> String? {
         return "id"
@@ -22,7 +23,7 @@ class Message: Object {
     class var messageId: Int {
         let realm = try! Realm()
         
-        let messages: NSArray = Array(realm.objects(User).sorted("id"))
+        let messages: NSArray = Array(realm.objects(Message).sorted("id"))
         let last = messages.lastObject
         
         if messages.count > 0 {

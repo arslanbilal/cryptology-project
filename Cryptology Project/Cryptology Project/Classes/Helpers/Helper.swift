@@ -11,4 +11,9 @@ import UIKit
 
 class Helper: UIViewController {
     
+    class func getStringDateFromDate(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy at HH:mm"
+        return dateFormatter.stringFromDate(date)
+    }
 }

@@ -11,17 +11,14 @@ import UIKit
 
 class MessageList: NSObject {
     
-    var id: Int
-    var name: String
-    var lastname: String
-    var username: String
+    let otherUser: User!
     var messages: [Message]!
     
-    init(id: Int, name: String, lastname: String, username: String, message: Message) {
-        self.id = id
-        self.name = name
-        self.lastname = lastname
-        self.username = username
+    init(otherUser: User, message: Message, messageType: MessageType) {
+        self.otherUser = otherUser
+        message.type = messageType
+        
+        self.messages = [Message]()
         self.messages.append(message)
     }
 }
