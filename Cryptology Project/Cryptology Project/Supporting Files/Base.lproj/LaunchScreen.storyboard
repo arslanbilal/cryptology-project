@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,21 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cryptology Project" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOz-Rl-6Ew">
-                                <rect key="frame" x="206" y="66" width="188" height="117"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="188" id="taZ-wE-rdh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
-                                <color key="textColor" red="0.74410021551724137" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cryptology Project" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOz-Rl-6Ew">
+                                <rect key="frame" x="35" y="46" width="530" height="116"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.68235294117647061" green="0.0" blue="0.019607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="oOz-Rl-6Ew" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="46" id="wpV-fR-15y"/>
-                            <constraint firstItem="oOz-Rl-6Ew" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xjh-73-wyv"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="oOz-Rl-6Ew" secondAttribute="bottom" constant="417" id="y8J-TV-s8p"/>
+                            <constraint firstItem="oOz-Rl-6Ew" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="15" id="0bz-WN-CED"/>
+                            <constraint firstItem="oOz-Rl-6Ew" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="26" id="F63-ym-zyM"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="oOz-Rl-6Ew" secondAttribute="bottom" constant="438" id="xJX-hO-lPL"/>
+                            <constraint firstItem="oOz-Rl-6Ew" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zOe-JZ-ZLg"/>
                         </constraints>
                     </view>
                 </viewController>

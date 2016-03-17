@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let loginView = LoginView(frame: CGRectZero)
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +26,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginView.autoPinEdgesToSuperviewEdges()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        //didTapLoginButton(UIButton())
-    }
-    
     // MARK: Button Actions
     func didTapLoginButton(sender: UIButton) {
-        self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)
+        let username = loginView.usernameTextField.text!
+        let password = loginView.passwordTextField.text!
+        
+        if  username != "" && password != "" {
+            let user = realm.objects(User).filter("username = '\(username)' AND password = '\(password)'").first
+            
+            if user != nil {
+                ActiveUser.sharedInstance.setUser(user!)
+                
+                loginView.usernameTextField.text = ""
+                loginView.passwordTextField.text = ""
+                
+                self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)
+            } else {
+                print("Couldn't find!")
+            }
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

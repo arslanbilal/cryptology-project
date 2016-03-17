@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class NavigationController: UINavigationController {
     
     override func viewDidLoad() {
@@ -17,7 +18,6 @@ class NavigationController: UINavigationController {
         self.navigationBar.titleTextAttributes = titleTextAttributes()
         self.navigationBar.barTintColor = UIColor.navigationBarBackgroundColor()
         self.navigationBar.tintColor = UIColor.whiteColor()
-        
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()

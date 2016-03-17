@@ -8,21 +8,27 @@
 
 import UIKit
 
+
 class MessagesListTableViewController: UITableViewController {
     
     let cellIdentifier = "messagesListTableViewCell"
+    var chatList = [MessageList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationItem.title = "Chats"
+        self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: "didTapExitButton:")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
         
         tableView.registerClass(MessagesListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .None
+        
+        chatList = ActiveUser.sharedInstance.chatList
+        tableView.reloadData()
     }
 
     // MARK: UITableView Datasource
@@ -31,7 +37,7 @@ class MessagesListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return chatList.count
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -41,9 +47,10 @@ class MessagesListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: MessagesListTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesListTableViewCell
         
-        cell.profileNameLabel.text = "User Name\(indexPath.row + 1)"
-        cell.profileLastMessageLabel.text = "Last Message goes here..."
-        cell.profileImageView.backgroundColor = UIColor.redColor()
+        let index = indexPath.row
+        cell.profileNameLabel.text = "\(chatList[index]) \(chatList[index].lastname)"
+        cell.profileLastMessageLabel.text = chatList[index].messages.last?.text
+        cell.profileImageView.backgroundColor = UIColor ( red: 0.7054, green: 0.5915, blue: 1.0, alpha: 1.0 )
         return cell
     }
     

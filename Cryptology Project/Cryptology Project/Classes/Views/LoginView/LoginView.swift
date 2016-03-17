@@ -43,8 +43,8 @@ class LoginView: UIView {
         loginElementsView.layer.cornerRadius = 10.0
         self.addSubview(loginElementsView)
         
-        loginElementsView.autoPinEdgeToSuperviewEdge(.Left, withInset: 3.0)
-        loginElementsView.autoPinEdgeToSuperviewEdge(.Right, withInset: 3.0)
+        loginElementsView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
+        loginElementsView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
         loginElementsView.autoPinEdge(.Top, toEdge: .Bottom, ofView: appNameLabel, withOffset: distanceAppNameLabelAndLoginView)
         loginElementsView.autoSetDimension(.Height, toSize: loginElementsViewHeight)
         
@@ -99,7 +99,9 @@ class LoginView: UIView {
         passwordView.autoSetDimension(.Height, toSize: distanceBetweenLoginElements * 1.5)
         
         
+        passwordTextField.secureTextEntry = true
         passwordView.addSubview(passwordTextField)
+        
         passwordTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(2.0, 5.0, 2.0, 5.0))
         
         
