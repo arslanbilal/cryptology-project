@@ -18,16 +18,23 @@ class ActiveUser: NSObject {
     var name = ""
     var lastname = ""
     var username = ""
-    
     var chatList = [MessageList]()
+    var userList = [User]()
 
     static let sharedInstance = ActiveUser()
     
     func setUser(user: User) {
-        id = user.id
-        name = user.name
-        lastname = user.lastname
-        username = user.username
+        self.id = user.id
+        self.name = user.name
+        self.lastname = user.lastname
+        self.username = user.username
+        
+        let users = realm.objects(User).filter("id != \(self.id)")
+        
+        for otherUser in users {
+            userList.append(otherUser)
+        }
+        
         
         let chats = realm.objects(Chat).filter("fromUserId = \(id) OR toUserId = \(id)")
         
@@ -45,5 +52,15 @@ class ActiveUser: NSObject {
                 chatList.append(MessageList(id: (fromUser?.id)!, name: (fromUser?.name)!, lastname: (fromUser?.lastname)!, username: (fromUser?.username)!, message: message!))
             }
         }
+    }
+    
+    func exitUser() {
+        self.id = 0
+        self.name = ""
+        self.lastname = ""
+        self.username = ""
+        
+        self.chatList = []
+        self.userList = []
     }
 }

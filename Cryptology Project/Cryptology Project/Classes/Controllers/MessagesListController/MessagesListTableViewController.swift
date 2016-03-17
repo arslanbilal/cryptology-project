@@ -18,10 +18,13 @@ class MessagesListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
+        
         self.navigationItem.title = "Chats"
         self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: "didTapExitButton:")
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: "didTapExitButton:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "didTapAddChatButton:")
         
         tableView.registerClass(MessagesListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
@@ -47,10 +50,8 @@ class MessagesListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: MessagesListTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesListTableViewCell
         
-        let index = indexPath.row
-        cell.profileNameLabel.text = "\(chatList[index]) \(chatList[index].lastname)"
-        cell.profileLastMessageLabel.text = chatList[index].messages.last?.text
-        cell.profileImageView.backgroundColor = UIColor ( red: 0.7054, green: 0.5915, blue: 1.0, alpha: 1.0 )
+        cell.setContent(chatList[indexPath.row])
+        
         return cell
     }
     
@@ -61,6 +62,12 @@ class MessagesListTableViewController: UITableViewController {
     
     // MARK: Button Actions
     func didTapExitButton(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true) { () -> Void in
+            ActiveUser.sharedInstance.exitUser()
+        }
+    }
+    
+    func didTapAddChatButton(sender :UIBarButtonItem) {
+        self.navigationController?.pushViewController(StartMessageViewController(), animated: true)
     }
 }

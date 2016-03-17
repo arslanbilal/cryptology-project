@@ -44,6 +44,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             } else {
                 print("Couldn't find!")
             }
+        } else {
+            print("Field(s) missing.")
         }
     }
     

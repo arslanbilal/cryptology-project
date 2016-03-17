@@ -11,9 +11,9 @@ import UIKit
 
 class MessagesListTableViewCell: UITableViewCell {
 
-    var profileImageView = UIImageView.newAutoLayoutView()
-    var profileNameLabel = UILabel.newAutoLayoutView()
-    var profileLastMessageLabel = UILabel.newAutoLayoutView()
+    private var profileImageView = UIImageView.newAutoLayoutView()
+    private var profileNameLabel = UILabel.newAutoLayoutView()
+    private var profileLastMessageLabel = UILabel.newAutoLayoutView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -58,5 +58,11 @@ class MessagesListTableViewCell: UITableViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setContent(messageList: MessageList) {
+        self.profileNameLabel.text = "\(messageList.name) \(messageList.lastname)"
+        self.profileLastMessageLabel.text = messageList.messages.last?.text
+        self.profileImageView.backgroundColor = UIColor ( red: 0.7054, green: 0.5915, blue: 1.0, alpha: 1.0 )
     }
 }
