@@ -59,6 +59,8 @@ class ActiveUser: NSObject {
                 chatList.append(MessageList(otherUser: otherUser, message: message, messageType: messageType))
             }
         }
+        
+        chatList.sortInPlace({ $0.0.messages.last?.date.timeIntervalSince1970 >  $0.1.messages.last?.date.timeIntervalSince1970})
     }
     
     func getMesageListFromUserId(userId: Int) -> MessageList? {
