@@ -33,7 +33,7 @@ User and Message are have a relation with Chat. Table(Class) Relations:
 
 
 ##Version v0.1:
-######Last version of app is showing.
+######Last [version][release] of app is showing.
 
 	- users can login
 	- users can message other user
@@ -59,3 +59,4 @@ Gifs lasts about 40-50 seconds.
 [realm]:https://realm.io
 [purelayout]:https://github.com/PureLayout/PureLayout
 [arslanbilal]:https://github.com/arslanbilal
+[release]:https://github.com/arslanbilal/cryptology-project/releases
