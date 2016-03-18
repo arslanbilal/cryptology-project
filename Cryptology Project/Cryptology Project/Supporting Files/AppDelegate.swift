@@ -14,12 +14,35 @@ import RealmSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let realm = try! Realm()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
         
+//        // Simulator Document Directory
+//        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+//        print("\(urls[urls.count - 1])")
+        
+        //generateUsersWithCount(10)
+        
         return true
+    }
+    
+    // Generete User for testing
+    func generateUsersWithCount(count: Int) {
+        for i in (0 ..< count) {
+            let user = User()
+            user.id = User.userId
+            user.name = "#\(i+1) User"
+            user.lastname = "Lastname"
+            user.username = "user\(i+1)"
+            user.password = "1234"
+            
+            try! realm.write {
+                realm.add(user)
+            }
+        }
     }
 }

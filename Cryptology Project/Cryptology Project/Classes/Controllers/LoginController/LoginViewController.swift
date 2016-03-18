@@ -42,10 +42,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)
             } else {
-                print("Couldn't find!")
+                let alertController = UIAlertController.init(title: "Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", preferredStyle: .Alert)
+                alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
         } else {
-            print("Field(s) missing.")
+            let alertController = UIAlertController.init(title: "Login Error", message: "Please fill the all missing fileds.", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
