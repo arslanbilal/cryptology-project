@@ -35,6 +35,8 @@ class ActiveUser: NSObject {
             userList.append(otherUser)
         }
         
+        userList.sortInPlace({ $0.0.name < $0.1.name })
+        
         loadUserChatData()
     }
     
