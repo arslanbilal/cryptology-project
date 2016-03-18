@@ -13,6 +13,7 @@ class MessagesListTableViewController: UITableViewController {
     
     let cellIdentifier = "messagesListTableViewCell"
     var chatList = [MessageList]()
+    var messageList: MessageList?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,14 @@ class MessagesListTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if messageList != nil {
+            let messagesViewController = MessagesViewController()
+            messagesViewController.messageList = messageList!
+            self.navigationController?.pushViewController(messagesViewController, animated: true)
+            messageList = nil
+            return
+        }
 
         chatList = ActiveUser.sharedInstance.chatList
         tableView.reloadData()

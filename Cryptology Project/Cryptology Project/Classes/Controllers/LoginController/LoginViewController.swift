@@ -28,30 +28,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Button Actions
     func didTapLoginButton(sender: UIButton) {
+        let username = loginView.usernameTextField.text!
+        let password = loginView.passwordTextField.text!
         
-        let user = realm.objects(User).filter("username = 'bilal' AND password = '123456'").first
-        ActiveUser.sharedInstance.setUser(user!)
-        self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)
-        
-//        let username = loginView.usernameTextField.text!
-//        let password = loginView.passwordTextField.text!
-//        
-//        if  username != "" && password != "" {
-//            let user = realm.objects(User).filter("username = '\(username)' AND password = '\(password)'").first
-//            
-//            if user != nil {
-//                ActiveUser.sharedInstance.setUser(user!)
-//                
-//                loginView.usernameTextField.text = ""
-//                loginView.passwordTextField.text = ""
-//                
-//                self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)
-//            } else {
-//                print("Couldn't find!")
-//            }
-//        } else {
-//            print("Field(s) missing.")
-//        }
+        if  username != "" && password != "" {
+            let user = realm.objects(User).filter("username = '\(username)' AND password = '\(password)'").first
+            
+            if user != nil {
+                ActiveUser.sharedInstance.setUser(user!)
+                
+                loginView.usernameTextField.text = ""
+                loginView.passwordTextField.text = ""
+                
+                self.presentViewController(NavigationController(rootViewController: MessagesListTableViewController()), animated: true, completion: nil)
+            } else {
+                print("Couldn't find!")
+            }
+        } else {
+            print("Field(s) missing.")
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

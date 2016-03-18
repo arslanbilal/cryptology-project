@@ -61,10 +61,10 @@ class ActiveUser: NSObject {
         }
     }
     
-    func getMesageListFromUserId(userId: Int) -> MessageList {
+    func getMesageListFromUserId(userId: Int) -> MessageList? {
         
         let messageList = chatList.filter { $0.otherUser.id == userId }.first
-        return messageList!
+        return messageList
     }
     
     func exitUser() {

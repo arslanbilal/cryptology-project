@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class StartMessageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -65,16 +66,19 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
     
     // MARK: UITableView Delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedUser = userList[indexPath.row]
+        let messageList: MessageList
         
+        if let userMessageList = ActiveUser.sharedInstance.getMesageListFromUserId(selectedUser.id) {
+            messageList = userMessageList
+        } else {
+            messageList = MessageList(otherUser: selectedUser, message: nil, messageType: nil)
+        }
+        
+        let viewControllersCount = self.navigationController?.viewControllers.count
+        let messagesListTableViewController = self.navigationController?.viewControllers[viewControllersCount! - 2] as! MessagesListTableViewController
+        messagesListTableViewController.messageList = messageList
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

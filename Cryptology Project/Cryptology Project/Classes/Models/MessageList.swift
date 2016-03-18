@@ -14,11 +14,13 @@ class MessageList: NSObject {
     let otherUser: User!
     var messages: [Message]!
     
-    init(otherUser: User, message: Message, messageType: MessageType) {
+    init(otherUser: User, message: Message?, messageType: MessageType?) {
         self.otherUser = otherUser
-        message.type = messageType
         
-        self.messages = [Message]()
-        self.messages.append(message)
+        if message != nil {
+            message!.type = messageType!
+            self.messages = [Message]()
+            self.messages.append(message!)
+        }
     }
 }
