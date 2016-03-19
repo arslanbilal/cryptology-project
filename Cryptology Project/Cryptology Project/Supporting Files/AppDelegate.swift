@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
         
-//        // Simulator Document Directory
+//        // Simulator/Device Document Directory
 //        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
 //        print("\(urls[urls.count - 1])")
         
-        //generateUsersWithCount(10)
+        //generateUsersWithCount(5)
         
         return true
     }
@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Generete User for testing
     func generateUsersWithCount(count: Int) {
         for i in (0 ..< count) {
-            let user = User()
-            user.id = User.userId
+            let user = RealmUser()
+            user.id = RealmUser.userId
             user.name = "#\(i+1) User"
             user.lastname = "Lastname"
             user.username = "user\(i+1)"

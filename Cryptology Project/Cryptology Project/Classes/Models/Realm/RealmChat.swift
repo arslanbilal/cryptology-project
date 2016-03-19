@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 
-class Chat: Object {
+class RealmChat: Object {
     dynamic var messageId = 0
     dynamic var fromUserId = 0
     dynamic var toUserId = 0

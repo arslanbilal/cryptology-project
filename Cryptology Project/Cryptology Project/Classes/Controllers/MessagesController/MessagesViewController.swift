@@ -108,12 +108,12 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         if let message = messageTextField.text {
             if message.length > 0 {
                 
-                let sendingMessage = Message()
-                sendingMessage.id = Message.messageId
+                let sendingMessage = RealmMessage()
+                sendingMessage.id = RealmMessage.messageId
                 sendingMessage.text = message
                 sendingMessage.date = NSDate()
                 
-                let chat = Chat()
+                let chat = RealmChat()
                 chat.messageId = sendingMessage.id
                 chat.fromUserId = ActiveUser.sharedInstance.id
                 chat.toUserId = messageList.otherUser.id

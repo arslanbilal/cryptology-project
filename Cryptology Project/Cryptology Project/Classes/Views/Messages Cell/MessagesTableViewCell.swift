@@ -9,12 +9,6 @@
 import UIKit
 
 
-enum MessageType: Int {
-    case IncomingMessage
-    case OutgoingMessage
-}
-
-
 class MessagesTableViewCell: UITableViewCell {
     
     private var messageDateLabel = UILabel.newAutoLayoutView()
@@ -71,9 +65,8 @@ class MessagesTableViewCell: UITableViewCell {
     }
     
     func setContent(message: Message) {
-        self.messageDateLabel.text = Helper.getStringDateFromDate(message.date)
-        self.messageLabel.text = message.text
-        
-        self.setMessageType(message.type)
+        self.messageDateLabel.text = Helper.getStringDateFromDate(message.message.date)
+        self.messageLabel.text = message.message.text
+        self.setMessageType(message.messagteType)
     }
 }

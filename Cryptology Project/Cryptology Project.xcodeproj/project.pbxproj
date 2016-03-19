@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7701563A1C9E1240001A4B1E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770156391C9E1240001A4B1E /* Message.swift */; };
 		771B0AC71C9B40F5004BD825 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771B0AC51C9B40F5004BD825 /* Realm.framework */; };
 		771B0AC81C9B40F5004BD825 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 771B0AC51C9B40F5004BD825 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		771B0AC91C9B40F5004BD825 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771B0AC61C9B40F5004BD825 /* RealmSwift.framework */; };
 		771B0ACA1C9B40F5004BD825 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 771B0AC61C9B40F5004BD825 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		772C83021C9A40ED00A9541C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83011C9A40ED00A9541C /* User.swift */; };
-		772C83041C9A410400A9541C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83031C9A410400A9541C /* Message.swift */; };
-		772C83061C9A410C00A9541C /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83051C9A410C00A9541C /* Chat.swift */; };
+		772C83021C9A40ED00A9541C /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83011C9A40ED00A9541C /* RealmUser.swift */; };
+		772C83041C9A410400A9541C /* RealmMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83031C9A410400A9541C /* RealmMessage.swift */; };
+		772C83061C9A410C00A9541C /* RealmChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83051C9A410C00A9541C /* RealmChat.swift */; };
 		772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83071C9A4AF400A9541C /* ActiveUser.swift */; };
 		772C830A1C9A619B00A9541C /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83091C9A619B00A9541C /* MessageList.swift */; };
 		775CB2AF1C98AA1A00A38280 /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2AE1C98AA1A00A38280 /* MessagesListTableViewController.swift */; };
@@ -63,11 +64,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		770156391C9E1240001A4B1E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		771B0AC51C9B40F5004BD825 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		771B0AC61C9B40F5004BD825 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		772C83011C9A40ED00A9541C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		772C83031C9A410400A9541C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		772C83051C9A410C00A9541C /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		772C83011C9A40ED00A9541C /* RealmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
+		772C83031C9A410400A9541C /* RealmMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMessage.swift; sourceTree = "<group>"; };
+		772C83051C9A410C00A9541C /* RealmChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmChat.swift; sourceTree = "<group>"; };
 		772C83071C9A4AF400A9541C /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		772C83091C9A619B00A9541C /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
 		775CB2AE1C98AA1A00A38280 /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewController.swift; sourceTree = "<group>"; };
@@ -166,9 +168,9 @@
 		77BAF1FD1C9B2BFE00DFA5C3 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				772C83051C9A410C00A9541C /* Chat.swift */,
-				772C83031C9A410400A9541C /* Message.swift */,
-				772C83011C9A40ED00A9541C /* User.swift */,
+				772C83051C9A410C00A9541C /* RealmChat.swift */,
+				772C83031C9A410400A9541C /* RealmMessage.swift */,
+				772C83011C9A40ED00A9541C /* RealmUser.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -247,11 +249,11 @@
 		77D0868E1C95D2E000DFD8A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				77D086921C95D30D00DFD8A8 /* Controllers */,
 				77C7AB0E1C95D54A00120A3D /* Extensions */,
 				77D086941C95D31700DFD8A8 /* Helpers */,
 				77D086931C95D31200DFD8A8 /* Models */,
 				77D086911C95D30800DFD8A8 /* Views */,
+				77D086921C95D30D00DFD8A8 /* Controllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -305,6 +307,7 @@
 				77BAF1FD1C9B2BFE00DFA5C3 /* Realm */,
 				772C83071C9A4AF400A9541C /* ActiveUser.swift */,
 				772C83091C9A619B00A9541C /* MessageList.swift */,
+				770156391C9E1240001A4B1E /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,20 +456,21 @@
 				775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */,
 				77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */,
 				77BAF1F91C9B259D00DFA5C3 /* StartMessageViewController.swift in Sources */,
-				772C83041C9A410400A9541C /* Message.swift in Sources */,
+				772C83041C9A410400A9541C /* RealmMessage.swift in Sources */,
 				77D0866C1C95D1F500DFD8A8 /* AppDelegate.swift in Sources */,
 				77F1FEC41C98EA9C00E9913A /* StringExtension.swift in Sources */,
 				77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */,
 				77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */,
-				772C83021C9A40ED00A9541C /* User.swift in Sources */,
+				772C83021C9A40ED00A9541C /* RealmUser.swift in Sources */,
 				77E202D81C977B8E00FAAD74 /* NavigationController.swift in Sources */,
 				77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */,
 				77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */,
 				77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */,
 				772C830A1C9A619B00A9541C /* MessageList.swift in Sources */,
-				772C83061C9A410C00A9541C /* Chat.swift in Sources */,
+				772C83061C9A410C00A9541C /* RealmChat.swift in Sources */,
 				775CB2AF1C98AA1A00A38280 /* MessagesListTableViewController.swift in Sources */,
 				77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */,
+				7701563A1C9E1240001A4B1E /* Message.swift in Sources */,
 				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,
 				772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */,
 				775CB2B91C98D22800A38280 /* MessagesViewController.swift in Sources */,

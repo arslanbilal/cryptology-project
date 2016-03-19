@@ -19,17 +19,17 @@ class ActiveUser: NSObject {
     var lastname = ""
     var username = ""
     var chatList = [MessageList]()
-    var userList = [User]()
+    var userList = [RealmUser]()
 
     static let sharedInstance = ActiveUser()
     
-    func setUser(user: User) {
+    func setUser(user: RealmUser) {
         self.id = user.id
         self.name = user.name
         self.lastname = user.lastname
         self.username = user.username
         
-        let users = realm.objects(User).filter("id != \(self.id)")
+        let users = realm.objects(RealmUser).filter("id != \(self.id)")
         
         for otherUser in users {
             userList.append(otherUser)
@@ -44,16 +44,17 @@ class ActiveUser: NSObject {
         
         self.chatList = [MessageList]()
         
-        let chats = realm.objects(Chat).filter("fromUserId = \(id) OR toUserId = \(id)")
+        let chats = realm.objects(RealmChat).filter("fromUserId = \(id) OR toUserId = \(id)")
         
         for chat in chats {
             let selectedUserId = chat.fromUserId != id ? chat.fromUserId : chat.toUserId
             let messageType = chat.fromUserId != id ? MessageType.IncomingMessage : MessageType.OutgoingMessage
             
-            let message = realm.objects(Message).filter("id = \(chat.messageId)").first!
-            let otherUser = realm.objects(User).filter("id = \(selectedUserId)").first!
+            let realmMessage = realm.objects(RealmMessage).filter("id = \(chat.messageId)").first!
+            let otherUser = realm.objects(RealmUser).filter("id = \(selectedUserId)").first!
             
             let result = chatList.filter { $0.otherUser.id == otherUser.id }.first
+            let message = Message(message: realmMessage, type: messageType)
             
             if result != nil {
                 result?.messages.append(message)
@@ -62,11 +63,10 @@ class ActiveUser: NSObject {
             }
         }
         
-        chatList.sortInPlace({ $0.0.messages.last?.date.timeIntervalSince1970 >  $0.1.messages.last?.date.timeIntervalSince1970})
+        chatList.sortInPlace({ $0.0.messages.last?.message.date.timeIntervalSince1970 >  $0.1.messages.last?.message.date.timeIntervalSince1970})
     }
     
     func getMesageListFromUserId(userId: Int) -> MessageList? {
-        
         let messageList = chatList.filter { $0.otherUser.id == userId }.first
         return messageList
     }

@@ -1,5 +1,5 @@
 //
-//  Message.swift
+//  User.swift
 //  Cryptology Project
 //
 //  Created by Bilal Arslan on 17/03/16.
@@ -10,23 +10,24 @@ import Foundation
 import RealmSwift
 
 
-class Message: Object {
+class RealmUser: Object {
     dynamic var id = 0
-    dynamic var text = ""
-    dynamic var date = NSDate()
-    var type: MessageType = .OutgoingMessage // default
+    dynamic var name = ""
+    dynamic var lastname = ""
+    dynamic var username = ""
+    dynamic var password = ""
     
     override static func primaryKey() -> String? {
         return "id"
     }
     
-    class var messageId: Int {
+    class var userId: Int {
         let realm = try! Realm()
         
-        let messages: NSArray = Array(realm.objects(Message).sorted("id"))
-        let last = messages.lastObject
+        let users: NSArray = Array(realm.objects(RealmUser).sorted("id"))
+        let last = users.lastObject
         
-        if messages.count > 0 {
+        if users.count > 0 {
             let id = last?.valueForKey("id") as? Int
             return id! + 1
         } else {

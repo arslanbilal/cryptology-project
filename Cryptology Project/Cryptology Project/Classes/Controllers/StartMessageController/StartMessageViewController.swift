@@ -14,7 +14,7 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
 
     let cellIdentifier = "userCell"
     let tableView = UITableView.newAutoLayoutView()
-    var userList = [User]()
+    var userList = [RealmUser]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -40,7 +40,7 @@ class UserTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setContents(user: User) {
+    func setContents(user: RealmUser) {
         self.profileNameLabel.text = user.name + " " + user.lastname
         self.profileImageView.backgroundColor = UIColor.grayColor()
     }

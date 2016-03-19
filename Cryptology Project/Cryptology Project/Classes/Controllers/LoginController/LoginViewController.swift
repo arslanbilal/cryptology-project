@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = loginView.passwordTextField.text!
         
         if  username != "" && password != "" {
-            let user = realm.objects(User).filter("username = '\(username)' AND password = '\(password)'").first
+            let user = realm.objects(RealmUser).filter("username = '\(username)' AND password = '\(password)'").first
             
             if user != nil {
                 ActiveUser.sharedInstance.setUser(user!)
