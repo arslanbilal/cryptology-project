@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
     
     let loginView = LoginView(frame: CGRectZero)
     let realm = try! Realm()
@@ -18,8 +18,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginView.usernameTextField.delegate = self
-        loginView.passwordTextField.delegate = self
         loginView.loginButton.addTarget(self, action: "didTapLoginButton:", forControlEvents: .TouchUpInside)
         self.view.addSubview(loginView)
         
@@ -51,10 +49,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
         }
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class LoginView: UIView {
+class LoginView: UIView, UITextFieldDelegate {
     
     let usernameTextField = UITextField.newAutoLayoutView()
     let passwordTextField = UITextField.newAutoLayoutView()
@@ -71,7 +71,9 @@ class LoginView: UIView {
         usernameView.autoSetDimension(.Height, toSize: distanceBetweenLoginElements * 1.5)
         
         
+        usernameTextField.delegate = self
         usernameView.addSubview(usernameTextField)
+        
         usernameTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(2.0, 5.0, 2.0, 5.0))
         
         
@@ -99,6 +101,7 @@ class LoginView: UIView {
         passwordView.autoSetDimension(.Height, toSize: distanceBetweenLoginElements * 1.5)
         
         
+        passwordTextField.delegate = self
         passwordTextField.secureTextEntry = true
         passwordView.addSubview(passwordTextField)
         
@@ -119,4 +122,17 @@ class LoginView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: UITextField Delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+    }
+    
 }

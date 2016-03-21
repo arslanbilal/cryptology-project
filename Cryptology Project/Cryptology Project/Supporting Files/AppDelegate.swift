@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
         
-//        // Simulator/Device Document Directory
-//        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-//        print("\(urls[urls.count - 1])")
+        // Simulator/Device Document Directory
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        print("\(urls[urls.count - 1])")
         
         //generateUsersWithCount(5)
         

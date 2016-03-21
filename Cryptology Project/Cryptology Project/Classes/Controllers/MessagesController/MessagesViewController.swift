@@ -17,6 +17,8 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     private let messageTextField = UITextField.newAutoLayoutView()
     private let sendButton = UIButton.newAutoLayoutView()
+    var bottomViewBottomConstraint: [NSLayoutConstraint]!
+    
     private let realm = try! Realm()
     
     var messageList: MessageList!
@@ -27,9 +29,17 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationItem.title = messageList.otherUser!.name + " " + messageList.otherUser.lastname
         self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         
         loadViews()
         tableView.reloadData()
+    }
+    
+    // MARK: UIResponder
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // MARK: UI initialisation
@@ -49,8 +59,9 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         bottomView.backgroundColor = UIColor ( red: 0.8982, green: 0.8982, blue: 0.8982, alpha: 1.0 )
         self.view.addSubview(bottomView)
         
-        bottomView.autoPinEdge(.Top, toEdge: .Bottom, ofView: tableView)
-        bottomView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0), excludingEdge: .Top)
+        //bottomView.autoPinEdge(.Top, toEdge: .Bottom, ofView: tableView)
+        bottomViewBottomConstraint = bottomView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0), excludingEdge: .Top)
+        bottomView.autoSetDimension(.Height, toSize: 50.0)
         
         sendButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
         sendButton.setTitle("Send", forState: .Normal)
@@ -129,10 +140,33 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
                     let indexPath = NSIndexPath(forItem: messageCount, inSection: 0)
                     tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
                     messageTextField.text = ""
+                    self.view.endEditing(true)
                 }
             }
         }
         
         messageTextField.resignFirstResponder()
+    }
+    
+    // MARK: Keyboard State Methods
+    func keyboardWillHide(sender: NSNotification) {
+        if let userInfo = sender.userInfo {
+            if let _ = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size.height {
+                //key point 0,
+                self.bottomViewBottomConstraint[1].constant =  0
+                //textViewBottomConstraint.constant = keyboardHeight
+                UIView.animateWithDuration(0.25, animations: { () -> Void in self.view.layoutIfNeeded() })
+            }
+        }
+    }
+    func keyboardWillShow(sender: NSNotification) {
+        if let userInfo = sender.userInfo {
+            if let keyboardHeight = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size.height {
+                self.bottomViewBottomConstraint[1].constant = -1 * keyboardHeight
+                UIView.animateWithDuration(0.25, animations: { () -> Void in
+                    self.view.layoutIfNeeded()
+                })
+            }
+        }
     }
 }
