@@ -30,8 +30,8 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationItem.title = messageList.otherUser!.name + " " + messageList.otherUser.lastname
         self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MessagesViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MessagesViewController.keyboardWillShow(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
         loadViews()
         tableView.reloadData()
@@ -59,13 +59,12 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         bottomView.backgroundColor = UIColor ( red: 0.8982, green: 0.8982, blue: 0.8982, alpha: 1.0 )
         self.view.addSubview(bottomView)
         
-        //bottomView.autoPinEdge(.Top, toEdge: .Bottom, ofView: tableView)
         bottomViewBottomConstraint = bottomView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0), excludingEdge: .Top)
         bottomView.autoSetDimension(.Height, toSize: 50.0)
         
         sendButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
         sendButton.setTitle("Send", forState: .Normal)
-        sendButton.addTarget(self, action: "didTapSendButton:", forControlEvents: .TouchUpInside)
+        sendButton.addTarget(self, action: #selector(MessagesViewController.didTapSendButton(_:)), forControlEvents: .TouchUpInside)
         sendButton.setTitleColor(UIColor.sendMessageButtonTintColor(), forState: .Normal)
         sendButton.setTitleColor(UIColor.grayColor(), forState: .Disabled)
         sendButton.setTitleColor(UIColor ( red: 0.6078, green: 0.7176, blue: 0.8706, alpha: 1.0 ), forState: .Highlighted)

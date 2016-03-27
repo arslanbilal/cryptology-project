@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginView.loginButton.addTarget(self, action: "didTapLoginButton:", forControlEvents: .TouchUpInside)
+        loginView.loginButton.addTarget(self, action: #selector(LoginViewController.didTapLoginButton(_:)), forControlEvents: .TouchUpInside)
         self.view.addSubview(loginView)
         
         loginView.autoPinEdgesToSuperviewEdges()
