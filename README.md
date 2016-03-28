@@ -1,8 +1,11 @@
 # Cryptology Project
 
+
+
+
 <hr>
 <p align="center">
-	<img alt="Git" src="./source/appIcon.png" height="180" width="180"> <br> 
+	<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/appIcon.png" height="225" width="225">
 </p>
 <h3>This repo includes "Cryptology Course" project(Encrypted Messaging App in iOS 8+)</h3>
 <hr>
