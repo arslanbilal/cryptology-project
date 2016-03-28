@@ -13,23 +13,17 @@ import RealmSwift
 class ActiveUser: NSObject {
     
     private let realm = try! Realm()
-    
-    var id = 0
-    var name = ""
-    var lastname = ""
-    var username = ""
+
+    var user = RealmUser()
     var chatList = [MessageList]()
     var userList = [RealmUser]()
 
     static let sharedInstance = ActiveUser()
     
-    func setUser(user: RealmUser) {
-        self.id = user.id
-        self.name = user.name
-        self.lastname = user.lastname
-        self.username = user.username
+    func setActiveUser(user: RealmUser) {
+        self.user = user
         
-        let users = realm.objects(RealmUser).filter("id != \(self.id)")
+        let users = realm.objects(RealmUser).filter("id != \(self.user.id)")
         
         for otherUser in users {
             userList.append(otherUser)
@@ -44,14 +38,14 @@ class ActiveUser: NSObject {
         
         self.chatList = [MessageList]()
         
-        let chats = realm.objects(RealmChat).filter("fromUserId = \(id) OR toUserId = \(id)")
+        let chats = realm.objects(RealmChat).filter("fromUser.id = \(self.user.id) OR toUser.id = \(self.user.id)")
         
         for chat in chats {
-            let selectedUserId = chat.fromUserId != id ? chat.fromUserId : chat.toUserId
-            let messageType = chat.fromUserId != id ? MessageType.IncomingMessage : MessageType.OutgoingMessage
+            let selectedUser = chat.fromUser != user ? chat.fromUser : chat.toUser
+            let messageType = chat.fromUser != user ? MessageType.IncomingMessage : MessageType.OutgoingMessage
             
-            let realmMessage = realm.objects(RealmMessage).filter("id = \(chat.messageId)").first!
-            let otherUser = realm.objects(RealmUser).filter("id = \(selectedUserId)").first!
+            let realmMessage = realm.objects(RealmMessage).filter("id = \(chat.message!.id)").first!
+            let otherUser = realm.objects(RealmUser).filter("id = \(selectedUser!.id)").first!
             
             let result = chatList.filter { $0.otherUser.id == otherUser.id }.first
             let message = Message(message: realmMessage, type: messageType)
@@ -59,7 +53,7 @@ class ActiveUser: NSObject {
             if result != nil {
                 result?.messages.append(message)
             } else {
-                chatList.append(MessageList(otherUser: otherUser, message: message, messageType: messageType))
+                chatList.append(MessageList(otherUser: otherUser, message: message, messageType: messageType, messageKey: (chat.key?.key)!))
             }
         }
         
@@ -72,11 +66,7 @@ class ActiveUser: NSObject {
     }
     
     func exitUser() {
-        self.id = 0
-        self.name = ""
-        self.lastname = ""
-        self.username = ""
-        
+        self.user = RealmUser()
         self.chatList = []
         self.userList = []
     }

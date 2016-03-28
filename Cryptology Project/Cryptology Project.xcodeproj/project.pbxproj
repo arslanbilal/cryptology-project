@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7701563A1C9E1240001A4B1E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770156391C9E1240001A4B1E /* Message.swift */; };
-		7707DA9D1CA7B805004D5AEB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DA991CA7B71E004D5AEB /* Realm.framework */; };
 		7707DAA11CA7B82F004D5AEB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DA9F1CA7B82F004D5AEB /* Realm.framework */; };
 		7707DAA21CA7B82F004D5AEB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DA9F1CA7B82F004D5AEB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7707DAA31CA7B82F004D5AEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */; };
 		7707DAA41CA7B82F004D5AEB /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		772C71F91CA936F60013B735 /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 772C71F61CA936F60013B735 /* FBEncryptorAES.m */; };
+		772C71FA1CA936F60013B735 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 772C71F81CA936F60013B735 /* NSData+Base64.m */; };
+		772C72171CA946830013B735 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C72161CA946830013B735 /* RealmKey.swift */; };
 		772C83021C9A40ED00A9541C /* RealmUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83011C9A40ED00A9541C /* RealmUser.swift */; };
 		772C83041C9A410400A9541C /* RealmMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83031C9A410400A9541C /* RealmMessage.swift */; };
 		772C83061C9A410C00A9541C /* RealmChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83051C9A410C00A9541C /* RealmChat.swift */; };
@@ -66,9 +68,13 @@
 
 /* Begin PBXFileReference section */
 		770156391C9E1240001A4B1E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		7707DA991CA7B71E004D5AEB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "/Users/bilalarslan/Documents/projects/ios/apps/cryptology-project/Cryptology Project/Realm.framework"; sourceTree = "<absolute>"; };
 		7707DA9F1CA7B82F004D5AEB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		772C71F51CA936F60013B735 /* FBEncryptorAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
+		772C71F61CA936F60013B735 /* FBEncryptorAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
+		772C71F71CA936F60013B735 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		772C71F81CA936F60013B735 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		772C72161CA946830013B735 /* RealmKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmKey.swift; sourceTree = "<group>"; };
 		772C83011C9A40ED00A9541C /* RealmUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmUser.swift; sourceTree = "<group>"; };
 		772C83031C9A410400A9541C /* RealmMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmMessage.swift; sourceTree = "<group>"; };
 		772C83051C9A410C00A9541C /* RealmChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmChat.swift; sourceTree = "<group>"; };
@@ -112,7 +118,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7707DAA11CA7B82F004D5AEB /* Realm.framework in Frameworks */,
-				7707DA9D1CA7B805004D5AEB /* Realm.framework in Frameworks */,
 				7707DAA31CA7B82F004D5AEB /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +139,17 @@
 				7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		772C71F41CA936F60013B735 /* FBEncryptor */ = {
+			isa = PBXGroup;
+			children = (
+				772C71F51CA936F60013B735 /* FBEncryptorAES.h */,
+				772C71F61CA936F60013B735 /* FBEncryptorAES.m */,
+				772C71F71CA936F60013B735 /* NSData+Base64.h */,
+				772C71F81CA936F60013B735 /* NSData+Base64.m */,
+			);
+			path = FBEncryptor;
 			sourceTree = "<group>";
 		};
 		775CB2AD1C98A9E200A38280 /* MessagesListController */ = {
@@ -174,6 +190,7 @@
 				772C83051C9A410C00A9541C /* RealmChat.swift */,
 				772C83031C9A410400A9541C /* RealmMessage.swift */,
 				772C83011C9A40ED00A9541C /* RealmUser.swift */,
+				772C72161CA946830013B735 /* RealmKey.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -264,6 +281,7 @@
 		77D0868F1C95D2EB00DFD8A8 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				772C71F41CA936F60013B735 /* FBEncryptor */,
 				77C7AB151C95DBAE00120A3D /* PureLayout */,
 			);
 			path = Dependencies;
@@ -401,7 +419,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Bilal Arslan";
 				TargetAttributes = {
 					77D086671C95D1F500DFD8A8 = {
@@ -459,8 +477,11 @@
 				775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */,
 				77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */,
 				77BAF1F91C9B259D00DFA5C3 /* StartMessageViewController.swift in Sources */,
+				772C71F91CA936F60013B735 /* FBEncryptorAES.m in Sources */,
 				772C83041C9A410400A9541C /* RealmMessage.swift in Sources */,
+				772C71FA1CA936F60013B735 /* NSData+Base64.m in Sources */,
 				77D0866C1C95D1F500DFD8A8 /* AppDelegate.swift in Sources */,
+				772C72171CA946830013B735 /* RealmKey.swift in Sources */,
 				77F1FEC41C98EA9C00E9913A /* StringExtension.swift in Sources */,
 				77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */,
 				77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */,

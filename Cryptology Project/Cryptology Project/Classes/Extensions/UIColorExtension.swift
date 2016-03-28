@@ -24,7 +24,7 @@ extension UIColor {
     }
     
     public class func incomingMessageColor() -> UIColor {
-        return UIColor(netHex: 0x4A90E2)
+        return UIColor(netHex: 0xA4AAB3)
     }
     
     public class func loginButtonBacgrounColor() -> UIColor {

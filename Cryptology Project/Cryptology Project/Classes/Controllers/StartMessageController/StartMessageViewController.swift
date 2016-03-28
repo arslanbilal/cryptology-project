@@ -20,10 +20,10 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = UIColor.redColor()
+        self.view.backgroundColor = UIColor.navigationBarBackgroundColor()
         
         self.navigationItem.title = "Start Chat"
-        self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
+        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name    + " " + ActiveUser.sharedInstance.user.name
         
         tableView.registerClass(UserTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
@@ -72,7 +72,7 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
         if let userMessageList = ActiveUser.sharedInstance.getMesageListFromUserId(selectedUser.id) {
             messageList = userMessageList
         } else {
-            messageList = MessageList(otherUser: selectedUser, message: nil, messageType: nil)
+            messageList = MessageList(otherUser: selectedUser, message: nil, messageType: nil, messageKey: "")
         }
         
         let viewControllersCount = self.navigationController?.viewControllers.count

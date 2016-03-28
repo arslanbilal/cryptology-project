@@ -21,7 +21,7 @@ class MessagesListTableViewController: UITableViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         
         self.navigationItem.title = "Chats"
-        self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
+        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name + " " + ActiveUser.sharedInstance.user.lastname
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: #selector(MessagesListTableViewController.didTapExitButton(_:)))

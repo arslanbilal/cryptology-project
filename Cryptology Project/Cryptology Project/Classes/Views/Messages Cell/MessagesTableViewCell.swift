@@ -15,6 +15,11 @@ class MessagesTableViewCell: UITableViewCell {
     private var messageLabel = UILabel.newAutoLayoutView()
     private var messageView = UIView.newAutoLayoutView()
     
+    private var leftConstraint: NSLayoutConstraint?
+    private var rightConstraint: NSLayoutConstraint?
+    
+    private let messageCellWidth = (UIScreen.mainScreen().bounds.size.width * 0.65) - 10
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     
@@ -22,11 +27,13 @@ class MessagesTableViewCell: UITableViewCell {
         self.selectionStyle = .None
         
         
-        messageView.backgroundColor = UIColor.incomingMessageColor()
         messageView.layer.cornerRadius = 10.0
         self.addSubview(messageView)
         
         messageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0))
+//        messageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 10)
+//        messageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10)
+//        messageView.autoSetDimension(.Width, toSize: messageCellWidth)
         
         
         messageDateLabel.numberOfLines = 1
@@ -54,19 +61,29 @@ class MessagesTableViewCell: UITableViewCell {
     }
     
     func setMessageType(type: MessageType) {
+        if (leftConstraint != nil) {
+            messageView.removeConstraint(leftConstraint!)
+        }
+        
+        if (rightConstraint != nil) {
+            messageView.removeConstraint(rightConstraint!)
+        }
+        
         switch (type) {
         case .IncomingMessage:
             messageView.backgroundColor = UIColor.incomingMessageColor()
+            //leftConstraint = messageView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10)
             break
         case .OutgoingMessage:
             messageView.backgroundColor = UIColor.outgoingMessageColor()
+            //rightConstraint = messageView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10)
             break
         }
     }
     
-    func setContent(message: Message) {
+    func setContent(message: Message, messageKey: String) {
         self.messageDateLabel.text = Helper.getStringDateFromDate(message.message.date)
-        self.messageLabel.text = message.message.text
+        self.messageLabel.text = FBEncryptorAES.decryptBase64String(message.message.text, keyString: messageKey)
         self.setMessageType(message.messagteType)
     }
 }

@@ -11,7 +11,8 @@ import RealmSwift
 
 
 class RealmChat: Object {
-    dynamic var messageId = 0
-    dynamic var fromUserId = 0
-    dynamic var toUserId = 0
+    dynamic var message: RealmMessage? = nil
+    dynamic var fromUser: RealmUser? = nil
+    dynamic var toUser: RealmUser? = nil
+    dynamic var key: RealmKey? = nil
 }

@@ -23,25 +23,45 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     var messageList: MessageList!
     
+    // MARK: -
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationItem.title = messageList.otherUser!.name + " " + messageList.otherUser.lastname
-        self.navigationItem.prompt = ActiveUser.sharedInstance.name + " " + ActiveUser.sharedInstance.lastname
+        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name + " " + ActiveUser.sharedInstance.user.lastname
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MessagesViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MessagesViewController.keyboardWillShow(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MessagesViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
         loadViews()
         tableView.reloadData()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let count = messageList.messages?.count {
+            if count > 0 {
+                let indexPath = NSIndexPath(forItem: count - 1, inSection: 0)
+                tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+            }
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        messageTextField.resignFirstResponder()
+    }
+    
+    // MARK: -
     // MARK: UIResponder
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    // MARK: -
     // MARK: UI initialisation
     func loadViews() {
         tableView.registerClass(MessagesTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
@@ -86,6 +106,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         messageTextField.autoPinEdge(.Right, toEdge: .Left, ofView: sendButton, withOffset: -5.0)
     }
     
+    // MARK: -
     // MARK: UITableView Datasource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -101,11 +122,18 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: MessagesTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesTableViewCell
         
-        cell.setContent(messageList.messages[indexPath.row])
+        cell.setContent(messageList.messages[indexPath.row], messageKey: messageList.messageKey)
         
         return cell
     }
     
+    // MARK: -
+    // MARK: UITableView Delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        messageTextField.resignFirstResponder()
+    }
+    
+    // MARK: -
     // MARK: UITextField Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -118,15 +146,38 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         if let message = messageTextField.text {
             if message.length > 0 {
                 
+                var key: String = ""
+                if messageList.otherUser.username < ActiveUser.sharedInstance.user.username {
+                    for _ in 0...3 {
+                        key += messageList.otherUser.username + ActiveUser.sharedInstance.user.username
+                    }
+                } else {
+                    for _ in 0...3 {
+                        key += ActiveUser.sharedInstance.user.username + messageList.otherUser.username
+                    }
+                }
+                
+                let cipherText = FBEncryptorAES.encryptBase64String(message, keyString: key, separateLines: false)
+
                 let sendingMessage = RealmMessage()
                 sendingMessage.id = RealmMessage.messageId
-                sendingMessage.text = message
+                sendingMessage.text = cipherText
                 sendingMessage.date = NSDate()
                 
                 let chat = RealmChat()
-                chat.messageId = sendingMessage.id
-                chat.fromUserId = ActiveUser.sharedInstance.id
-                chat.toUserId = messageList.otherUser.id
+                chat.message = sendingMessage
+                chat.fromUser = ActiveUser.sharedInstance.user
+                chat.toUser = messageList.otherUser
+                
+                let chatKey = realm.objects(RealmKey).filter("key = '\(key)'").first
+                if (chatKey != nil) {
+                    chat.key = chatKey
+                } else {
+                    let chatKey = RealmKey()
+                    chatKey.id = RealmKey.keyId
+                    chatKey.key = key
+                    chat.key = chatKey
+                }
                 
                 try! realm.write {
                     realm.add(sendingMessage)
@@ -147,6 +198,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         messageTextField.resignFirstResponder()
     }
     
+    // MARK: -
     // MARK: Keyboard State Methods
     func keyboardWillHide(sender: NSNotification) {
         if let userInfo = sender.userInfo {

@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
             let user = realm.objects(RealmUser).filter("username = '\(username)' AND password = '\(password)'").first
             
             if user != nil {
-                ActiveUser.sharedInstance.setUser(user!)
+                ActiveUser.sharedInstance.setActiveUser(user!)
                 
                 loginView.usernameTextField.text = ""
                 loginView.passwordTextField.text = ""
