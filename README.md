@@ -59,7 +59,7 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 ##### v0.2
 ![Gif](https://github.com/arslanbilal/cryptology-project/raw/master/Source/application.gif)
 
-Gifs lasts about 40-50 seconds.
+Gif lasts 100 seconds.
 
 ## Credits
 - [Bilal Arslan][arslanbilal]: Architecture, Concept, Code and UI Design
