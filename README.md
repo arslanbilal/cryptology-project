@@ -3,7 +3,7 @@
 <p align="center">
 	<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/appIcon.png" height="225" width="225">
 </p>
-<h3>This repo includes "Cryptology Course" project(Encrypted Messaging App in iOS 8+)</h3>
+<h3>This repo includes "Cryptology Course" project(Encrypted Messaging App in iOS 8.0+)</h3>
 <hr>
 ## Summary:
 Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. You can run in your own machine. You just uncomment the `genenaretUsersWithCount(Int)` method in AppDelegate.swift file for adding random user in the system. Then recomment the same line. To test: 
@@ -57,9 +57,9 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 Gif lasts 100 seconds.
 
 ## Test Vector of Encryption Library(FBEncryptor)
-
-<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/testVector.png"> <br>
-	<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/output.png">
+<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/testVector.png">
+#### Output
+<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/output.png">
 	
 ## Credits
 - [Bilal Arslan][arslanbilal]: Architecture, Concept, Code and UI Design
