@@ -6,7 +6,7 @@
 <h3>This repo includes "Cryptology Course" project(Encrypted Messaging App in iOS 8.0+)</h3>
 <hr>
 ## Summary:
-Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. You can run in your own machine. You just uncomment the `genenaretUsersWithCount(Int)` method in AppDelegate.swift file for adding random user in the system. Then recomment the same line. To test: 
+Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. Man-in-the-Middle never see plain text. You can run in your own machine. You just uncomment the `genenaretUsersWithCount(Int)` method in AppDelegate.swift file for adding random user in the system. Then recomment the same line. To test: 
 
 1. username: user# (no is depends on count that you assign the func.)
 2. password: 1234
@@ -17,7 +17,7 @@ Simple iOS messaging application and working in locale [database][realm]. Messag
 - Xcode 7.3+
 
 ## Architecture
-There are 4 classes that represent 3 tables in the Realm database.
+There are 4 classes that represent 4 tables in the Realm database.
 
 - User: (*(int)* **id**, *(string)* **name**, *(string)* **lastname**, *(string)* **username**, *(string)* **password**)
 - Message: (*(int)* **id**, *(string)* **text**, *(Date)* **date**)
@@ -37,8 +37,8 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 
 **Dependencies/Libraries**
 
-- [PureLayout][purelayout] for UI
-- [FBEncryptor][fbencryptor] for Encrypt/Decrypt with chat specific key
+- [PureLayout][purelayout] for UI Autolayout
+- [FBEncryptor][fbencryptor] for Encrypt/Decrypt messages with chat specific key
 
 
 ## Latest version: v0.2:
@@ -47,8 +47,10 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 	- users can message other users
 	- users see only own messages
 	- users message is in a place(incoming, outgoing)
-	- messages are encrypting with AES 256 bit.
+	- messages are encrypting with AES 256 bit key.
 	- users can only see his/her own messages, others are encrypted.
+	- Man-in-the-Middle see for all Cipher Message.
+	- Man-in-the-Middle does not have key to see plain format.
 
 ## How does it look like?
 ##### v0.2
