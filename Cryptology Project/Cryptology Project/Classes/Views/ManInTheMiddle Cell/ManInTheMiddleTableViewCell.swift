@@ -1,31 +1,41 @@
 //
-//  MessagesTableViewCell.swift
+//  ManInTheMiddleTableViewCell.swift
 //  Cryptology Project
 //
-//  Created by Bilal Arslan on 15/03/16.
+//  Created by Bilal Arslan on 29/03/16.
 //  Copyright © 2016 Bilal Arslan. All rights reserved.
 //
 
 import UIKit
 
+class ManInTheMiddleTableViewCell: UITableViewCell {
 
-class MessagesTableViewCell: UITableViewCell {
-    
+    private let messageOwnersLabel = UILabel.newAutoLayoutView()
     private let messageDateLabel = UILabel.newAutoLayoutView()
     private let messageLabel = UILabel.newAutoLayoutView()
-    private let messageView = UIView.newAutoLayoutView()
-
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
+        
         self.backgroundColor = UIColor.clearColor()
         self.selectionStyle = .None
         
-        
+        let messageView = UIView.newAutoLayoutView()
         messageView.layer.cornerRadius = 10.0
+        messageView.backgroundColor = UIColor.incomingMessageColor()
         self.addSubview(messageView)
         
         messageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0))
+        
+        
+        messageOwnersLabel.numberOfLines = 1
+        messageOwnersLabel.textColor = UIColor.whiteColor()
+        messageOwnersLabel.textAlignment = .Left
+        messageOwnersLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
+        messageView.addSubview(messageOwnersLabel)
+        
+        messageOwnersLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10.0, 15.0, 0, 15.0), excludingEdge: .Bottom)
+        messageOwnersLabel.autoSetDimension(.Height, toSize: 17)
         
         
         messageDateLabel.numberOfLines = 1
@@ -34,7 +44,9 @@ class MessagesTableViewCell: UITableViewCell {
         messageDateLabel.font = UIFont(name: "HelveticaNeue-Italic", size: 13)
         messageView.addSubview(messageDateLabel)
         
-        messageDateLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10.0, 15.0, 0, 15.0), excludingEdge: .Bottom)
+        messageDateLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: messageOwnersLabel, withOffset: 7.5)
+        messageDateLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: 15.0)
+        messageDateLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: 15.0)
         messageDateLabel.autoSetDimension(.Height, toSize: 15)
         
         
@@ -47,25 +59,14 @@ class MessagesTableViewCell: UITableViewCell {
         messageLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: messageDateLabel, withOffset: 7.5)
         messageLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0, 15.0, 10.0, 15.0), excludingEdge: .Top)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setMessageType(type: MessageType) {
-        switch (type) {
-        case .IncomingMessage:
-            messageView.backgroundColor = UIColor.incomingMessageColor()
-            break
-        case .OutgoingMessage:
-            messageView.backgroundColor = UIColor.outgoingMessageColor()
-            break
-        }
-    }
-    
-    func setContent(message: Message, messageKey: String) {
-        self.messageDateLabel.text = Helper.getStringDateFromDate(message.message.date)
-        self.messageLabel.text = FBEncryptorAES.decryptBase64String(message.message.text, keyString: messageKey)
-        self.setMessageType(message.messagteType)
+    func setContent(message: CipherMessage) {
+        self.messageOwnersLabel.text = message.owners
+        self.messageDateLabel.text = Helper.getStringDateFromDate(message.date)
+        self.messageLabel.text = message.message
     }
 }

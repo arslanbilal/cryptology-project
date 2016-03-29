@@ -16,14 +16,14 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
     let tableView = UITableView.newAutoLayoutView()
     var userList = [RealmUser]()
     
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.navigationBarBackgroundColor()
         
         self.navigationItem.title = "Start Chat"
-        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name    + " " + ActiveUser.sharedInstance.user.name
+        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name    + " " + ActiveUser.sharedInstance.user.lastname
         
         tableView.registerClass(UserTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
@@ -38,12 +38,7 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
         tableView.reloadData()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: UITableView Datasource
+    // MARK: - UITableView Datasource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -76,8 +71,8 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
         }
         
         let viewControllersCount = self.navigationController?.viewControllers.count
-        let messagesListTableViewController = self.navigationController?.viewControllers[viewControllersCount! - 2] as! MessagesListTableViewController
-        messagesListTableViewController.messageList = messageList
+        let messagesListViewController = self.navigationController?.viewControllers[viewControllersCount! - 2] as! MessagesListViewController
+        messagesListViewController.messageList = messageList
         
         self.navigationController?.popViewControllerAnimated(true)
     }

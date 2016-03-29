@@ -11,9 +11,9 @@ import UIKit
 
 class MessagesListTableViewCell: UITableViewCell {
 
-    private var profileImageView = UIImageView.newAutoLayoutView()
-    private var profileNameLabel = UILabel.newAutoLayoutView()
-    private var profileLastMessageLabel = UILabel.newAutoLayoutView()
+    private let profileImageView = UIImageView.newAutoLayoutView()
+    private let profileNameLabel = UILabel.newAutoLayoutView()
+    private let profileLastMessageLabel = UILabel.newAutoLayoutView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

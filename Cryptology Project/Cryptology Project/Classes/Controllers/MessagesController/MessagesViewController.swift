@@ -23,8 +23,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     var messageList: MessageList!
     
-    // MARK: -
-    // MARK: View lifecycle
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,14 +54,12 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         messageTextField.resignFirstResponder()
     }
     
-    // MARK: -
-    // MARK: UIResponder
+    // MARK: - UIResponder
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    // MARK: -
-    // MARK: UI initialisation
+    // MARK: - UI initialisation
     func loadViews() {
         tableView.registerClass(MessagesTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
@@ -106,8 +103,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         messageTextField.autoPinEdge(.Right, toEdge: .Left, ofView: sendButton, withOffset: -5.0)
     }
     
-    // MARK: -
-    // MARK: UITableView Datasource
+    // MARK: - UITableView Datasource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -127,36 +123,38 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    // MARK: -
     // MARK: UITableView Delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         messageTextField.resignFirstResponder()
     }
     
-    // MARK: -
-    // MARK: UITextField Delegate
+    // MARK: - UITextField Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }
     
-    // MARK: Button Actions
+    // MARK: - Button Actions
     func didTapSendButton(sender: UIButton) {
         
         if let message = messageTextField.text {
             if message.length > 0 {
                 
-                var key: String = ""
-                if messageList.otherUser.username < ActiveUser.sharedInstance.user.username {
-                    for _ in 0...3 {
-                        key += messageList.otherUser.username + ActiveUser.sharedInstance.user.username
-                    }
-                } else {
-                    for _ in 0...3 {
-                        key += ActiveUser.sharedInstance.user.username + messageList.otherUser.username
-                    }
-                }
+                let key: String! // Key for Chat
                 
+                if messageList.messageKey == "" { // If there is key
+                    key = messageList.messageKey
+                } else {
+                    let data = NSMutableData(length: kCCKeySizeAES256)!
+                    let result = SecRandomCopyBytes(kSecRandomDefault, kCCKeySizeAES256, UnsafeMutablePointer<UInt8>(data.mutableBytes))
+                    guard result == errSecSuccess else {
+                        return
+                        //fatalError("SECURITY FAILURE: Could not generate secure random numbers: \(result).")
+                    }
+                    
+                    key = FBEncryptorAES.hexStringForData(data)
+                }
+
                 let cipherText = FBEncryptorAES.encryptBase64String(message, keyString: key, separateLines: false)
 
                 let sendingMessage = RealmMessage()
@@ -169,15 +167,11 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
                 chat.fromUser = ActiveUser.sharedInstance.user
                 chat.toUser = messageList.otherUser
                 
-                let chatKey = realm.objects(RealmKey).filter("key = '\(key)'").first
-                if (chatKey != nil) {
-                    chat.key = chatKey
-                } else {
-                    let chatKey = RealmKey()
-                    chatKey.id = RealmKey.keyId
-                    chatKey.key = key
-                    chat.key = chatKey
-                }
+                let chatKey = RealmKey()
+                chatKey.id = RealmKey.keyId
+                chatKey.key = key
+                chat.key = chatKey
+                
                 
                 try! realm.write {
                     realm.add(sendingMessage)

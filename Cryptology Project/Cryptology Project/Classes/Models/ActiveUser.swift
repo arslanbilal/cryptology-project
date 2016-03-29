@@ -17,6 +17,7 @@ class ActiveUser: NSObject {
     var user = RealmUser()
     var chatList = [MessageList]()
     var userList = [RealmUser]()
+    private var manInTheMiddle = [CipherMessage]()
 
     static let sharedInstance = ActiveUser()
     
@@ -35,7 +36,6 @@ class ActiveUser: NSObject {
     }
     
     func loadUserChatData() {
-        
         self.chatList = [MessageList]()
         
         let chats = realm.objects(RealmChat).filter("fromUser.id = \(self.user.id) OR toUser.id = \(self.user.id)")
@@ -58,6 +58,26 @@ class ActiveUser: NSObject {
         }
         
         chatList.sortInPlace({ $0.0.messages.last?.message.date.timeIntervalSince1970 >  $0.1.messages.last?.message.date.timeIntervalSince1970})
+    }
+    
+    func loadManInTheMiddleData() -> [CipherMessage]{
+        self.manInTheMiddle = [CipherMessage]()
+        
+        let chats = realm.objects(RealmChat)
+        
+        for chat in chats {
+            let message = chat.message?.text
+            let owners = (chat.fromUser?.username)! + " => " + (chat.toUser?.username)!
+            let date = chat.message?.date
+            
+            let cipherMessage = CipherMessage(message: message!, owners: owners, date: date!)
+            
+            manInTheMiddle.append(cipherMessage)
+        }
+        
+        manInTheMiddle.sortInPlace({ $0.0.date.timeIntervalSince1970 <   $0.1.date.timeIntervalSince1970})
+        
+        return manInTheMiddle
     }
     
     func getMesageListFromUserId(userId: Int) -> MessageList? {

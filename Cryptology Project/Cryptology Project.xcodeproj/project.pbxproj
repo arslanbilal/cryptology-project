@@ -20,9 +20,12 @@
 		772C83061C9A410C00A9541C /* RealmChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83051C9A410C00A9541C /* RealmChat.swift */; };
 		772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83071C9A4AF400A9541C /* ActiveUser.swift */; };
 		772C830A1C9A619B00A9541C /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83091C9A619B00A9541C /* MessageList.swift */; };
-		775CB2AF1C98AA1A00A38280 /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2AE1C98AA1A00A38280 /* MessagesListTableViewController.swift */; };
 		775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */; };
 		775CB2B91C98D22800A38280 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B81C98D22800A38280 /* MessagesViewController.swift */; };
+		777685B21CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B11CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift */; };
+		777685B51CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */; };
+		777685B71CAAC54100BD62B9 /* CipherMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B61CAAC54100BD62B9 /* CipherMessage.swift */; };
+		77834C451CAA9C6400B1E94A /* MessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77834C441CAA9C6400B1E94A /* MessagesListViewController.swift */; };
 		77BAF1F91C9B259D00DFA5C3 /* StartMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BAF1F81C9B259D00DFA5C3 /* StartMessageViewController.swift */; };
 		77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BAF1FB1C9B2AAE00DFA5C3 /* UserTableViewCell.swift */; };
 		77C7AB0D1C95D53100120A3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB0C1C95D53100120A3D /* LoginViewController.swift */; };
@@ -80,9 +83,12 @@
 		772C83051C9A410C00A9541C /* RealmChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmChat.swift; sourceTree = "<group>"; };
 		772C83071C9A4AF400A9541C /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		772C83091C9A619B00A9541C /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
-		775CB2AE1C98AA1A00A38280 /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewController.swift; sourceTree = "<group>"; };
 		775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewCell.swift; sourceTree = "<group>"; };
 		775CB2B81C98D22800A38280 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		777685B11CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManInTheMiddleTableViewController.swift; path = ManInTheMiddleTableViewController/ManInTheMiddleTableViewController.swift; sourceTree = "<group>"; };
+		777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManInTheMiddleTableViewCell.swift; path = "ManInTheMiddle Cell/ManInTheMiddleTableViewCell.swift"; sourceTree = "<group>"; };
+		777685B61CAAC54100BD62B9 /* CipherMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherMessage.swift; sourceTree = "<group>"; };
+		77834C441CAA9C6400B1E94A /* MessagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListViewController.swift; sourceTree = "<group>"; };
 		77BAF1F81C9B259D00DFA5C3 /* StartMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartMessageViewController.swift; sourceTree = "<group>"; };
 		77BAF1FB1C9B2AAE00DFA5C3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		77C7AB0C1C95D53100120A3D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +161,7 @@
 		775CB2AD1C98A9E200A38280 /* MessagesListController */ = {
 			isa = PBXGroup;
 			children = (
-				775CB2AE1C98AA1A00A38280 /* MessagesListTableViewController.swift */,
+				77834C441CAA9C6400B1E94A /* MessagesListViewController.swift */,
 			);
 			path = MessagesListController;
 			sourceTree = "<group>";
@@ -166,6 +172,22 @@
 				775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */,
 			);
 			path = "Messages List Cell";
+			sourceTree = "<group>";
+		};
+		777685B01CAAB21C00BD62B9 /* ManInTheMiddleTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				777685B11CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift */,
+			);
+			name = ManInTheMiddleTableViewController;
+			sourceTree = "<group>";
+		};
+		777685B31CAAC13100BD62B9 /* ManInTheMidle Cell */ = {
+			isa = PBXGroup;
+			children = (
+				777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */,
+			);
+			name = "ManInTheMidle Cell";
 			sourceTree = "<group>";
 		};
 		77BAF1F71C9B255700DFA5C3 /* StartMessageController */ = {
@@ -302,6 +324,7 @@
 		77D086911C95D30800DFD8A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				777685B31CAAC13100BD62B9 /* ManInTheMidle Cell */,
 				77E202C91C97541700FAAD74 /* LoginView */,
 				77E202D01C9779E100FAAD74 /* Messages Cell */,
 				775CB2B01C98AD2E00A38280 /* Messages List Cell */,
@@ -313,6 +336,7 @@
 		77D086921C95D30D00DFD8A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				777685B01CAAB21C00BD62B9 /* ManInTheMiddleTableViewController */,
 				77E202D61C977B7000FAAD74 /* NavigationController */,
 				77C7AB0B1C95D51600120A3D /* LoginController */,
 				775CB2AD1C98A9E200A38280 /* MessagesListController */,
@@ -329,6 +353,7 @@
 				772C83071C9A4AF400A9541C /* ActiveUser.swift */,
 				772C83091C9A619B00A9541C /* MessageList.swift */,
 				770156391C9E1240001A4B1E /* Message.swift */,
+				777685B61CAAC54100BD62B9 /* CipherMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777685B21CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift in Sources */,
 				775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */,
 				77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */,
 				77BAF1F91C9B259D00DFA5C3 /* StartMessageViewController.swift in Sources */,
@@ -489,10 +515,12 @@
 				77E202D81C977B8E00FAAD74 /* NavigationController.swift in Sources */,
 				77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */,
 				77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */,
+				77834C451CAA9C6400B1E94A /* MessagesListViewController.swift in Sources */,
 				77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */,
+				777685B71CAAC54100BD62B9 /* CipherMessage.swift in Sources */,
 				772C830A1C9A619B00A9541C /* MessageList.swift in Sources */,
 				772C83061C9A410C00A9541C /* RealmChat.swift in Sources */,
-				775CB2AF1C98AA1A00A38280 /* MessagesListTableViewController.swift in Sources */,
+				777685B51CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift in Sources */,
 				77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */,
 				7701563A1C9E1240001A4B1E /* Message.swift in Sources */,
 				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,

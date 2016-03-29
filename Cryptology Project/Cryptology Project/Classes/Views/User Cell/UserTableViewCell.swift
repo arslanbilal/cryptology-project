@@ -11,8 +11,8 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
     
-    private var profileImageView = UIImageView.newAutoLayoutView()
-    private var profileNameLabel = UILabel.newAutoLayoutView()
+    private let profileImageView = UIImageView.newAutoLayoutView()
+    private let profileNameLabel = UILabel.newAutoLayoutView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
