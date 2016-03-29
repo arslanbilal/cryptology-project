@@ -56,7 +56,7 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 ##### v0.2
 ![Gif](https://github.com/arslanbilal/cryptology-project/raw/master/Source/application.gif)
 
-Gif lasts 100 seconds.
+Gif lasts about 30 seconds.
 
 ## Test Vector of Encryption Library(FBEncryptor)
 <img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/testVector.png">
