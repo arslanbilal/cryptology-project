@@ -48,7 +48,7 @@ class LoginView: UIView, UITextFieldDelegate {
         loginElementsView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
         loginElementsView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
         loginElementsView.autoCenterInSuperviewMargins()
-        loginElementsView.autoSetDimension(.Height, toSize: 210)
+        loginElementsView.autoSetDimension(.Height, toSize: 250)
         
         
         let usernameView = UIView.newAutoLayoutView()
@@ -57,7 +57,7 @@ class LoginView: UIView, UITextFieldDelegate {
         loginElementsView.addSubview(usernameView)
         
         usernameView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10.0, 10.0, 0, 10.0), excludingEdge: .Bottom)
-        usernameView.autoSetDimension(.Height, toSize: 40)
+        usernameView.autoSetDimension(.Height, toSize: 50)
         
         
         usernameTextField.delegate = self
@@ -76,7 +76,7 @@ class LoginView: UIView, UITextFieldDelegate {
         passwordView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
         passwordView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
         passwordView.autoPinEdge(.Top, toEdge: .Bottom, ofView: usernameView, withOffset: 10.0)
-        passwordView.autoSetDimension(.Height, toSize: 40)
+        passwordView.autoSetDimension(.Height, toSize: 50)
         
         
         passwordTextField.delegate = self
@@ -96,7 +96,7 @@ class LoginView: UIView, UITextFieldDelegate {
         generatedCodeView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
         generatedCodeView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
         generatedCodeView.autoPinEdge(.Top, toEdge: .Bottom, ofView: passwordView, withOffset: 10.0)
-        generatedCodeView.autoSetDimension(.Height, toSize: 40)
+        generatedCodeView.autoSetDimension(.Height, toSize: 50)
         
         
         generatedCodeTextField.delegate = self
