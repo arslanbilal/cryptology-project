@@ -103,6 +103,7 @@ class LoginView: UIView, UITextFieldDelegate {
         generatedCodeTextField.textAlignment = .Center
         generatedCodeTextField.placeholder = "code"
         generatedCodeTextField.keyboardType = .NumberPad
+        generatedCodeTextField.delegate = self
         generatedCodeView.addSubview(generatedCodeTextField)
         
         generatedCodeTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(5.0, 0.0, 5.0, 5.0), excludingEdge: .Right)
@@ -160,7 +161,21 @@ class LoginView: UIView, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: UITextField Delegate
+    // MARK: - UITextField Delegate
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == generatedCodeTextField {
+            let currentCharacterCount = textField.text?.characters.count ?? 0
+            if (range.length + range.location > currentCharacterCount){
+                return false
+            }
+            let newLength = currentCharacterCount + string.characters.count - range.length
+            return newLength <= 5
+        }
+        
+        return true
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false

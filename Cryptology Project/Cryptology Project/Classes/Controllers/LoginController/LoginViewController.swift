@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     
     let loginView = LoginView(frame: CGRectZero)
     let realm = try! Realm()
-    var generateadNumber = 0
+    var generateadNumber: UInt32 = 0
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -29,42 +29,54 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Random Number Generator
-    func generateRandomNumber() -> UInt {
-        return 1
+    func generateRandomNumber() {
+        generateadNumber = (10000 + arc4random_uniform(90000))
+        loginView.generatedCodeLabel.text = "\(generateadNumber)"
     }
     
     // MARK: - Button Actions
     func didTapSignInButton(sender: UIButton) {
         let username = loginView.usernameTextField.text!
         let password = loginView.passwordTextField.text!
+        let inputCode = loginView.generatedCodeTextField.text!
         
-        if  username != "" && password != "" {
-            let user = realm.objects(RealmUser).filter("username = '\(username)' AND password = '\(password)'").first
-            
-            if user != nil {
-                ActiveUser.sharedInstance.setActiveUser(user!)
-                
-                loginView.usernameTextField.text = ""
-                loginView.passwordTextField.text = ""
-                
-                self.presentViewController(NavigationController(rootViewController: MessagesListViewController()), animated: true, completion: nil)
+        if  username != "" && password != "" && inputCode != "" {
+            if generateadNumber == UInt32(inputCode) {
+                let user = realm.objects(RealmUser).filter("username = '\(username)' AND password = '\(password)'").first
+                if user != nil {
+                    ActiveUser.sharedInstance.setActiveUser(user!)
+                    loginView.usernameTextField.text = ""
+                    loginView.passwordTextField.text = ""
+                    
+                    self.presentViewController(NavigationController(rootViewController: MessagesListViewController()), animated: true, completion: nil)
+                } else {
+                    self.initAndShowAletView("Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", style: .Alert)
+                }
             } else {
-                let alertController = UIAlertController.init(title: "Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", preferredStyle: .Alert)
-                alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
+                self.initAndShowAletView("Login Error", message: "Enterred Code is not equal the Generated Code", style: .Alert)
             }
         } else {
-            let alertController = UIAlertController.init(title: "Login Error", message: "Please fill the all missing fileds.", preferredStyle: .Alert)
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.initAndShowAletView("Login Error", message: "Please fill the all missing fileds.", style: .Alert)
         }
+        
+        loginView.passwordTextField.text = ""
+        loginView.generatedCodeTextField.text = ""
+        self.generateRandomNumber()
     }
     
     func didTapSignUpButton(sender: UIBarButtonItem) {
-        print("didTapSignUpButton")
+        //! Sign up process is not possible in this version.
     }
     
     func didTapLogButton(sender :UIBarButtonItem) {
         self.presentViewController(NavigationController(rootViewController: ManInTheMiddleTableViewController()), animated: true, completion: nil)
     }
+    
+    // MARK: - AlertViewInitialise
+    func initAndShowAletView(title: String, message: String, style: UIAlertControllerStyle) {
+        let alertController = UIAlertController.init(title: title, message: message, preferredStyle: style)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 }
