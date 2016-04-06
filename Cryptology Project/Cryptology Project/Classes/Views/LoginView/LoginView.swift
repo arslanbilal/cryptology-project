@@ -13,29 +13,31 @@ class LoginView: UIView, UITextFieldDelegate {
     
     let usernameTextField = UITextField.newAutoLayoutView()
     let passwordTextField = UITextField.newAutoLayoutView()
-    let loginButton = UIButton.newAutoLayoutView()
+    let signInButton = UIButton.newAutoLayoutView()
+    let signUpButton = UIButton.newAutoLayoutView()
+    let generatedCodeLabel = UILabel.newAutoLayoutView()
+    let generatedCodeTextField = UITextField.newAutoLayoutView()
+    let logButton = UIButton.newAutoLayoutView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.loginViewBackgroundColor()
         
-        let screenHeigt: CGFloat = UIScreen.mainScreen().bounds.height - 30
-        let appNameLabelHeight = screenHeigt / 3
-        let loginElementsViewHeight = ((appNameLabelHeight * 2) * 0.6)
-        let distanceAppNameLabelAndLoginView = ((appNameLabelHeight * 2) * 0.1)
-        let distanceBetweenLoginElements = (loginElementsViewHeight * 0.1)
-
+        let generatedCodeViewWidth = UIScreen.mainScreen().bounds.width - 55
+        let appnameLabelYPoint = ((UIScreen.mainScreen().bounds.height / 2.0) - 135) / 2.0
+        
         
         let appNameLabel = UILabel.newAutoLayoutView()
         appNameLabel.textAlignment = .Center
         appNameLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 45.0)
-        appNameLabel.numberOfLines = 0
+        appNameLabel.adjustsFontSizeToFitWidth = true;
+        appNameLabel.numberOfLines = 1
         appNameLabel.textColor = UIColor.whiteColor()
-        appNameLabel.text = "Cryptology Project"
+        appNameLabel.text = "CryptoChat"
         self.addSubview(appNameLabel)
         
-        appNameLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(30.0, 15.0, 0, 15.0), excludingEdge: .Bottom)
-        appNameLabel.autoSetDimension(.Height, toSize: appNameLabelHeight)
+        appNameLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(appnameLabelYPoint, 15.0, 0, 15.0), excludingEdge: .Bottom)
+        appNameLabel.autoSetDimension(.Height, toSize: 60)
         
         
         let loginElementsView = UIView.newAutoLayoutView()
@@ -45,78 +47,113 @@ class LoginView: UIView, UITextFieldDelegate {
         
         loginElementsView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
         loginElementsView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
-        loginElementsView.autoPinEdge(.Top, toEdge: .Bottom, ofView: appNameLabel, withOffset: distanceAppNameLabelAndLoginView)
-        loginElementsView.autoSetDimension(.Height, toSize: loginElementsViewHeight)
-        
-        
-        let usernameLabel = UILabel.newAutoLayoutView()
-        usernameLabel.textAlignment = .Left
-        usernameLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
-        usernameLabel.textColor = UIColor.whiteColor()
-        usernameLabel.text = "Username:"
-        loginElementsView.addSubview(usernameLabel)
-        
-        usernameLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(0.0, 5.0, 0, 5.0), excludingEdge: .Bottom)
-        usernameLabel.autoSetDimension(.Height, toSize: distanceBetweenLoginElements)
+        loginElementsView.autoCenterInSuperviewMargins()
+        loginElementsView.autoSetDimension(.Height, toSize: 210)
         
         
         let usernameView = UIView.newAutoLayoutView()
         usernameView.backgroundColor = UIColor.whiteColor()
-        usernameView.layer.cornerRadius = 3.0
+        usernameView.layer.cornerRadius = 5.0
         loginElementsView.addSubview(usernameView)
         
-        usernameView.autoPinEdgeToSuperviewEdge(.Left, withInset: 5.0)
-        usernameView.autoPinEdgeToSuperviewEdge(.Right, withInset: 5.0)
-        usernameView.autoPinEdge(.Top, toEdge: .Bottom, ofView: usernameLabel)
-        usernameView.autoSetDimension(.Height, toSize: distanceBetweenLoginElements * 1.5)
+        usernameView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(10.0, 10.0, 0, 10.0), excludingEdge: .Bottom)
+        usernameView.autoSetDimension(.Height, toSize: 40)
         
         
         usernameTextField.delegate = self
+        usernameTextField.textAlignment = .Center
+        usernameTextField.placeholder = "username"
         usernameView.addSubview(usernameTextField)
         
         usernameTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(2.0, 5.0, 2.0, 5.0))
         
         
-        let passwordLabel = UILabel.newAutoLayoutView()
-        passwordLabel.textAlignment = .Left
-        passwordLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 12.0)
-        passwordLabel.textColor = UIColor.whiteColor()
-        passwordLabel.text = "Password:"
-        loginElementsView.addSubview(passwordLabel)
-        
-        passwordLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: 5.0)
-        passwordLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: 5.0)
-        passwordLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: usernameView, withOffset: distanceBetweenLoginElements / 2)
-        passwordLabel.autoSetDimension(.Height, toSize: distanceBetweenLoginElements)
-        
-        
         let passwordView = UIView.newAutoLayoutView()
         passwordView.backgroundColor = UIColor.whiteColor()
-        passwordView.layer.cornerRadius = 3.0
+        passwordView.layer.cornerRadius = 5.0
         loginElementsView.addSubview(passwordView)
         
-        passwordView.autoPinEdgeToSuperviewEdge(.Left, withInset: 5.0)
-        passwordView.autoPinEdgeToSuperviewEdge(.Right, withInset: 5.0)
-        passwordView.autoPinEdge(.Top, toEdge: .Bottom, ofView: passwordLabel)
-        passwordView.autoSetDimension(.Height, toSize: distanceBetweenLoginElements * 1.5)
+        passwordView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
+        passwordView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
+        passwordView.autoPinEdge(.Top, toEdge: .Bottom, ofView: usernameView, withOffset: 10.0)
+        passwordView.autoSetDimension(.Height, toSize: 40)
         
         
         passwordTextField.delegate = self
+        passwordTextField.textAlignment = .Center
         passwordTextField.secureTextEntry = true
+        passwordTextField.placeholder = "password"
         passwordView.addSubview(passwordTextField)
         
         passwordTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(2.0, 5.0, 2.0, 5.0))
         
         
-        loginButton.backgroundColor = UIColor.loginButtonBacgrounColor()
-        loginButton.titleLabel?.textColor = UIColor.whiteColor()
-        loginButton.setTitle("Login", forState: .Normal)
-        loginButton.layer.cornerRadius = 5.0
-        loginElementsView.addSubview(loginButton)
+        let generatedCodeView = UIView.newAutoLayoutView()
+        generatedCodeView.backgroundColor = UIColor.whiteColor()
+        generatedCodeView.layer.cornerRadius = 5.0
+        loginElementsView.addSubview(generatedCodeView)
         
-        loginButton.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
-        loginButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
-        loginButton.autoSetDimensionsToSize(CGSizeMake(120, distanceBetweenLoginElements * 1.7))
+        generatedCodeView.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
+        generatedCodeView.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
+        generatedCodeView.autoPinEdge(.Top, toEdge: .Bottom, ofView: passwordView, withOffset: 10.0)
+        generatedCodeView.autoSetDimension(.Height, toSize: 40)
+        
+        
+        generatedCodeTextField.delegate = self
+        generatedCodeTextField.textAlignment = .Center
+        generatedCodeTextField.placeholder = "code"
+        generatedCodeTextField.keyboardType = .NumberPad
+        generatedCodeView.addSubview(generatedCodeTextField)
+        
+        generatedCodeTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(5.0, 0.0, 5.0, 5.0), excludingEdge: .Right)
+        generatedCodeTextField.autoSetDimension(.Width, toSize: (generatedCodeViewWidth / 2.0))
+        
+        
+        generatedCodeLabel.textAlignment = .Center
+        generatedCodeLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20.0)
+        generatedCodeLabel.textColor = UIColor ( red: 0.8392, green: 0.1961, blue: 0.2902, alpha: 1.0 )
+        generatedCodeLabel.text = "24512"
+        generatedCodeView.addSubview(generatedCodeLabel)
+        
+        generatedCodeLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(5.0, 5.0, 5.0, 0.0), excludingEdge: .Left)
+        generatedCodeLabel.autoSetDimension(.Width, toSize: (generatedCodeViewWidth / 2.0))
+        
+        
+        signInButton.backgroundColor = UIColor.loginButtonBacgrounColor()
+        signInButton.titleLabel?.textColor = UIColor.whiteColor()
+        signInButton.setTitle("Sign in", forState: .Normal)
+        signInButton.layer.cornerRadius = 5.0
+        loginElementsView.addSubview(signInButton)
+        
+        signInButton.autoPinEdgeToSuperviewEdge(.Right, withInset: 10.0)
+        signInButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
+        signInButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: generatedCodeView, withOffset: 10.0)
+        signInButton.autoSetDimension(.Width, toSize: (generatedCodeViewWidth / 2.0))
+
+        
+        signUpButton.backgroundColor = UIColor.outgoingMessageColor()
+        signUpButton.titleLabel?.textColor = UIColor.whiteColor()
+        signUpButton.setTitle("Sign up", forState: .Normal)
+        signUpButton.layer.cornerRadius = 5.0
+        loginElementsView.addSubview(signUpButton)
+        
+        signUpButton.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
+        signUpButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
+        signUpButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: generatedCodeView, withOffset: 10.0)
+        signUpButton.autoSetDimension(.Width, toSize: (generatedCodeViewWidth / 2.0))
+        
+
+        logButton.setImage(UIImage(named: "middleMan"), forState: .Normal)
+        logButton.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6 )
+        logButton.contentMode = .ScaleAspectFit
+        logButton.setTitle(" Man-in-the-Middle", forState: .Normal)
+        logButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 15)
+        logButton.layer.cornerRadius = 10
+        self.addSubview(logButton)
+        
+        logButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
+        logButton.autoAlignAxisToSuperviewAxis(.Vertical)
+        logButton.autoSetDimensionsToSize(CGSizeMake(200, 45))
     }
     
     required init?(coder aDecoder: NSCoder) {

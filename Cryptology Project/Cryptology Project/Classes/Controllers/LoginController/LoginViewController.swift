@@ -14,34 +14,27 @@ class LoginViewController: UIViewController {
     
     let loginView = LoginView(frame: CGRectZero)
     let realm = try! Realm()
+    var generateadNumber = 0
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginView.loginButton.addTarget(self, action: #selector(LoginViewController.didTapLoginButton(_:)), forControlEvents: .TouchUpInside)
+        loginView.signInButton.addTarget(self, action: #selector(LoginViewController.didTapSignInButton(_:)), forControlEvents: .TouchUpInside)
+        loginView.signUpButton.addTarget(self, action: #selector(LoginViewController.didTapSignUpButton(_:)), forControlEvents: .TouchUpInside)
+        loginView.logButton.addTarget(self, action: #selector(LoginViewController.didTapLogButton(_:)), forControlEvents: .TouchUpInside)
         self.view.addSubview(loginView)
         
         loginView.autoPinEdgesToSuperviewEdges()
-        
-        let logButton = UIButton.newAutoLayoutView()
-        logButton.setImage(UIImage(named: "middleMan"), forState: .Normal)
-        logButton.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6 )
-        logButton.contentMode = .ScaleAspectFit
-        logButton.setTitle(" Man-in-the-Middle", forState: .Normal)
-        logButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 13)
-        logButton.layer.cornerRadius = 10
-        logButton.addTarget(self, action: #selector(LoginViewController.didTapLogButton(_:)), forControlEvents: .TouchUpInside)
-        self.view.addSubview(logButton)
-        self.view.bringSubviewToFront(logButton)
-        
-        logButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
-        logButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        logButton.autoSetDimensionsToSize(CGSizeMake(150, 40))
+    }
+    
+    // MARK: - Random Number Generator
+    func generateRandomNumber() -> UInt {
+        return 1
     }
     
     // MARK: - Button Actions
-    func didTapLoginButton(sender: UIButton) {
+    func didTapSignInButton(sender: UIButton) {
         let username = loginView.usernameTextField.text!
         let password = loginView.passwordTextField.text!
         
@@ -65,6 +58,10 @@ class LoginViewController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func didTapSignUpButton(sender: UIBarButtonItem) {
+        print("didTapSignUpButton")
     }
     
     func didTapLogButton(sender :UIBarButtonItem) {
