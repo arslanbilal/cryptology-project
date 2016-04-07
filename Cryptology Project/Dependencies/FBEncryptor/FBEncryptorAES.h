@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2011 Five-technology Co.,Ltd.
+// Copyright (c) 2011 Five-technology Co.,Ltd. and - Bilal ARSLAN, April 2016 -
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,7 @@
 //
 
 #import <CommonCrypto/CommonCryptor.h>
+#include <CommonCrypto/CommonDigest.h>
 #import <Foundation/Foundation.h>
 
 #define FBENCRYPT_ALGORITHM     kCCAlgorithmAES128
@@ -51,5 +52,16 @@
 + (NSString*)hexStringForData:(NSData*)data;
 + (NSData*)dataForHexString:(NSString*)hexString;
 
+// - Bilal ARSLAN, April 2016 -
+
+//-----------------
+// KEY Generator
+//-----------------
++ (NSString *)generateKey;
+
+//-----------------
+// Hash Generator
+//-----------------
++ (NSString *)generateSHA512:(NSString *)input;
 
 @end

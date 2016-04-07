@@ -63,6 +63,6 @@ class MessagesListTableViewCell: UITableViewCell {
     func setContent(messageList: MessageList) {
         self.profileNameLabel.text = "\(messageList.otherUser.name) \(messageList.otherUser.lastname)"
         self.profileLastMessageLabel.text =  FBEncryptorAES.decryptBase64String(messageList.messages.last?.message.text, keyString: messageList.messageKey)
-        self.profileImageView.backgroundColor = UIColor.grayColor()
+        self.profileImageView.image = UIImage(named: "profile")
     }
 }

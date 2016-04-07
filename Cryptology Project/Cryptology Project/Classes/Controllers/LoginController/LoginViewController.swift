@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
         self.view.addSubview(loginView)
         
         loginView.autoPinEdgesToSuperviewEdges()
+        self.generateRandomNumber()
     }
     
     // MARK: - Random Number Generator
@@ -42,13 +43,54 @@ class LoginViewController: UIViewController {
         
         if  username != "" && password != "" && inputCode != "" {
             if generateadNumber == UInt32(inputCode) {
-                let user = realm.objects(RealmUser).filter("username = '\(username)' AND password = '\(password)'").first
+                let user = realm.objects(RealmUser).filter("username = '\(username)'").first
                 if user != nil {
-                    ActiveUser.sharedInstance.setActiveUser(user!)
-                    loginView.usernameTextField.text = ""
-                    loginView.passwordTextField.text = ""
-                    
-                    self.presentViewController(NavigationController(rootViewController: MessagesListViewController()), animated: true, completion: nil)
+                    if !(user!.isLocked) {
+                        if user!.attemptableDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
+                            if user!.checkPassword(password) {
+                                ActiveUser.sharedInstance.setActiveUser(user!)
+                                loginView.usernameTextField.text = ""
+                                loginView.passwordTextField.text = ""
+                                
+                                try! realm.write {
+                                    user!.wrongAttemptCount = 0
+                                    user!.attemptableDate = NSDate()
+                                }
+                                
+                                self.presentViewController(NavigationController(rootViewController: MessagesListViewController()), animated: true, completion: nil)
+                            } else {
+                                let wrongAttemptCount = user!.wrongAttemptCount + 1
+                                
+                                if wrongAttemptCount == 3 {
+                                    let date = NSDate.init(timeIntervalSinceNow: 60 * 30) // 30 min delay
+                                    try! realm.write {
+                                        user!.attemptableDate =  date// 20 sec
+                                        user!.wrongAttemptCount = wrongAttemptCount
+                                    }
+                                
+                                    self.initAndShowAletView("Wrong Password!", message: "Account's login is delayed. You must try at date: \(Helper.getStringDateFromDate(date))", style: .Alert)
+                                } else if wrongAttemptCount >= 5 {
+                                    try! realm.write {
+                                        user!.isLocked = true
+                                        user!.wrongAttemptCount = 5
+                                    }
+                                    
+                                    self.initAndShowAletView("Important Error!", message: "User is Locked! You can not login anymore! Please contact the customer service.", style: .Alert)
+                                } else {
+                                    try! realm.write {
+                                        user!.wrongAttemptCount = wrongAttemptCount
+                                    }
+                                    
+                                    self.initAndShowAletView("Wrong Pssword!", message: "\(user!.username) password does not match!", style: .Alert)
+                                }
+                            }
+                            
+                        } else {
+                            self.initAndShowAletView("Login Error!", message: "Login is delayed to date: \(Helper.getStringDateFromDate(user!.attemptableDate)). Try after this date.", style: .Alert)
+                        }
+                    } else {
+                        self.initAndShowAletView("Login Error\nUser is Locked", message: "You can not sign in because user is locked with multiple wrong attempt. Please contact the customer service.", style: .Alert)
+                    }
                 } else {
                     self.initAndShowAletView("Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", style: .Alert)
                 }

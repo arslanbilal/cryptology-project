@@ -142,17 +142,10 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 let key: String! // Key for Chat
                 
-                if messageList.messageKey == "" { // If there is key
+                if messageList.messageKey != "" { // If there is key
                     key = messageList.messageKey
                 } else {
-                    let data = NSMutableData(length: kCCKeySizeAES256)!
-                    let result = SecRandomCopyBytes(kSecRandomDefault, kCCKeySizeAES256, UnsafeMutablePointer<UInt8>(data.mutableBytes))
-                    guard result == errSecSuccess else {
-                        return
-                        //fatalError("SECURITY FAILURE: Could not generate secure random numbers: \(result).")
-                    }
-                    
-                    key = FBEncryptorAES.hexStringForData(data)
+                    key = FBEncryptorAES.generateKey()
                 }
 
                 let cipherText = FBEncryptorAES.encryptBase64String(message, keyString: key, separateLines: false)

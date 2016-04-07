@@ -42,6 +42,6 @@ class UserTableViewCell: UITableViewCell {
     
     func setContents(user: RealmUser) {
         self.profileNameLabel.text = user.name + " " + user.lastname
-        self.profileImageView.backgroundColor = UIColor.grayColor()
+        self.profileImageView.image = UIImage(named: "profile")
     }
 }

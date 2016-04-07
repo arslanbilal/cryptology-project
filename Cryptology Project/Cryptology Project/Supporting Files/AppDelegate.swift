@@ -38,7 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             user.name = "#\(i+1) User"
             user.lastname = "Lastname"
             user.username = "user\(i+1)"
-            user.password = "1234"
+            let salt = FBEncryptorAES.generateKey()
+            user.passwordSalt = salt
+            user.passwordHash = FBEncryptorAES.generateSHA512(("1234" + salt))
+            user.isLocked = false
+            user.attemptableDate = NSDate()
+            user.wrongAttemptCount = 0
             
             try! realm.write {
                 realm.add(user)

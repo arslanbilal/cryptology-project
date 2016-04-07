@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2011 Five-technology Co.,Ltd.
+// Copyright (c) 2011 Five-technology Co.,Ltd. and - Bilal ARSLAN, April 2016 -
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -121,7 +121,6 @@
 	return result;
 }
 
-
 + (NSString*)encryptBase64String:(NSString*)string keyString:(NSString*)keyString separateLines:(BOOL)separateLines {
     NSData* data = [self encryptData:[string dataUsingEncoding:NSUTF8StringEncoding]
                                  key:[keyString dataUsingEncoding:NSUTF8StringEncoding]
@@ -142,7 +141,6 @@
     }
 }
 
-
 #define FBENCRYPT_IV_HEX_LEGNTH (FBENCRYPT_BLOCK_SIZE*2)
 
 + (NSData*)generateIv {
@@ -158,9 +156,7 @@
     return [NSData dataWithBytes:cIv length:FBENCRYPT_BLOCK_SIZE];
 }
 
-
-+ (NSString*)hexStringForData:(NSData*)data
-{
++ (NSString*)hexStringForData:(NSData*)data {
     if (data == nil) {
         return nil;
     }
@@ -175,8 +171,7 @@
     return hexString;
 }
 
-+ (NSData*)dataForHexString:(NSString*)hexString
-{
++ (NSData*)dataForHexString:(NSString*)hexString {
     if (hexString == nil) {
         return nil;
     }
@@ -203,6 +198,27 @@
         [data appendBytes:&byte length:1];
     }
     return data;
+}
+
++ (NSString *)generateKey {
+    NSMutableData *data = [NSMutableData dataWithLength:kCCKeySizeAES256];
+    int result = SecRandomCopyBytes(kSecRandomDefault, kCCKeySizeAES256, [data mutableBytes]);
+    
+    if (result != errSecSuccess) {
+        return @"";
+    }
+    
+    return [self hexStringForData:data];
+}
+
++ (NSString *)generateSHA512:(NSString *)input {
+    const char *inputChar = [input cStringUsingEncoding:NSASCIIStringEncoding];
+    NSData *keyData = [NSData dataWithBytes:inputChar length:strlen(inputChar)];
+    uint8_t digest[CC_SHA512_DIGEST_LENGTH] = {0};
+    CC_SHA512(keyData.bytes, (int)keyData.length, digest);
+    
+    NSData *hash = [NSData dataWithBytes:digest length:CC_SHA512_DIGEST_LENGTH];
+    return [hash description];
 }
 
 @end

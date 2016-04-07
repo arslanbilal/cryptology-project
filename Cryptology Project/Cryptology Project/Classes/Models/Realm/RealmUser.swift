@@ -15,7 +15,11 @@ class RealmUser: Object {
     dynamic var name = ""
     dynamic var lastname = ""
     dynamic var username = ""
-    dynamic var password = ""
+    dynamic var passwordSalt = ""
+    dynamic var passwordHash = ""
+    dynamic var isLocked = false
+    dynamic var wrongAttemptCount = 0
+    dynamic var attemptableDate = NSDate()
     
     override static func primaryKey() -> String? {
         return "id"
@@ -33,5 +37,15 @@ class RealmUser: Object {
         } else {
             return 1
         }
+    }
+    
+    func checkPassword(password: String) -> Bool {
+        let inputPasswordHash = FBEncryptorAES.generateSHA512((password + self.passwordSalt))
+        
+        if self.passwordHash == inputPasswordHash {
+            return true
+        }
+        
+        return false
     }
 }
