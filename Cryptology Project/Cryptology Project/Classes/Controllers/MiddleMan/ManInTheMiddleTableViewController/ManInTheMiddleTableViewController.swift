@@ -37,6 +37,7 @@ class ManInTheMiddleTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         cipherChatData = ActiveUser.sharedInstance.loadManInTheMiddleData()
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source

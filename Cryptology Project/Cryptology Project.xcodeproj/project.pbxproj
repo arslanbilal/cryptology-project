@@ -29,6 +29,7 @@
 		77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB281C95DE1B00120A3D /* NSArray+PureLayout.m */; };
 		77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB2A1C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m */; };
 		77CA5CC71CB80A8A003CC313 /* MidSquareRandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA5CC61CB80A8A003CC313 /* MidSquareRandomNumberGenerator.swift */; };
+		77CA5CCA1CB8108E003CC313 /* KeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CA5CC91CB8108E003CC313 /* KeyListTableViewCell.swift */; };
 		77D0866C1C95D1F500DFD8A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D0866B1C95D1F500DFD8A8 /* AppDelegate.swift */; };
 		77D086761C95D1F500DFD8A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D086751C95D1F500DFD8A8 /* Assets.xcassets */; };
 		77D086791C95D1F500DFD8A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D086771C95D1F500DFD8A8 /* LaunchScreen.storyboard */; };
@@ -105,6 +106,7 @@
 		77C7AB2C1C95DE1B00120A3D /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
 		77C7AB2D1C95DE1B00120A3D /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		77CA5CC61CB80A8A003CC313 /* MidSquareRandomNumberGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidSquareRandomNumberGenerator.swift; sourceTree = "<group>"; };
+		77CA5CC91CB8108E003CC313 /* KeyListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyListTableViewCell.swift; path = "KeyList Cell/KeyListTableViewCell.swift"; sourceTree = "<group>"; };
 		77D086681C95D1F500DFD8A8 /* Cryptology Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cryptology Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D0866B1C95D1F500DFD8A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77D086751C95D1F500DFD8A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
+		77CA5CC81CB81070003CC313 /* KeyList Cell */ = {
+			isa = PBXGroup;
+			children = (
+				77CA5CC91CB8108E003CC313 /* KeyListTableViewCell.swift */,
+			);
+			name = "KeyList Cell";
+			sourceTree = "<group>";
+		};
 		77D0865F1C95D1F500DFD8A8 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +314,7 @@
 		77D086911C95D30800DFD8A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				77CA5CC81CB81070003CC313 /* KeyList Cell */,
 				777685B31CAAC13100BD62B9 /* ManInTheMidle Cell */,
 				77E202C91C97541700FAAD74 /* LoginView */,
 				77E202D01C9779E100FAAD74 /* Messages Cell */,
@@ -582,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */,
+				77CA5CCA1CB8108E003CC313 /* KeyListTableViewCell.swift in Sources */,
 				77E96AF21CB7E43600A209D7 /* UserViewController.swift in Sources */,
 				77E96AFA1CB7F68F00A209D7 /* KeyEditTableViewController.swift in Sources */,
 				77CA5CC71CB80A8A003CC313 /* MidSquareRandomNumberGenerator.swift in Sources */,

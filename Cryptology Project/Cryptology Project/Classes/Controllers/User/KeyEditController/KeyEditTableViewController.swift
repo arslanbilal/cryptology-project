@@ -10,20 +10,32 @@ import UIKit
 
 class KeyEditTableViewController: UITableViewController {
     
+    let keyCellIdentifier = "keyCell"
+    var messageList: [MessageList] = ActiveUser.sharedInstance.chatList
+    
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: - Table view data source
+    // MARK: UITableView Datasource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return messageList.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(keyCellIdentifier, forIndexPath: indexPath)
+        
+        return cell
+    }
+    
+    // MARK: UITableView Delegate
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
     
 }

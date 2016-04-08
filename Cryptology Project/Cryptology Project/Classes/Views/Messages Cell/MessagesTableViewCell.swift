@@ -21,7 +21,6 @@ class MessagesTableViewCell: UITableViewCell {
         self.backgroundColor = UIColor.clearColor()
         self.selectionStyle = .None
         
-        
         messageView.layer.cornerRadius = 10.0
         self.addSubview(messageView)
         

@@ -6,7 +6,9 @@
 <h3>This repo includes "Cryptology Course" project(Encrypted Messaging App in iOS 8.0+)</h3>
 <hr>
 ## Summary:
-Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. Man-in-the-Middle never see plain text. You can run in your own machine. You just uncomment the `genenaretUsersWithCount(Int)` method in AppDelegate.swift file for adding random user in the system. Then recomment the same line. To test: 
+Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. Man-in-the-Middle never see plain text. Password doesn't hold in DB. Password salt and hash are fields of user table in DB.
+<br> <br>
+You can run in your own machine. You just uncomment the `genenaretUsersWithCount(Int)` method in AppDelegate.swift file for adding random user in the system. Then recomment the same line. To test:
 
 1. username: user# (no is depends on count that you assign the func.)
 2. password: 1234
@@ -19,7 +21,7 @@ Simple iOS messaging application and working in locale [database][realm]. Messag
 ## Architecture
 There are 4 classes that represent 4 tables in the Realm database.
 
-- User: (*(int)* **id**, *(string)* **name**, *(string)* **lastname**, *(string)* **username**, *(string)* **password**)
+- User: (*(int)* **id**, *(string)* **name**, *(string)* **lastname**, *(string)* **username**, *(string)* **passwordSalt**, *(string)* **passwordHash**, *(bool)* **isLocked**, *(int)* **wrongAttemptCount**, *(Date)* **attemptableDate**)
 - Message: (*(int)* **id**, *(string)* **text**, *(Date)* **date**)
 - Key: (*(int)* **id**, *(string)* key)
 - Chat: (*(Message)* **message**, *(User)* **fromUser**, *(User)* **toUser**, *(Key)* **key**)
@@ -38,10 +40,12 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 **Dependencies/Libraries**
 
 - [PureLayout][purelayout] for UI Autolayout
-- [FBEncryptor][fbencryptor] for Encrypt/Decrypt messages with chat specific key
+- [FBEncryptor][fbencryptor] 
+	- Encrypt/Decrypt messages with chat specific key
+	- Pasword Salting.
 
 
-## Latest version: v0.2:
+## Latest version: v0.3:
 ##### Last [version][release] of the app. For more version detail, check "versions.MD" version log file.
 	- users can login
 	- users can message other users
@@ -51,17 +55,18 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 	- users can only see his/her own messages, others are encrypted.
 	- Man-in-the-Middle see for all Cipher Message.
 	- Man-in-the-Middle does not have key to see plain format.
+	- Login with Captcha approval.
+	- Account screen for change password, key and sign out.
+	- User login delays 30 min after 3 wrong login attempt
+	- User account locks after 5 wrong login attempt.
+	- User password can not known. Salt and Hast hold in DB.
+	- User change password(min 8 chac.)
 
 ## How does it look like?
-##### v0.2
+##### v0.3
 ![Gif](https://github.com/arslanbilal/cryptology-project/raw/master/Source/application.gif)
 
-Gif lasts about 30 seconds.
-
-## Test Vector of Encryption Library(FBEncryptor)
-<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/testVector.png">
-#### Output
-<img src="https://raw.githubusercontent.com/arslanbilal/cryptology-project/master/Source/output.png">
+Gif lasts about 2 min.
 	
 ## Credits
 - [Bilal Arslan][arslanbilal]: Architecture, Concept, Code and UI Design
