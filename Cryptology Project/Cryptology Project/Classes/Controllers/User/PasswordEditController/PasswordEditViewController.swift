@@ -14,6 +14,7 @@ class PasswordEditViewController: UIViewController, UITextFieldDelegate {
     let password2TextField = UITextField.newAutoLayoutView()
     let submitButton = UIButton.newAutoLayoutView()
     
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +29,7 @@ class PasswordEditViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Load Views
     func loadViews() {
         let loginElementsView = UIView.newAutoLayoutView()
         loginElementsView.backgroundColor = UIColor.loginViewBackgroundColor()
@@ -94,7 +96,7 @@ class PasswordEditViewController: UIViewController, UITextFieldDelegate {
         let password1 = passwordTextField.text!
         let password2 = password2TextField.text!
         
-        if password1 != "" && password2 != ""  {
+        if password1 != "" && password2 != "" {
             if password1 == password2 {
                 if password1.length > 7 {
                     ActiveUser.sharedInstance.user.changePassword(password1)

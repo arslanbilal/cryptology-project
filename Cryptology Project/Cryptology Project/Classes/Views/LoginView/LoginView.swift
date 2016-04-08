@@ -102,7 +102,6 @@ class LoginView: UIView, UITextFieldDelegate {
         generatedCodeTextField.delegate = self
         generatedCodeTextField.textAlignment = .Center
         generatedCodeTextField.placeholder = "code"
-        generatedCodeTextField.keyboardType = .NumberPad
         generatedCodeTextField.delegate = self
         generatedCodeView.addSubview(generatedCodeTextField)
         

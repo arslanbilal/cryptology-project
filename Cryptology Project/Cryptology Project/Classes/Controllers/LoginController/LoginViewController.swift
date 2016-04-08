@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     
     let loginView = LoginView(frame: CGRectZero)
     let realm = try! Realm()
-    var generateadNumber: UInt32 = 0
+    var generateadCaptcha: String = ""
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -31,8 +31,8 @@ class LoginViewController: UIViewController {
     
     // MARK: - Random Number Generator
     func generateRandomNumber() {
-        generateadNumber = (10000 + arc4random_uniform(90000))
-        loginView.generatedCodeLabel.text = "\(generateadNumber)"
+        generateadCaptcha = CaptchaGenerator.generate()
+        loginView.generatedCodeLabel.text = generateadCaptcha
     }
     
     // MARK: - Button Actions
@@ -42,8 +42,9 @@ class LoginViewController: UIViewController {
         let inputCode = loginView.generatedCodeTextField.text!
         
         if  username != "" && password != "" && inputCode != "" {
-            if generateadNumber == UInt32(inputCode) {
+            if generateadCaptcha == inputCode {
                 let user = realm.objects(RealmUser).filter("username = '\(username)'").first
+                
                 if user != nil {
                     if !(user!.isLocked) {
                         if user!.attemptableDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
@@ -103,11 +104,12 @@ class LoginViewController: UIViewController {
         
         loginView.passwordTextField.text = ""
         loginView.generatedCodeTextField.text = ""
-        self.generateRandomNumber()
+        generateRandomNumber()
     }
     
     func didTapSignUpButton(sender: UIBarButtonItem) {
         //! Sign up process is not possible in this version.
+        //generateRandomNumber()
     }
     
     func didTapLogButton(sender :UIBarButtonItem) {
