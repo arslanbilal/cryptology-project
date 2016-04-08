@@ -75,7 +75,7 @@ class ActiveUser: NSObject {
             manInTheMiddle.append(cipherMessage)
         }
         
-        manInTheMiddle.sortInPlace({ $0.0.date.timeIntervalSince1970 <   $0.1.date.timeIntervalSince1970})
+        manInTheMiddle.sortInPlace({ $0.0.date.timeIntervalSince1970 > $0.1.date.timeIntervalSince1970})
         
         return manInTheMiddle
     }

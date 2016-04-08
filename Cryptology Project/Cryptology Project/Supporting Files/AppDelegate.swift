@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         print("\(urls[urls.count - 1])")
         
-        //generateUsersWithCount(5)
+        //generateUsersWithCount(9)
         
         return true
     }

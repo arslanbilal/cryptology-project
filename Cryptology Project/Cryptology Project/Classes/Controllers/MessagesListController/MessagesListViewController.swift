@@ -43,6 +43,7 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
         if messageList != nil {
             let messagesViewController = MessagesViewController()
             messagesViewController.messageList = messageList!
+            messagesViewController.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(messagesViewController, animated: true)
             messageList = nil
             return
@@ -77,6 +78,7 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let messagesViewController = MessagesViewController()
         messagesViewController.messageList = chatList[indexPath.row]
+        messagesViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(messagesViewController, animated: true)
     }
     
@@ -88,6 +90,8 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func didTapAddChatButton(sender :UIBarButtonItem) {
-        self.navigationController?.pushViewController(StartMessageViewController(), animated: true)
+        let startMessageViewController = StartMessageViewController()
+        startMessageViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(startMessageViewController, animated: true)
     }
 }

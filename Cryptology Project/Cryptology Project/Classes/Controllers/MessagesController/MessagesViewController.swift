@@ -90,16 +90,21 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         sendButton.autoSetDimension(.Width, toSize: 50.0)
         
         
-        messageTextField.layer.borderWidth = 1.0
-        messageTextField.layer.borderColor = UIColor.grayColor().CGColor
-        messageTextField.layer.cornerRadius = 10.0
-        messageTextField.placeholder = " Message"
+        let messageView = UIView.newAutoLayoutView()
+        messageView.backgroundColor = UIColor.whiteColor()
+        messageView.layer.cornerRadius = 5.0
+        bottomView.addSubview(messageView)
+        
+        messageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(7.5, 5.0, 7.5, 0.0), excludingEdge: .Right)
+        messageView.autoPinEdge(.Right, toEdge: .Left, ofView: sendButton, withOffset: -5.0)
+        
+        
+        messageTextField.placeholder = "Tap here to type message"
         messageTextField.delegate = self
         messageTextField.backgroundColor = UIColor.whiteColor()
-        bottomView.addSubview(messageTextField)
+        messageView.addSubview(messageTextField)
         
-        messageTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(7.5, 5.0, 7.5, 0.0), excludingEdge: .Right)
-        messageTextField.autoPinEdge(.Right, toEdge: .Left, ofView: sendButton, withOffset: -5.0)
+        messageTextField.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(1.0, 5.0, 1.0, 5.0))
     }
     
     // MARK: - UITableView Datasource

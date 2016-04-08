@@ -115,7 +115,9 @@ class LoginViewController: UIViewController {
     }
     
     func didTapLogButton(sender :UIBarButtonItem) {
-        self.presentViewController(NavigationController(rootViewController: ManInTheMiddleTableViewController()), animated: true, completion: nil)
+        let manInTheMiddleTableViewController = ManInTheMiddleTableViewController()
+        manInTheMiddleTableViewController.exitButton = true
+        self.presentViewController(NavigationController(rootViewController: manInTheMiddleTableViewController), animated: true, completion: nil)
     }
     
     // MARK: - AlertViewInitialise
