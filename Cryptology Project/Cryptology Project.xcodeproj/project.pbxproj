@@ -41,6 +41,8 @@
 		77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202CA1C97542700FAAD74 /* LoginView.swift */; };
 		77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */; };
 		77E202D81C977B8E00FAAD74 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D71C977B8E00FAAD74 /* NavigationController.swift */; };
+		77E96AD21CB78B2000A209D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AD11CB78B2000A209D7 /* TabBarController.swift */; };
+		77E96AD51CB79C0D00A209D7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AD41CB79C0D00A209D7 /* UserViewController.swift */; };
 		77F1FEC41C98EA9C00E9913A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1FEC31C98EA9C00E9913A /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		77E202CA1C97542700FAAD74 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		77E202D71C977B8E00FAAD74 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		77E96AD11CB78B2000A209D7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = TabBarController/TabBarController.swift; sourceTree = "<group>"; };
+		77E96AD41CB79C0D00A209D7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = UserViewController/UserViewController.swift; sourceTree = "<group>"; };
 		77F1FEC31C98EA9C00E9913A /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +340,8 @@
 		77D086921C95D30D00DFD8A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				77E96AD31CB79BE800A209D7 /* UserViewController */,
+				77E96AD01CB78AEE00A209D7 /* TabBarController */,
 				777685B01CAAB21C00BD62B9 /* ManInTheMiddleTableViewController */,
 				77E202D61C977B7000FAAD74 /* NavigationController */,
 				77C7AB0B1C95D51600120A3D /* LoginController */,
@@ -396,6 +402,22 @@
 				77E202D71C977B8E00FAAD74 /* NavigationController.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		77E96AD01CB78AEE00A209D7 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AD11CB78B2000A209D7 /* TabBarController.swift */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		77E96AD31CB79BE800A209D7 /* UserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AD41CB79C0D00A209D7 /* UserViewController.swift */,
+			);
+			name = UserViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				777685B21CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift in Sources */,
+				77E96AD51CB79C0D00A209D7 /* UserViewController.swift in Sources */,
 				775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */,
 				77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */,
 				77BAF1F91C9B259D00DFA5C3 /* StartMessageViewController.swift in Sources */,
@@ -522,6 +545,7 @@
 				772C83061C9A410C00A9541C /* RealmChat.swift in Sources */,
 				777685B51CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift in Sources */,
 				77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */,
+				77E96AD21CB78B2000A209D7 /* TabBarController.swift in Sources */,
 				7701563A1C9E1240001A4B1E /* Message.swift in Sources */,
 				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,
 				772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */,

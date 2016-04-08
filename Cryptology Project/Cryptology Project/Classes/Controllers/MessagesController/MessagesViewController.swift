@@ -29,7 +29,6 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationItem.title = messageList.otherUser!.name + " " + messageList.otherUser.lastname
-        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name + " " + ActiveUser.sharedInstance.user.lastname
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MessagesViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MessagesViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)

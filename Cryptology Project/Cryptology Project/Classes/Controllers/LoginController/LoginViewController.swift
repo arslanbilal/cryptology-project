@@ -31,6 +31,10 @@ class LoginViewController: UIViewController {
     
     // MARK: - Random Number Generator
     func generateRandomNumber() {
+        
+        
+        
+        
         generateadNumber = (10000 + arc4random_uniform(90000))
         loginView.generatedCodeLabel.text = "\(generateadNumber)"
     }
@@ -57,7 +61,7 @@ class LoginViewController: UIViewController {
                                     user!.attemptableDate = NSDate()
                                 }
                                 
-                                self.presentViewController(NavigationController(rootViewController: MessagesListViewController()), animated: true, completion: nil)
+                                self.presentViewController(TabBarController(), animated: true, completion: nil)
                             } else {
                                 let wrongAttemptCount = user!.wrongAttemptCount + 1
                                 

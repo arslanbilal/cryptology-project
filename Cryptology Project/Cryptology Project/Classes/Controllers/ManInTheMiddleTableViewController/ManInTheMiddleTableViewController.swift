@@ -17,17 +17,9 @@ class ManInTheMiddleTableViewController: UITableViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.view.backgroundColor = UIColor.whiteColor()
-        
         self.navigationItem.title = "Man in the Middle"
-        self.navigationItem.prompt = "Message List"
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: #selector(ManInTheMiddleTableViewController.didTapExitButton(_:)))
         

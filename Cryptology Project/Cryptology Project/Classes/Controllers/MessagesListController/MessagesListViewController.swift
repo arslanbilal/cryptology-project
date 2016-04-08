@@ -22,11 +22,10 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
         self.view.backgroundColor = UIColor.whiteColor()
         
         self.navigationItem.title = "Chats"
-        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name + " " + ActiveUser.sharedInstance.user.lastname
-        
+
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: #selector(MessagesListViewController.didTapExitButton(_:)))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .Done, target: self, action: #selector(MessagesListViewController.didTapAddChatButton(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .Compose, target: self, action: #selector(MessagesListViewController.didTapAddChatButton(_:)))
         
         tableView.registerClass(MessagesListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
@@ -36,22 +35,6 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
         self.view.addSubview(tableView)
         
         tableView.autoPinEdgesToSuperviewEdges()
-        
-        
-        let logButton = UIButton.newAutoLayoutView()
-        logButton.setImage(UIImage(named: "middleMan"), forState: .Normal)
-        logButton.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6 )
-        logButton.contentMode = .ScaleAspectFit
-        logButton.setTitle(" Man-in-the-Middle", forState: .Normal)
-        logButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 13)
-        logButton.layer.cornerRadius = 10
-        logButton.addTarget(self, action: #selector(MessagesListViewController.didTapLogButton(_:)), forControlEvents: .TouchUpInside)
-        self.view.addSubview(logButton)
-        self.view.bringSubviewToFront(logButton)
-        
-        logButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
-        logButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        logButton.autoSetDimensionsToSize(CGSizeMake(150, 40))
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -106,9 +89,5 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
     
     func didTapAddChatButton(sender :UIBarButtonItem) {
         self.navigationController?.pushViewController(StartMessageViewController(), animated: true)
-    }
-    
-    func didTapLogButton(sender :UIBarButtonItem) {
-        self.presentViewController(NavigationController(rootViewController: ManInTheMiddleTableViewController()), animated: true, completion: nil)
     }
 }

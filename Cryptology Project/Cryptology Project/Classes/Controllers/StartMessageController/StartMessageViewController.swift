@@ -21,9 +21,8 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.navigationBarBackgroundColor()
-        
         self.navigationItem.title = "Start Chat"
-        self.navigationItem.prompt = ActiveUser.sharedInstance.user.name    + " " + ActiveUser.sharedInstance.user.lastname
+        
         
         tableView.registerClass(UserTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         tableView.showsVerticalScrollIndicator = false
@@ -33,6 +32,7 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
         self.view.addSubview(tableView)
         
         tableView.autoPinEdgesToSuperviewEdges()
+        
         
         userList = ActiveUser.sharedInstance.userList
         tableView.reloadData()
