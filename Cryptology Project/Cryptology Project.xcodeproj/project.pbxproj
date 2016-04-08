@@ -21,14 +21,9 @@
 		772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83071C9A4AF400A9541C /* ActiveUser.swift */; };
 		772C830A1C9A619B00A9541C /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83091C9A619B00A9541C /* MessageList.swift */; };
 		775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */; };
-		775CB2B91C98D22800A38280 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B81C98D22800A38280 /* MessagesViewController.swift */; };
-		777685B21CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B11CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift */; };
 		777685B51CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */; };
 		777685B71CAAC54100BD62B9 /* CipherMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B61CAAC54100BD62B9 /* CipherMessage.swift */; };
-		77834C451CAA9C6400B1E94A /* MessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77834C441CAA9C6400B1E94A /* MessagesListViewController.swift */; };
-		77BAF1F91C9B259D00DFA5C3 /* StartMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BAF1F81C9B259D00DFA5C3 /* StartMessageViewController.swift */; };
 		77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BAF1FB1C9B2AAE00DFA5C3 /* UserTableViewCell.swift */; };
-		77C7AB0D1C95D53100120A3D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB0C1C95D53100120A3D /* LoginViewController.swift */; };
 		77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB111C95D68C00120A3D /* UIColorExtension.swift */; };
 		77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB261C95DE1B00120A3D /* ALView+PureLayout.m */; };
 		77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB281C95DE1B00120A3D /* NSArray+PureLayout.m */; };
@@ -40,9 +35,15 @@
 		77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D086971C95D35E00DFD8A8 /* Helper.swift */; };
 		77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202CA1C97542700FAAD74 /* LoginView.swift */; };
 		77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */; };
-		77E202D81C977B8E00FAAD74 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D71C977B8E00FAAD74 /* NavigationController.swift */; };
-		77E96AD21CB78B2000A209D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AD11CB78B2000A209D7 /* TabBarController.swift */; };
-		77E96AD51CB79C0D00A209D7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AD41CB79C0D00A209D7 /* UserViewController.swift */; };
+		77E96AEB1CB7E43600A209D7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AD91CB7E43600A209D7 /* NavigationController.swift */; };
+		77E96AEC1CB7E43600A209D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96ADB1CB7E43600A209D7 /* TabBarController.swift */; };
+		77E96AED1CB7E43600A209D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96ADD1CB7E43600A209D7 /* LoginViewController.swift */; };
+		77E96AEE1CB7E43600A209D7 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AE01CB7E43600A209D7 /* MessagesViewController.swift */; };
+		77E96AEF1CB7E43600A209D7 /* MessagesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AE21CB7E43600A209D7 /* MessagesListViewController.swift */; };
+		77E96AF01CB7E43600A209D7 /* StartMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AE41CB7E43600A209D7 /* StartMessageViewController.swift */; };
+		77E96AF11CB7E43600A209D7 /* ManInTheMiddleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AE71CB7E43600A209D7 /* ManInTheMiddleTableViewController.swift */; };
+		77E96AF21CB7E43600A209D7 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AEA1CB7E43600A209D7 /* UserViewController.swift */; };
+		77E96AF51CB7E46800A209D7 /* PasswordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AF41CB7E46800A209D7 /* PasswordEditViewController.swift */; };
 		77F1FEC41C98EA9C00E9913A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F1FEC31C98EA9C00E9913A /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,14 +87,9 @@
 		772C83071C9A4AF400A9541C /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		772C83091C9A619B00A9541C /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
 		775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewCell.swift; sourceTree = "<group>"; };
-		775CB2B81C98D22800A38280 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		777685B11CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManInTheMiddleTableViewController.swift; path = ManInTheMiddleTableViewController/ManInTheMiddleTableViewController.swift; sourceTree = "<group>"; };
 		777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManInTheMiddleTableViewCell.swift; path = "ManInTheMiddle Cell/ManInTheMiddleTableViewCell.swift"; sourceTree = "<group>"; };
 		777685B61CAAC54100BD62B9 /* CipherMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherMessage.swift; sourceTree = "<group>"; };
-		77834C441CAA9C6400B1E94A /* MessagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListViewController.swift; sourceTree = "<group>"; };
-		77BAF1F81C9B259D00DFA5C3 /* StartMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartMessageViewController.swift; sourceTree = "<group>"; };
 		77BAF1FB1C9B2AAE00DFA5C3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
-		77C7AB0C1C95D53100120A3D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		77C7AB111C95D68C00120A3D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		77C7AB241C95DE1A00120A3D /* Cryptology Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cryptology Project-Bridging-Header.h"; sourceTree = "<group>"; };
 		77C7AB251C95DE1B00120A3D /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
@@ -116,9 +112,15 @@
 		77D086971C95D35E00DFD8A8 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		77E202CA1C97542700FAAD74 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
-		77E202D71C977B8E00FAAD74 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		77E96AD11CB78B2000A209D7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = TabBarController/TabBarController.swift; sourceTree = "<group>"; };
-		77E96AD41CB79C0D00A209D7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserViewController.swift; path = UserViewController/UserViewController.swift; sourceTree = "<group>"; };
+		77E96AD91CB7E43600A209D7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		77E96ADB1CB7E43600A209D7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		77E96ADD1CB7E43600A209D7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		77E96AE01CB7E43600A209D7 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		77E96AE21CB7E43600A209D7 /* MessagesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListViewController.swift; sourceTree = "<group>"; };
+		77E96AE41CB7E43600A209D7 /* StartMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartMessageViewController.swift; sourceTree = "<group>"; };
+		77E96AE71CB7E43600A209D7 /* ManInTheMiddleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManInTheMiddleTableViewController.swift; sourceTree = "<group>"; };
+		77E96AEA1CB7E43600A209D7 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		77E96AF41CB7E46800A209D7 /* PasswordEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordEditViewController.swift; path = PasswordEditController/PasswordEditViewController.swift; sourceTree = "<group>"; };
 		77F1FEC31C98EA9C00E9913A /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,14 +164,6 @@
 			path = FBEncryptor;
 			sourceTree = "<group>";
 		};
-		775CB2AD1C98A9E200A38280 /* MessagesListController */ = {
-			isa = PBXGroup;
-			children = (
-				77834C441CAA9C6400B1E94A /* MessagesListViewController.swift */,
-			);
-			path = MessagesListController;
-			sourceTree = "<group>";
-		};
 		775CB2B01C98AD2E00A38280 /* Messages List Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,28 +172,12 @@
 			path = "Messages List Cell";
 			sourceTree = "<group>";
 		};
-		777685B01CAAB21C00BD62B9 /* ManInTheMiddleTableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				777685B11CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift */,
-			);
-			name = ManInTheMiddleTableViewController;
-			sourceTree = "<group>";
-		};
 		777685B31CAAC13100BD62B9 /* ManInTheMidle Cell */ = {
 			isa = PBXGroup;
 			children = (
 				777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */,
 			);
 			name = "ManInTheMidle Cell";
-			sourceTree = "<group>";
-		};
-		77BAF1F71C9B255700DFA5C3 /* StartMessageController */ = {
-			isa = PBXGroup;
-			children = (
-				77BAF1F81C9B259D00DFA5C3 /* StartMessageViewController.swift */,
-			);
-			path = StartMessageController;
 			sourceTree = "<group>";
 		};
 		77BAF1FA1C9B2A6E00DFA5C3 /* User Cell */ = {
@@ -219,14 +197,6 @@
 				772C72161CA946830013B735 /* RealmKey.swift */,
 			);
 			path = Realm;
-			sourceTree = "<group>";
-		};
-		77C7AB0B1C95D51600120A3D /* LoginController */ = {
-			isa = PBXGroup;
-			children = (
-				77C7AB0C1C95D53100120A3D /* LoginViewController.swift */,
-			);
-			path = LoginController;
 			sourceTree = "<group>";
 		};
 		77C7AB0E1C95D54A00120A3D /* Extensions */ = {
@@ -340,14 +310,11 @@
 		77D086921C95D30D00DFD8A8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				77E96AD31CB79BE800A209D7 /* UserViewController */,
-				77E96AD01CB78AEE00A209D7 /* TabBarController */,
-				777685B01CAAB21C00BD62B9 /* ManInTheMiddleTableViewController */,
-				77E202D61C977B7000FAAD74 /* NavigationController */,
-				77C7AB0B1C95D51600120A3D /* LoginController */,
-				775CB2AD1C98A9E200A38280 /* MessagesListController */,
-				77E202CD1C9779AC00FAAD74 /* MessagesController */,
-				77BAF1F71C9B255700DFA5C3 /* StartMessageController */,
+				77E96AD71CB7E43600A209D7 /* BaseController */,
+				77E96ADC1CB7E43600A209D7 /* LoginController */,
+				77E96ADE1CB7E43600A209D7 /* Message */,
+				77E96AE51CB7E43600A209D7 /* MiddleMan */,
+				77E96AE81CB7E43600A209D7 /* User */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -380,14 +347,6 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
-		77E202CD1C9779AC00FAAD74 /* MessagesController */ = {
-			isa = PBXGroup;
-			children = (
-				775CB2B81C98D22800A38280 /* MessagesViewController.swift */,
-			);
-			path = MessagesController;
-			sourceTree = "<group>";
-		};
 		77E202D01C9779E100FAAD74 /* Messages Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,28 +355,112 @@
 			path = "Messages Cell";
 			sourceTree = "<group>";
 		};
-		77E202D61C977B7000FAAD74 /* NavigationController */ = {
+		77E96AD71CB7E43600A209D7 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
-				77E202D71C977B8E00FAAD74 /* NavigationController.swift */,
+				77E96AD81CB7E43600A209D7 /* NavigationController */,
+				77E96ADA1CB7E43600A209D7 /* TabBarController */,
+			);
+			path = BaseController;
+			sourceTree = "<group>";
+		};
+		77E96AD81CB7E43600A209D7 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AD91CB7E43600A209D7 /* NavigationController.swift */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
-		77E96AD01CB78AEE00A209D7 /* TabBarController */ = {
+		77E96ADA1CB7E43600A209D7 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				77E96AD11CB78B2000A209D7 /* TabBarController.swift */,
+				77E96ADB1CB7E43600A209D7 /* TabBarController.swift */,
 			);
-			name = TabBarController;
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		77E96AD31CB79BE800A209D7 /* UserViewController */ = {
+		77E96ADC1CB7E43600A209D7 /* LoginController */ = {
 			isa = PBXGroup;
 			children = (
-				77E96AD41CB79C0D00A209D7 /* UserViewController.swift */,
+				77E96ADD1CB7E43600A209D7 /* LoginViewController.swift */,
 			);
-			name = UserViewController;
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		77E96ADE1CB7E43600A209D7 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				77E96ADF1CB7E43600A209D7 /* MessagesController */,
+				77E96AE11CB7E43600A209D7 /* MessagesListController */,
+				77E96AE31CB7E43600A209D7 /* StartMessageController */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		77E96ADF1CB7E43600A209D7 /* MessagesController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AE01CB7E43600A209D7 /* MessagesViewController.swift */,
+			);
+			path = MessagesController;
+			sourceTree = "<group>";
+		};
+		77E96AE11CB7E43600A209D7 /* MessagesListController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AE21CB7E43600A209D7 /* MessagesListViewController.swift */,
+			);
+			path = MessagesListController;
+			sourceTree = "<group>";
+		};
+		77E96AE31CB7E43600A209D7 /* StartMessageController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AE41CB7E43600A209D7 /* StartMessageViewController.swift */,
+			);
+			path = StartMessageController;
+			sourceTree = "<group>";
+		};
+		77E96AE51CB7E43600A209D7 /* MiddleMan */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AE61CB7E43600A209D7 /* ManInTheMiddleTableViewController */,
+			);
+			path = MiddleMan;
+			sourceTree = "<group>";
+		};
+		77E96AE61CB7E43600A209D7 /* ManInTheMiddleTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AE71CB7E43600A209D7 /* ManInTheMiddleTableViewController.swift */,
+			);
+			path = ManInTheMiddleTableViewController;
+			sourceTree = "<group>";
+		};
+		77E96AE81CB7E43600A209D7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AF31CB7E44200A209D7 /* PasswordEditController */,
+				77E96AE91CB7E43600A209D7 /* UserViewController */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		77E96AE91CB7E43600A209D7 /* UserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AEA1CB7E43600A209D7 /* UserViewController.swift */,
+			);
+			path = UserViewController;
+			sourceTree = "<group>";
+		};
+		77E96AF31CB7E44200A209D7 /* PasswordEditController */ = {
+			isa = PBXGroup;
+			children = (
+				77E96AF41CB7E46800A209D7 /* PasswordEditViewController.swift */,
+			);
+			name = PasswordEditController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,11 +564,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777685B21CAAB3A800BD62B9 /* ManInTheMiddleTableViewController.swift in Sources */,
-				77E96AD51CB79C0D00A209D7 /* UserViewController.swift in Sources */,
 				775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */,
+				77E96AF21CB7E43600A209D7 /* UserViewController.swift in Sources */,
 				77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */,
-				77BAF1F91C9B259D00DFA5C3 /* StartMessageViewController.swift in Sources */,
+				77E96AEE1CB7E43600A209D7 /* MessagesViewController.swift in Sources */,
 				772C71F91CA936F60013B735 /* FBEncryptorAES.m in Sources */,
 				772C83041C9A410400A9541C /* RealmMessage.swift in Sources */,
 				772C71FA1CA936F60013B735 /* NSData+Base64.m in Sources */,
@@ -533,24 +575,26 @@
 				772C72171CA946830013B735 /* RealmKey.swift in Sources */,
 				77F1FEC41C98EA9C00E9913A /* StringExtension.swift in Sources */,
 				77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */,
+				77E96AEC1CB7E43600A209D7 /* TabBarController.swift in Sources */,
 				77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */,
 				772C83021C9A40ED00A9541C /* RealmUser.swift in Sources */,
-				77E202D81C977B8E00FAAD74 /* NavigationController.swift in Sources */,
 				77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */,
+				77E96AED1CB7E43600A209D7 /* LoginViewController.swift in Sources */,
 				77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */,
-				77834C451CAA9C6400B1E94A /* MessagesListViewController.swift in Sources */,
+				77E96AF11CB7E43600A209D7 /* ManInTheMiddleTableViewController.swift in Sources */,
+				77E96AF51CB7E46800A209D7 /* PasswordEditViewController.swift in Sources */,
 				77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */,
 				777685B71CAAC54100BD62B9 /* CipherMessage.swift in Sources */,
+				77E96AF01CB7E43600A209D7 /* StartMessageViewController.swift in Sources */,
+				77E96AEB1CB7E43600A209D7 /* NavigationController.swift in Sources */,
 				772C830A1C9A619B00A9541C /* MessageList.swift in Sources */,
 				772C83061C9A410C00A9541C /* RealmChat.swift in Sources */,
 				777685B51CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift in Sources */,
 				77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */,
-				77E96AD21CB78B2000A209D7 /* TabBarController.swift in Sources */,
+				77E96AEF1CB7E43600A209D7 /* MessagesListViewController.swift in Sources */,
 				7701563A1C9E1240001A4B1E /* Message.swift in Sources */,
 				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,
 				772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */,
-				775CB2B91C98D22800A38280 /* MessagesViewController.swift in Sources */,
-				77C7AB0D1C95D53100120A3D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

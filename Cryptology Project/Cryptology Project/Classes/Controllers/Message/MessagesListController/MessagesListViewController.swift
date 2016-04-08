@@ -24,7 +24,6 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
         self.navigationItem.title = "Chats"
 
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: #selector(MessagesListViewController.didTapExitButton(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .Compose, target: self, action: #selector(MessagesListViewController.didTapAddChatButton(_:)))
         
         tableView.registerClass(MessagesListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
@@ -83,12 +82,6 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     // MARK: - Button Actions
-    func didTapExitButton(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true) { () -> Void in
-            ActiveUser.sharedInstance.exitUser()
-        }
-    }
-    
     func didTapAddChatButton(sender :UIBarButtonItem) {
         let startMessageViewController = StartMessageViewController()
         startMessageViewController.hidesBottomBarWhenPushed = true

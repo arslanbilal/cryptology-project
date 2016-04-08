@@ -39,6 +39,18 @@ class RealmUser: Object {
         }
     }
     
+    func changePassword(password: String) {
+        let realm = try! Realm()
+        
+        let salt = FBEncryptorAES.generateKey()
+        let newHash = FBEncryptorAES.generateSHA512((password + salt))
+        
+        try! realm.write {
+            self.passwordSalt = salt
+            self.passwordHash = newHash
+        }
+    }
+    
     func checkPassword(password: String) -> Bool {
         let inputPasswordHash = FBEncryptorAES.generateSHA512((password + self.passwordSalt))
         

@@ -31,10 +31,6 @@ class LoginViewController: UIViewController {
     
     // MARK: - Random Number Generator
     func generateRandomNumber() {
-        
-        
-        
-        
         generateadNumber = (10000 + arc4random_uniform(90000))
         loginView.generatedCodeLabel.text = "\(generateadNumber)"
     }
@@ -72,37 +68,37 @@ class LoginViewController: UIViewController {
                                         user!.wrongAttemptCount = wrongAttemptCount
                                     }
                                 
-                                    self.initAndShowAletView("Wrong Password!", message: "Account's login is delayed. You must try at date: \(Helper.getStringDateFromDate(date))", style: .Alert)
+                                    showAlertView("Wrong Password!", message: "Account's login is delayed. You must try at date: \(Helper.getStringDateFromDate(date))", style: .Alert)
                                 } else if wrongAttemptCount >= 5 {
                                     try! realm.write {
                                         user!.isLocked = true
                                         user!.wrongAttemptCount = 5
                                     }
                                     
-                                    self.initAndShowAletView("Important Error!", message: "User is Locked! You can not login anymore! Please contact the customer service.", style: .Alert)
+                                    showAlertView("Important Error!", message: "User is Locked! You can not login anymore! Please contact the customer service.", style: .Alert)
                                 } else {
                                     try! realm.write {
                                         user!.wrongAttemptCount = wrongAttemptCount
                                     }
                                     
-                                    self.initAndShowAletView("Wrong Pssword!", message: "\(user!.username) password does not match!", style: .Alert)
+                                    showAlertView("Wrong Pssword!", message: "\(user!.username) password does not match!", style: .Alert)
                                 }
                             }
                             
                         } else {
-                            self.initAndShowAletView("Login Error!", message: "Login is delayed to date: \(Helper.getStringDateFromDate(user!.attemptableDate)). Try after this date.", style: .Alert)
+                            showAlertView("Login Error!", message: "Login is delayed to date: \(Helper.getStringDateFromDate(user!.attemptableDate)). Try after this date.", style: .Alert)
                         }
                     } else {
-                        self.initAndShowAletView("Login Error\nUser is Locked", message: "You can not sign in because user is locked with multiple wrong attempt. Please contact the customer service.", style: .Alert)
+                        showAlertView("Login Error\nUser is Locked", message: "You can not sign in because user is locked with multiple wrong attempt. Please contact the customer service.", style: .Alert)
                     }
                 } else {
-                    self.initAndShowAletView("Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", style: .Alert)
+                    showAlertView("Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", style: .Alert)
                 }
             } else {
-                self.initAndShowAletView("Login Error", message: "Enterred Code is not equal the Generated Code", style: .Alert)
+                showAlertView("Login Error", message: "Enterred Code is not equal the Generated Code", style: .Alert)
             }
         } else {
-            self.initAndShowAletView("Login Error", message: "Please fill the all missing fileds.", style: .Alert)
+            showAlertView("Login Error", message: "Please fill the all missing fileds.", style: .Alert)
         }
         
         loginView.passwordTextField.text = ""
@@ -121,10 +117,9 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - AlertViewInitialise
-    func initAndShowAletView(title: String, message: String, style: UIAlertControllerStyle) {
+    func showAlertView(title: String, message: String, style: UIAlertControllerStyle) {
         let alertController = UIAlertController.init(title: title, message: message, preferredStyle: style)
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
 }
