@@ -127,7 +127,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    // MARK: UITableView Delegate
+    // MARK: - UITableView Delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         messageTextField.resignFirstResponder()
     }
@@ -189,8 +189,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         messageTextField.resignFirstResponder()
     }
     
-    // MARK: -
-    // MARK: Keyboard State Methods
+    // MARK: - Keyboard State Methods
     func keyboardWillHide(sender: NSNotification) {
         if let userInfo = sender.userInfo {
             if let _ = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size.height {
@@ -201,6 +200,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
+    
     func keyboardWillShow(sender: NSNotification) {
         if let userInfo = sender.userInfo {
             if let keyboardHeight = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size.height {

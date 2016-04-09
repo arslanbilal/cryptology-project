@@ -60,11 +60,15 @@ class UserViewController: UIViewController {
     
     // MARK: - Button Actions
     func didTapPasswordChangeButton(sender: UIButton) {
-        self.navigationController?.pushViewController(PasswordEditViewController(), animated: true)
+        let passwordEditViewController = PasswordEditViewController()
+        passwordEditViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(passwordEditViewController, animated: true)
     }
     
     func didTapKeyChangeButton(sender: UIButton) {
-        
+        let keysTableViewController = KeysTableViewController()
+        keysTableViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(keysTableViewController, animated: true)
     }
     
     func didTapSignOutButton(sender: UIBarButtonItem) {
