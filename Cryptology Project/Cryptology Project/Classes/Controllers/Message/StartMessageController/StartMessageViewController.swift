@@ -67,7 +67,7 @@ class StartMessageViewController: UIViewController, UITableViewDataSource, UITab
         if let userMessageList = ActiveUser.sharedInstance.getMesageListFromUserId(selectedUser.id) {
             messageList = userMessageList
         } else {
-            messageList = MessageList(otherUser: selectedUser, message: nil, messageType: nil, messageKey: "")
+            messageList = MessageList(otherUser: selectedUser, message: nil, messageType: nil, messageKey: nil)
         }
         
         let viewControllersCount = self.navigationController?.viewControllers.count

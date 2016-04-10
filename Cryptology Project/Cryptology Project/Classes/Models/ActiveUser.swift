@@ -53,7 +53,7 @@ class ActiveUser: NSObject {
             if result != nil {
                 result?.messages.append(message)
             } else {
-                chatList.append(MessageList(otherUser: otherUser, message: message, messageType: messageType, messageKey: (chat.key?.key)!))
+                chatList.append(MessageList(otherUser: otherUser, message: message, messageType: messageType, messageKey: chat.key!))
             }
         }
         

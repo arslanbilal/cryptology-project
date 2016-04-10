@@ -62,9 +62,9 @@ class MessagesTableViewCell: UITableViewCell {
         }
     }
     
-    func setContent(message: Message, messageKey: String) {
+    func setContent(message: Message, messageKey: RealmKey) {
         self.messageDateLabel.text = Helper.getStringDateFromDate(message.message.date)
-        self.messageLabel.text = FBEncryptorAES.decryptBase64String(message.message.text, keyString: messageKey)
+        self.messageLabel.text = FBEncryptorAES.decryptBase64String(message.message.text, keyString: messageKey.key)
         self.setMessageType(message.messagteType)
     }
 }

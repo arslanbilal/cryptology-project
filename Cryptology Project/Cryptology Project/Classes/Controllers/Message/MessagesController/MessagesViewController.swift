@@ -122,7 +122,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: MessagesTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MessagesTableViewCell
         
-        cell.setContent(messageList.messages[indexPath.row], messageKey: messageList.messageKey)
+        cell.setContent(messageList.messages[indexPath.row], messageKey: messageList.messageKey!)
         
         return cell
     }
@@ -144,15 +144,17 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         if let message = messageTextField.text {
             if message.length > 0 {
                 
-                let key: String! // Key for Chat
+                let chatKey: RealmKey!
                 
-                if messageList.messageKey != "" { // If there is key
-                    key = messageList.messageKey
+                if messageList.messageKey?.key != "" { // If there is key
+                    chatKey = realm.objects(RealmKey).filter("key = '\(messageList.messageKey!.key)'").first
                 } else {
-                    key = FBEncryptorAES.generateKey()
+                    chatKey = RealmKey()
+                    chatKey.id = RealmKey.keyId
+                    chatKey.key = FBEncryptorAES.generateKey()
                 }
 
-                let cipherText = FBEncryptorAES.encryptBase64String(message, keyString: key, separateLines: false)
+                let cipherText = FBEncryptorAES.encryptBase64String(message, keyString: chatKey!.key, separateLines: false)
 
                 let sendingMessage = RealmMessage()
                 sendingMessage.id = RealmMessage.messageId
@@ -163,12 +165,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
                 chat.message = sendingMessage
                 chat.fromUser = ActiveUser.sharedInstance.user
                 chat.toUser = messageList.otherUser
-                
-                let chatKey = RealmKey()
-                chatKey.id = RealmKey.keyId
-                chatKey.key = key
                 chat.key = chatKey
-                
                 
                 try! realm.write {
                     realm.add(sendingMessage)

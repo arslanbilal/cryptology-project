@@ -11,7 +11,7 @@ import UIKit
 class KeysTableViewController: UITableViewController {
     
     let cellIdentifier = "keyCell"
-    var messageList: [MessageList] = ActiveUser.sharedInstance.chatList
+    var messageList: [MessageList]! = ActiveUser.sharedInstance.chatList
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -22,6 +22,12 @@ class KeysTableViewController: UITableViewController {
         
         self.tableView.registerClass(KeyListTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         self.tableView.showsVerticalScrollIndicator = false
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tableView.reloadData()
     }
     
     // MARK: UITableView Datasource

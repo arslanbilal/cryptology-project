@@ -29,7 +29,7 @@ class UserViewController: UIViewController {
         passwordChangeButton.addTarget(self, action: #selector(UserViewController.didTapPasswordChangeButton(_:)), forControlEvents: .TouchUpInside)
         self.view.addSubview(passwordChangeButton)
         
-        passwordChangeButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(30.0, 15.5, 0.0, 15.5), excludingEdge: .Bottom)
+        passwordChangeButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(20.0, 15.5, 0.0, 15.5), excludingEdge: .Bottom)
         passwordChangeButton.autoSetDimension(.Height, toSize: 50.0)
         
         
@@ -42,7 +42,7 @@ class UserViewController: UIViewController {
         
         keyChangeButton.autoPinEdgeToSuperviewEdge(.Left, withInset: 15.5)
         keyChangeButton.autoPinEdgeToSuperviewEdge(.Right, withInset: 15.5)
-        keyChangeButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: passwordChangeButton, withOffset: 30.0)
+        keyChangeButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: passwordChangeButton, withOffset: 15.0)
         keyChangeButton.autoSetDimension(.Height, toSize: 50.0)
         
         let signOutButton = UIButton.newAutoLayoutView()
@@ -54,7 +54,7 @@ class UserViewController: UIViewController {
         
         signOutButton.autoPinEdgeToSuperviewEdge(.Left, withInset: 15.5)
         signOutButton.autoPinEdgeToSuperviewEdge(.Right, withInset: 15.5)
-        signOutButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: keyChangeButton, withOffset: 30.0)
+        signOutButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: keyChangeButton, withOffset: 15.0)
         signOutButton.autoSetDimension(.Height, toSize: 50.0)
     }
     

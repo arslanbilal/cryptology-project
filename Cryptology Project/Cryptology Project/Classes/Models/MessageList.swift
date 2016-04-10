@@ -13,9 +13,9 @@ class MessageList: NSObject {
     
     let otherUser: RealmUser!
     var messages: [Message]!
-    let messageKey: String!
+    var messageKey: RealmKey?
     
-    init(otherUser: RealmUser, message: Message?, messageType: MessageType?, messageKey: String) {
+    init(otherUser: RealmUser, message: Message?, messageType: MessageType?, messageKey: RealmKey?) {
         self.otherUser = otherUser
         self.messageKey = messageKey
         

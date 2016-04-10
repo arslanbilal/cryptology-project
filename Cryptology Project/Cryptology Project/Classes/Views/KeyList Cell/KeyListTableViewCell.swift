@@ -62,7 +62,7 @@ class KeyListTableViewCell: UITableViewCell {
     
     func setContent(messageList: MessageList) {
         self.usersLabel.text = ActiveUser.sharedInstance.user.username + " <=> " + messageList.otherUser.username
-        self.keyLabel.text = messageList.messageKey
+        self.keyLabel.text = messageList.messageKey!.key
         self.keyImageView.image = UIImage(named: "key")
     }
 }
