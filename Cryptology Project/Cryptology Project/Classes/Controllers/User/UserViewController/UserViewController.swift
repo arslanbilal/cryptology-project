@@ -29,7 +29,7 @@ class UserViewController: UIViewController {
         passwordChangeButton.addTarget(self, action: #selector(UserViewController.didTapPasswordChangeButton(_:)), forControlEvents: .TouchUpInside)
         self.view.addSubview(passwordChangeButton)
         
-        passwordChangeButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(20.0, 15.5, 0.0, 15.5), excludingEdge: .Bottom)
+        passwordChangeButton.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsMake(15.0, 15.5, 0.0, 15.5), excludingEdge: .Bottom)
         passwordChangeButton.autoSetDimension(.Height, toSize: 50.0)
         
         

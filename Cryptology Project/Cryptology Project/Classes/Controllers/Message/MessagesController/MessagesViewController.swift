@@ -146,7 +146,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 let chatKey: RealmKey!
                 
-                if messageList.messageKey?.key != "" { // If there is key
+                if messageList.messageKey != nil { // If there is key
                     chatKey = realm.objects(RealmKey).filter("key = '\(messageList.messageKey!.key)'").first
                 } else {
                     chatKey = RealmKey()

@@ -6,8 +6,25 @@
 <h3>This repo includes "Cryptology Course" project(Encrypted Messaging App in iOS 8.0+)</h3>
 <hr>
 ## Summary:
-Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. Man-in-the-Middle never see plain text. Password doesn't hold in DB. Password salt and hash are fields of user table in DB.
-<br> <br>
+Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. Man-in-the-Middle never see plain text. Password doesn't hold in DB. Password salt and hash are fields of user table in DB. Message keys can change from users.
+
+####Specifications:
+	- User can login
+	- User can message other users
+	- User see only own messages
+	- User message is in a place(incoming, outgoing)
+	- Messages are encrypting with AES 256 bit key.
+	- User can only see his/her own messages, others are encrypted.
+	- Man-in-the-Middle see for all Cipher Message.
+	- Man-in-the-Middle does not have key to see plain format.
+	- Login with Captcha approval.
+	- Account screen for change password, key and sign out.
+	- User login delays 30 min after 3 wrong login attempt
+	- User account locks after 5 wrong login attempt.
+	- User password can not known. Password Salt and Hast hold in DB.
+	- User can change password. (min 8 chac.)
+	- User can change message key. (generating new key)
+
 You can run in your own machine. You just uncomment the `genenaretUsersWithCount(Int)` method in AppDelegate.swift file for adding random user in the system. Then recomment the same line. To test:
 
 1. username: user# (no is depends on count that you assign the func.)
@@ -18,7 +35,7 @@ You can run in your own machine. You just uncomment the `genenaretUsersWithCount
 - Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)
 - Xcode 7.3+
 
-## Architecture
+## Architecture:
 There are 4 classes that represent 4 tables in the Realm database.
 
 - User: (*(int)* **id**, *(string)* **name**, *(string)* **lastname**, *(string)* **username**, *(string)* **passwordSalt**, *(string)* **passwordHash**, *(bool)* **isLocked**, *(int)* **wrongAttemptCount**, *(Date)* **attemptableDate**)
@@ -46,27 +63,20 @@ User, Message adn Key are have a relation with Chat. Table(Class) Relations:
 
 
 ## Latest version: v0.3:
-##### Last [version][release] of the app. For more version detail, check "versions.MD" version log file.
-	- users can login
-	- users can message other users
-	- users see only own messages
-	- users message is in a place(incoming, outgoing)
-	- messages are encrypting with AES 256 bit key.
-	- users can only see his/her own messages, others are encrypted.
-	- Man-in-the-Middle see for all Cipher Message.
-	- Man-in-the-Middle does not have key to see plain format.
+##### For more version detail, check [versions.MD][release] log file.
 	- Login with Captcha approval.
 	- Account screen for change password, key and sign out.
 	- User login delays 30 min after 3 wrong login attempt
 	- User account locks after 5 wrong login attempt.
-	- User password can not known. Salt and Hast hold in DB.
-	- User change password(min 8 chac.)
+	- User password can not known. Password Salt and Hast hold in DB.
+	- User can change password. (min 8 chac.)
+	- User can change message key. (generating new key)
 
 ## How does it look like?
 ##### v0.3
 ![Gif](https://github.com/arslanbilal/cryptology-project/raw/master/Source/application.gif)
 
-Gif lasts about 2 min.
+Gif lasts about 1.30 min.
 	
 ## Credits
 - [Bilal Arslan][arslanbilal]: Architecture, Concept, Code and UI Design
@@ -80,6 +90,6 @@ Gif lasts about 2 min.
 [realm]:https://realm.io
 [purelayout]:https://github.com/PureLayout/PureLayout
 [fbencryptor]:https://github.com/dev5tec/FBEncryptor
-[versionmd]:https://github.com/arslanbilal/cryptology-project/blob/master/VERSIONS.md
+[versionmd]:https://github.com/arslanbilal/cryptology-project/blob/master/VERSION.md
 [arslanbilal]:https://github.com/arslanbilal
 [release]:https://github.com/arslanbilal/cryptology-project/releases
