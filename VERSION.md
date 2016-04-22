@@ -3,8 +3,8 @@
 ###Latest version v0.3:
 	- Login with Captcha approval.
 	- Account screen for change password, key and sign out.
-	- User login delays 30 min after 3 wrong login attempt
-	- User account locks after 5 wrong login attempt.
+	- User login is postponed 30 min; after 3 wrong login attempt.
+	- User account is locked; after 5 wrong login attempt.
 	- User password can not known. Password Salt and Hast hold in DB.
 	- User can change password. (min 8 chac.)
 	- User can change message key. (generating new key)
