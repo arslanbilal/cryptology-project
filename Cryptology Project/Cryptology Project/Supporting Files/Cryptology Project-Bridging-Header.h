@@ -4,3 +4,4 @@
 
 #import "PureLayout.h"
 #import "FBEncryptorAES.h"
+#import "JTSImageViewController.h"

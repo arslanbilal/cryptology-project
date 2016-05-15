@@ -13,6 +13,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.barTintColor = UIColor.loginViewBackgroundColor()
+        self.tabBar.translucent = false
         self.tabBar.tintColor = UIColor.whiteColor()
         
         let nav1 = NavigationController(rootViewController: MessagesListViewController())

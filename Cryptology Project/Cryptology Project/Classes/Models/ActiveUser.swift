@@ -13,12 +13,12 @@ import RealmSwift
 class ActiveUser: NSObject {
     
     private let realm = try! Realm()
-
+    
     var user = RealmUser()
     var chatList = [MessageList]()
     var userList = [RealmUser]()
     private var manInTheMiddle = [CipherMessage]()
-
+    
     static let sharedInstance = ActiveUser()
     
     func setActiveUser(user: RealmUser) {

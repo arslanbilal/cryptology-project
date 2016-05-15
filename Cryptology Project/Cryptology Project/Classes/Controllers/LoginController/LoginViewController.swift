@@ -37,74 +37,78 @@ class LoginViewController: UIViewController {
     
     // MARK: - Button Actions
     func didTapSignInButton(sender: UIButton) {
-        let username = loginView.usernameTextField.text!
-        let password = loginView.passwordTextField.text!
-        let inputCode = loginView.generatedCodeTextField.text!
+        let user = realm.objects(RealmUser).filter("username = 'user1'").first
+        ActiveUser.sharedInstance.setActiveUser(user!)
+        self.presentViewController(TabBarController(), animated: true, completion: nil)
         
-        if  username != "" && password != "" && inputCode != "" {
-            if generateadCaptcha == inputCode {
-                let user = realm.objects(RealmUser).filter("username = '\(username)'").first
-                
-                if user != nil {
-                    if !(user!.isLocked) {
-                        if user!.attemptableDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
-                            if user!.checkPassword(password) {
-                                ActiveUser.sharedInstance.setActiveUser(user!)
-                                loginView.usernameTextField.text = ""
-                                loginView.passwordTextField.text = ""
-                                
-                                try! realm.write {
-                                    user!.wrongAttemptCount = 0
-                                    user!.attemptableDate = NSDate()
-                                }
-                                
-                                self.presentViewController(TabBarController(), animated: true, completion: nil)
-                            } else {
-                                let wrongAttemptCount = user!.wrongAttemptCount + 1
-                                
-                                if wrongAttemptCount == 3 {
-                                    let date = NSDate.init(timeIntervalSinceNow: 60 * 30) // 30 min delay
-                                    try! realm.write {
-                                        user!.attemptableDate =  date// 20 sec
-                                        user!.wrongAttemptCount = wrongAttemptCount
-                                    }
-                                
-                                    showAlertView("Wrong Password!", message: "Account's login is delayed. You must try at date: \(Helper.getStringDateFromDate(date))", style: .Alert)
-                                } else if wrongAttemptCount >= 5 {
-                                    try! realm.write {
-                                        user!.isLocked = true
-                                        user!.wrongAttemptCount = 5
-                                    }
-                                    
-                                    showAlertView("Important Error!", message: "User is Locked! You can not login anymore! Please contact the customer service.", style: .Alert)
-                                } else {
-                                    try! realm.write {
-                                        user!.wrongAttemptCount = wrongAttemptCount
-                                    }
-                                    
-                                    showAlertView("Wrong Pssword!", message: "\(user!.username) password does not match!", style: .Alert)
-                                }
-                            }
-                            
-                        } else {
-                            showAlertView("Login Error!", message: "Login is delayed to date: \(Helper.getStringDateFromDate(user!.attemptableDate)). Try after this date.", style: .Alert)
-                        }
-                    } else {
-                        showAlertView("Login Error\nUser is Locked", message: "You can not sign in because user is locked with multiple wrong attempt. Please contact the customer service.", style: .Alert)
-                    }
-                } else {
-                    showAlertView("Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", style: .Alert)
-                }
-            } else {
-                showAlertView("Login Error", message: "Enterred Code is not equal the Generated Code", style: .Alert)
-            }
-        } else {
-            showAlertView("Login Error", message: "Please fill the all missing fileds.", style: .Alert)
-        }
-        
-        loginView.passwordTextField.text = ""
-        loginView.generatedCodeTextField.text = ""
-        generateRandomNumber()
+        //        let username = loginView.usernameTextField.text!
+        //        let password = loginView.passwordTextField.text!
+        //        let inputCode = loginView.generatedCodeTextField.text!
+        //        
+        //        if  username != "" && password != "" && inputCode != "" {
+        //            if generateadCaptcha == inputCode {
+        //                let user = realm.objects(RealmUser).filter("username = '\(username)'").first
+        //                
+        //                if user != nil {
+        //                    if !(user!.isLocked) {
+        //                        if user!.attemptableDate.timeIntervalSince1970 < NSDate().timeIntervalSince1970 {
+        //                            if user!.checkPassword(password) {
+        //                                ActiveUser.sharedInstance.setActiveUser(user!)
+        //                                loginView.usernameTextField.text = ""
+        //                                loginView.passwordTextField.text = ""
+        //                                
+        //                                try! realm.write {
+        //                                    user!.wrongAttemptCount = 0
+        //                                    user!.attemptableDate = NSDate()
+        //                                }
+        //                                
+        //                                self.presentViewController(TabBarController(), animated: true, completion: nil)
+        //                            } else {
+        //                                let wrongAttemptCount = user!.wrongAttemptCount + 1
+        //                                
+        //                                if wrongAttemptCount == 3 {
+        //                                    let date = NSDate.init(timeIntervalSinceNow: 60 * 30) // 30 min delay
+        //                                    try! realm.write {
+        //                                        user!.attemptableDate =  date// 20 sec
+        //                                        user!.wrongAttemptCount = wrongAttemptCount
+        //                                    }
+        //                                
+        //                                    showAlertView("Wrong Password!", message: "Account's login is delayed. You must try at date: \(Helper.getStringDateFromDate(date))", style: .Alert)
+        //                                } else if wrongAttemptCount >= 5 {
+        //                                    try! realm.write {
+        //                                        user!.isLocked = true
+        //                                        user!.wrongAttemptCount = 5
+        //                                    }
+        //                                    
+        //                                    showAlertView("Important Error!", message: "User is Locked! You can not login anymore! Please contact the customer service.", style: .Alert)
+        //                                } else {
+        //                                    try! realm.write {
+        //                                        user!.wrongAttemptCount = wrongAttemptCount
+        //                                    }
+        //                                    
+        //                                    showAlertView("Wrong Pssword!", message: "\(user!.username) password does not match!", style: .Alert)
+        //                                }
+        //                            }
+        //                            
+        //                        } else {
+        //                            showAlertView("Login Error!", message: "Login is delayed to date: \(Helper.getStringDateFromDate(user!.attemptableDate)). Try after this date.", style: .Alert)
+        //                        }
+        //                    } else {
+        //                        showAlertView("Login Error\nUser is Locked", message: "You can not sign in because user is locked with multiple wrong attempt. Please contact the customer service.", style: .Alert)
+        //                    }
+        //                } else {
+        //                    showAlertView("Login Error", message: "Could not entring the App.\n'username' or 'password' is wrong.", style: .Alert)
+        //                }
+        //            } else {
+        //                showAlertView("Login Error", message: "Enterred Code is not equal the Generated Code", style: .Alert)
+        //            }
+        //        } else {
+        //            showAlertView("Login Error", message: "Please fill the all missing fileds.", style: .Alert)
+        //        }
+        //        
+        //        loginView.passwordTextField.text = ""
+        //        loginView.generatedCodeTextField.text = ""
+        //        generateRandomNumber()
     }
     
     func didTapSignUpButton(sender: UIBarButtonItem) {

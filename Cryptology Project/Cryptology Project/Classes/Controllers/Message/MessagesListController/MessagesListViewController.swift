@@ -9,7 +9,7 @@
 import UIKit
 
 class MessagesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     let cellIdentifier = "messagesListTableViewCell"
     var chatList = [MessageList]()
     var messageList: MessageList?
@@ -22,7 +22,7 @@ class MessagesListViewController: UIViewController, UITableViewDataSource, UITab
         self.view.backgroundColor = UIColor.whiteColor()
         
         self.navigationItem.title = "Chats"
-
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Done, target: nil, action: nil)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .Compose, target: self, action: #selector(MessagesListViewController.didTapAddChatButton(_:)))
         

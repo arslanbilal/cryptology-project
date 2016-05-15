@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7701563A1C9E1240001A4B1E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770156391C9E1240001A4B1E /* Message.swift */; };
-		7707DAA11CA7B82F004D5AEB /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DA9F1CA7B82F004D5AEB /* Realm.framework */; };
-		7707DAA21CA7B82F004D5AEB /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DA9F1CA7B82F004D5AEB /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7707DAA31CA7B82F004D5AEB /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */; };
-		7707DAA41CA7B82F004D5AEB /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		772C71F91CA936F60013B735 /* FBEncryptorAES.m in Sources */ = {isa = PBXBuildFile; fileRef = 772C71F61CA936F60013B735 /* FBEncryptorAES.m */; };
 		772C71FA1CA936F60013B735 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 772C71F81CA936F60013B735 /* NSData+Base64.m */; };
 		772C72171CA946830013B735 /* RealmKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C72161CA946830013B735 /* RealmKey.swift */; };
@@ -20,6 +16,12 @@
 		772C83061C9A410C00A9541C /* RealmChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83051C9A410C00A9541C /* RealmChat.swift */; };
 		772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83071C9A4AF400A9541C /* ActiveUser.swift */; };
 		772C830A1C9A619B00A9541C /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772C83091C9A619B00A9541C /* MessageList.swift */; };
+		774FBF901CE88CF700A382E2 /* JTSAnimatedGIFUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF851CE88CF700A382E2 /* JTSAnimatedGIFUtility.m */; };
+		774FBF911CE88CF700A382E2 /* JTSImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF871CE88CF700A382E2 /* JTSImageInfo.m */; };
+		774FBF921CE88CF700A382E2 /* JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF891CE88CF700A382E2 /* JTSImageViewController.m */; };
+		774FBF931CE88CF700A382E2 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF8B1CE88CF700A382E2 /* JTSSimpleImageDownloader.m */; };
+		774FBF941CE88CF700A382E2 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF8D1CE88CF700A382E2 /* UIApplication+JTSImageViewController.m */; };
+		774FBF951CE88CF700A382E2 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF8F1CE88CF700A382E2 /* UIImage+JTSImageEffects.m */; };
 		775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */; };
 		777685B51CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */; };
 		777685B71CAAC54100BD62B9 /* CipherMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B61CAAC54100BD62B9 /* CipherMessage.swift */; };
@@ -37,6 +39,10 @@
 		77D086791C95D1F500DFD8A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77D086771C95D1F500DFD8A8 /* LaunchScreen.storyboard */; };
 		77D086841C95D1F500DFD8A8 /* Cryptology_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D086831C95D1F500DFD8A8 /* Cryptology_ProjectTests.swift */; };
 		77D086981C95D35E00DFD8A8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D086971C95D35E00DFD8A8 /* Helper.swift */; };
+		77DDD8201CE87DDC008E7D0A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DDD81E1CE87DDC008E7D0A /* Realm.framework */; };
+		77DDD8211CE87DDC008E7D0A /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77DDD81E1CE87DDC008E7D0A /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		77DDD8221CE87DDC008E7D0A /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77DDD81F1CE87DDC008E7D0A /* RealmSwift.framework */; };
+		77DDD8231CE87DDC008E7D0A /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77DDD81F1CE87DDC008E7D0A /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202CA1C97542700FAAD74 /* LoginView.swift */; };
 		77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */; };
 		77E96AEB1CB7E43600A209D7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E96AD91CB7E43600A209D7 /* NavigationController.swift */; };
@@ -63,14 +69,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7707DAA51CA7B82F004D5AEB /* Embed Frameworks */ = {
+		77DDD81C1CE87B0A008E7D0A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7707DAA41CA7B82F004D5AEB /* RealmSwift.framework in Embed Frameworks */,
-				7707DAA21CA7B82F004D5AEB /* Realm.framework in Embed Frameworks */,
+				77DDD8231CE87DDC008E7D0A /* RealmSwift.framework in Embed Frameworks */,
+				77DDD8211CE87DDC008E7D0A /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,8 +85,6 @@
 
 /* Begin PBXFileReference section */
 		770156391C9E1240001A4B1E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		7707DA9F1CA7B82F004D5AEB /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		772C71F51CA936F60013B735 /* FBEncryptorAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBEncryptorAES.h; sourceTree = "<group>"; };
 		772C71F61CA936F60013B735 /* FBEncryptorAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBEncryptorAES.m; sourceTree = "<group>"; };
 		772C71F71CA936F60013B735 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -91,6 +95,18 @@
 		772C83051C9A410C00A9541C /* RealmChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmChat.swift; sourceTree = "<group>"; };
 		772C83071C9A4AF400A9541C /* ActiveUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveUser.swift; sourceTree = "<group>"; };
 		772C83091C9A619B00A9541C /* MessageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
+		774FBF841CE88CF700A382E2 /* JTSAnimatedGIFUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSAnimatedGIFUtility.h; sourceTree = "<group>"; };
+		774FBF851CE88CF700A382E2 /* JTSAnimatedGIFUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSAnimatedGIFUtility.m; sourceTree = "<group>"; };
+		774FBF861CE88CF700A382E2 /* JTSImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageInfo.h; sourceTree = "<group>"; };
+		774FBF871CE88CF700A382E2 /* JTSImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageInfo.m; sourceTree = "<group>"; };
+		774FBF881CE88CF700A382E2 /* JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSImageViewController.h; sourceTree = "<group>"; };
+		774FBF891CE88CF700A382E2 /* JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSImageViewController.m; sourceTree = "<group>"; };
+		774FBF8A1CE88CF700A382E2 /* JTSSimpleImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTSSimpleImageDownloader.h; sourceTree = "<group>"; };
+		774FBF8B1CE88CF700A382E2 /* JTSSimpleImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTSSimpleImageDownloader.m; sourceTree = "<group>"; };
+		774FBF8C1CE88CF700A382E2 /* UIApplication+JTSImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JTSImageViewController.h"; sourceTree = "<group>"; };
+		774FBF8D1CE88CF700A382E2 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
+		774FBF8E1CE88CF700A382E2 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
+		774FBF8F1CE88CF700A382E2 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
 		775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewCell.swift; sourceTree = "<group>"; };
 		777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManInTheMiddleTableViewCell.swift; path = "ManInTheMiddle Cell/ManInTheMiddleTableViewCell.swift"; sourceTree = "<group>"; };
 		777685B61CAAC54100BD62B9 /* CipherMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherMessage.swift; sourceTree = "<group>"; };
@@ -119,6 +135,8 @@
 		77D086831C95D1F500DFD8A8 /* Cryptology_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptology_ProjectTests.swift; sourceTree = "<group>"; };
 		77D086851C95D1F500DFD8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D086971C95D35E00DFD8A8 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		77DDD81E1CE87DDC008E7D0A /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		77DDD81F1CE87DDC008E7D0A /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		77E202CA1C97542700FAAD74 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		77E202D41C977A5200FAAD74 /* MessagesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesTableViewCell.swift; sourceTree = "<group>"; };
 		77E96AD91CB7E43600A209D7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -139,8 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7707DAA11CA7B82F004D5AEB /* Realm.framework in Frameworks */,
-				7707DAA31CA7B82F004D5AEB /* RealmSwift.framework in Frameworks */,
+				77DDD8221CE87DDC008E7D0A /* RealmSwift.framework in Frameworks */,
+				77DDD8201CE87DDC008E7D0A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,8 +175,8 @@
 		771B0ACB1C9B410D004BD825 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7707DA9F1CA7B82F004D5AEB /* Realm.framework */,
-				7707DAA01CA7B82F004D5AEB /* RealmSwift.framework */,
+				77DDD81E1CE87DDC008E7D0A /* Realm.framework */,
+				77DDD81F1CE87DDC008E7D0A /* RealmSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,6 +190,25 @@
 				772C71F81CA936F60013B735 /* NSData+Base64.m */,
 			);
 			path = FBEncryptor;
+			sourceTree = "<group>";
+		};
+		774FBF831CE88CF700A382E2 /* JTSImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				774FBF841CE88CF700A382E2 /* JTSAnimatedGIFUtility.h */,
+				774FBF851CE88CF700A382E2 /* JTSAnimatedGIFUtility.m */,
+				774FBF861CE88CF700A382E2 /* JTSImageInfo.h */,
+				774FBF871CE88CF700A382E2 /* JTSImageInfo.m */,
+				774FBF881CE88CF700A382E2 /* JTSImageViewController.h */,
+				774FBF891CE88CF700A382E2 /* JTSImageViewController.m */,
+				774FBF8A1CE88CF700A382E2 /* JTSSimpleImageDownloader.h */,
+				774FBF8B1CE88CF700A382E2 /* JTSSimpleImageDownloader.m */,
+				774FBF8C1CE88CF700A382E2 /* UIApplication+JTSImageViewController.h */,
+				774FBF8D1CE88CF700A382E2 /* UIApplication+JTSImageViewController.m */,
+				774FBF8E1CE88CF700A382E2 /* UIImage+JTSImageEffects.h */,
+				774FBF8F1CE88CF700A382E2 /* UIImage+JTSImageEffects.m */,
+			);
+			path = JTSImageViewController;
 			sourceTree = "<group>";
 		};
 		775CB2B01C98AD2E00A38280 /* Messages List Cell */ = {
@@ -303,6 +340,7 @@
 		77D0868F1C95D2EB00DFD8A8 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				774FBF831CE88CF700A382E2 /* JTSImageViewController */,
 				772C71F41CA936F60013B735 /* FBEncryptor */,
 				77C7AB151C95DBAE00120A3D /* PureLayout */,
 			);
@@ -512,7 +550,8 @@
 				77D086641C95D1F500DFD8A8 /* Sources */,
 				77D086651C95D1F500DFD8A8 /* Frameworks */,
 				77D086661C95D1F500DFD8A8 /* Resources */,
-				7707DAA51CA7B82F004D5AEB /* Embed Frameworks */,
+				77DDD81C1CE87B0A008E7D0A /* Embed Frameworks */,
+				77DDD81D1CE87BA1008E7D0A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -598,6 +637,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		77DDD81D1CE87BA1008E7D0A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		77D086641C95D1F500DFD8A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -616,7 +671,9 @@
 				772C72171CA946830013B735 /* RealmKey.swift in Sources */,
 				77E96AFC1CB7FF8600A209D7 /* CaptchaGenerator.swift in Sources */,
 				77F1FEC41C98EA9C00E9913A /* StringExtension.swift in Sources */,
+				774FBF941CE88CF700A382E2 /* UIApplication+JTSImageViewController.m in Sources */,
 				77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */,
+				774FBF951CE88CF700A382E2 /* UIImage+JTSImageEffects.m in Sources */,
 				7794BF5C1CB8840A00D0CF22 /* KeyChangeViewController.swift in Sources */,
 				77E96AEC1CB7E43600A209D7 /* TabBarController.swift in Sources */,
 				77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */,
@@ -630,6 +687,8 @@
 				77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */,
 				777685B71CAAC54100BD62B9 /* CipherMessage.swift in Sources */,
 				77E96AF01CB7E43600A209D7 /* StartMessageViewController.swift in Sources */,
+				774FBF901CE88CF700A382E2 /* JTSAnimatedGIFUtility.m in Sources */,
+				774FBF931CE88CF700A382E2 /* JTSSimpleImageDownloader.m in Sources */,
 				77E96AEB1CB7E43600A209D7 /* NavigationController.swift in Sources */,
 				772C830A1C9A619B00A9541C /* MessageList.swift in Sources */,
 				772C83061C9A410C00A9541C /* RealmChat.swift in Sources */,
@@ -639,6 +698,8 @@
 				7701563A1C9E1240001A4B1E /* Message.swift in Sources */,
 				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,
 				772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */,
+				774FBF921CE88CF700A382E2 /* JTSImageViewController.m in Sources */,
+				774FBF911CE88CF700A382E2 /* JTSImageInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

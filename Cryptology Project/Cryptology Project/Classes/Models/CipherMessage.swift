@@ -13,7 +13,7 @@ class CipherMessage: NSObject {
     let message: String!
     let owners: String!
     let date: NSDate!
-
+    
     init(message: String, owners: String, date: NSDate) {
         self.message = message
         self.owners = owners

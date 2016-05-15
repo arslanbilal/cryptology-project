@@ -10,7 +10,7 @@ import UIKit
 
 
 class MessagesListTableViewCell: UITableViewCell {
-
+    
     private let profileImageView = UIImageView.newAutoLayoutView()
     private let profileNameLabel = UILabel.newAutoLayoutView()
     private let profileLastMessageLabel = UILabel.newAutoLayoutView()
@@ -55,14 +55,20 @@ class MessagesListTableViewCell: UITableViewCell {
         profileLastMessageLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: .Top)
         profileLastMessageLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: profileNameLabel)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func setContent(messageList: MessageList) {
         self.profileNameLabel.text = "\(messageList.otherUser.name) \(messageList.otherUser.lastname)"
-        self.profileLastMessageLabel.text =  FBEncryptorAES.decryptBase64String(messageList.messages.last?.message.text, keyString: messageList.messageKey!.key)
+        
+        if messageList.messages.last?.message.isImageMassage == true {
+            self.profileLastMessageLabel.text = "Image message"
+        } else {
+            self.profileLastMessageLabel.text =  FBEncryptorAES.decryptBase64String(messageList.messages.last?.message.text, keyString: messageList.messageKey!.key)
+        }
+        
         self.profileImageView.image = UIImage(named: "profile")
     }
 }

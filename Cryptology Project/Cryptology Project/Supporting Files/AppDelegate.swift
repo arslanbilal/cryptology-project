@@ -12,18 +12,18 @@ import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     let realm = try! Realm()
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
         
-        // Simulator/Device Document Directory
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        print("\(urls[urls.count - 1])")
+        //        // Simulator/Device Document Directory
+        //        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        //        print("\(urls[urls.count - 1])")
         
         //generateUsersWithCount(9)
         

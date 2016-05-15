@@ -13,6 +13,7 @@ import RealmSwift
 class RealmMessage: Object {
     dynamic var id = 0
     dynamic var text = ""
+    dynamic var isImageMassage = false
     dynamic var date = NSDate()
     
     override static func primaryKey() -> String? {

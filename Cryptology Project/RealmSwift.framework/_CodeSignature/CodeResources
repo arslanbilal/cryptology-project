@@ -6,27 +6,27 @@
 	<dict>
 		<key>Headers/RealmSwift-Swift.h</key>
 		<data>
-		UEw29eJeCgqjTdblgGafXBaA+Po=
+		mvjdtt2HiCnDFPUpgOD1eHtwtEk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ZdaDh636eQ+xeucYueb6LJr4E8k=
+		tlFdvBCwVlhlf10RB2teESTC9nY=
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/arm.swiftdoc</key>
 		<data>
-		pju9mhUcrBv+LpdtxUZasfrYG24=
+		9+tbiZFB0QMnKZWrARnzgMCtpbM=
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/arm.swiftmodule</key>
 		<data>
-		WH3s/24RxYpSIrv3QixV44e47kw=
+		UU8sogBqvWHG7cZ+Vl3ISqDy75s=
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		URwSj+rm5acs1YQMElSXPN+tH5g=
+		I7zyxhoJPQFc+5i+YVl8ttU6C1c=
 		</data>
 		<key>Modules/RealmSwift.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		U/Woqm5wDKdIxHoERFr0sKQyXnA=
+		M9cU9AZFuEB1imitScVJw8tVSck=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,55 +39,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UEw29eJeCgqjTdblgGafXBaA+Po=
+			mvjdtt2HiCnDFPUpgOD1eHtwtEk=
 			</data>
 			<key>hash2</key>
 			<data>
-			RwnTRli6/1VgZsj9daFAeY/A2eu4N9EmRSnPkFgkJg8=
+			0DBd3P7o5NrQogj93gTGXpoy5qOHkf8lrZn2Cq3xwlA=
 			</data>
 		</dict>
 		<key>Modules/RealmSwift.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pju9mhUcrBv+LpdtxUZasfrYG24=
+			9+tbiZFB0QMnKZWrARnzgMCtpbM=
 			</data>
 			<key>hash2</key>
 			<data>
-			hXzy93WPkeoJAj6FW3mf+3e0RwP7STnd08n7sYEzhmE=
+			jXIaBiBMbIrKzqsCeMRZcZUmDCTqmZG82suBhTtgLy4=
 			</data>
 		</dict>
 		<key>Modules/RealmSwift.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WH3s/24RxYpSIrv3QixV44e47kw=
+			UU8sogBqvWHG7cZ+Vl3ISqDy75s=
 			</data>
 			<key>hash2</key>
 			<data>
-			CKlvaWDrq8vseC+fsvVXn2EDMMZIl/0EQ6m0frCzbk4=
+			DRgdqdSCS8zh5Xb1dS97FF1rwkhEHeSbHbNd9fyu+QQ=
 			</data>
 		</dict>
 		<key>Modules/RealmSwift.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			URwSj+rm5acs1YQMElSXPN+tH5g=
+			I7zyxhoJPQFc+5i+YVl8ttU6C1c=
 			</data>
 			<key>hash2</key>
 			<data>
-			qmjYcbxGRzv5CFYYewHIjxeQdabjr90dNs11VOkpsJ8=
+			cCAyUpqN1O+nrjJpk0LzITfyxfg6DQEC9SZXqg+6rwE=
 			</data>
 		</dict>
 		<key>Modules/RealmSwift.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U/Woqm5wDKdIxHoERFr0sKQyXnA=
+			M9cU9AZFuEB1imitScVJw8tVSck=
 			</data>
 			<key>hash2</key>
 			<data>
-			yxKQ8JlfDDrm/7iH1OUD0XEBeiZjvAiDWERmJTysfQw=
+			FQUwOjsFL4JIvdna/xhKAgBdElNMqOZyzXpHktrtXkI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

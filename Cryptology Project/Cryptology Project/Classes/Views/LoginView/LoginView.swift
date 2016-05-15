@@ -129,7 +129,7 @@ class LoginView: UIView, UITextFieldDelegate {
         signInButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
         signInButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: generatedCodeView, withOffset: 10.0)
         signInButton.autoSetDimension(.Width, toSize: (generatedCodeViewWidth / 2.0))
-
+        
         
         signUpButton.backgroundColor = UIColor.outgoingMessageColor()
         signUpButton.titleLabel?.textColor = UIColor.whiteColor()
@@ -142,7 +142,7 @@ class LoginView: UIView, UITextFieldDelegate {
         signUpButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: generatedCodeView, withOffset: 10.0)
         signUpButton.autoSetDimension(.Width, toSize: (generatedCodeViewWidth / 2.0))
         
-
+        
         logButton.setImage(UIImage(named: "middleMan"), forState: .Normal)
         logButton.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6 )
         logButton.contentMode = .ScaleAspectFit
