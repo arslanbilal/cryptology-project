@@ -219,12 +219,12 @@
 			path = "Messages List Cell";
 			sourceTree = "<group>";
 		};
-		777685B31CAAC13100BD62B9 /* ManInTheMidle Cell */ = {
+		777685B31CAAC13100BD62B9 /* ManInTheMiddle Cell */ = {
 			isa = PBXGroup;
 			children = (
 				777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */,
 			);
-			name = "ManInTheMidle Cell";
+			name = "ManInTheMiddle Cell";
 			sourceTree = "<group>";
 		};
 		77BAF1FA1C9B2A6E00DFA5C3 /* User Cell */ = {
@@ -363,7 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				77CA5CC81CB81070003CC313 /* KeyList Cell */,
-				777685B31CAAC13100BD62B9 /* ManInTheMidle Cell */,
+				777685B31CAAC13100BD62B9 /* ManInTheMiddle Cell */,
 				77E202C91C97541700FAAD74 /* LoginView */,
 				77E202D01C9779E100FAAD74 /* Messages Cell */,
 				775CB2B01C98AD2E00A38280 /* Messages List Cell */,

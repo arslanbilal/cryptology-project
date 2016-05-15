@@ -9,7 +9,7 @@
 import UIKit
 
 class ManInTheMiddleTableViewCell: UITableViewCell {
-
+    
     private let messageOwnersLabel = UILabel.newAutoLayoutView()
     private let messageDateLabel = UILabel.newAutoLayoutView()
     private let messageLabel = UILabel.newAutoLayoutView()

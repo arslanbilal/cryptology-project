@@ -66,7 +66,15 @@ class ActiveUser: NSObject {
         let chats = realm.objects(RealmChat)
         
         for chat in chats {
-            let message = chat.message?.text
+            
+            let message: String!
+            
+            if chat.message?.isImageMassage == true {
+                message = "Image Message"
+            } else {
+                message = chat.message?.text
+            }
+            
             let owners = (chat.fromUser?.username)! + " => " + (chat.toUser?.username)!
             let date = chat.message?.date
             
