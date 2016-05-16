@@ -10,7 +10,7 @@ import UIKit
 
 
 class ManInTheMiddleTableViewController: UITableViewController {
-
+    
     var exitButton: Bool?
     let cellIdentifier = "manInTheMiddleTableViewCell"
     var cipherChatData: [CipherMessage]?
@@ -23,7 +23,7 @@ class ManInTheMiddleTableViewController: UITableViewController {
         self.navigationItem.title = "Man in the Middle"
         
         if exitButton! {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: #selector(ManInTheMiddleTableViewController.didTapExitButton(_:)))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"exit.png"), style: .Done, target: self, action: #selector(didTapExitButton(_:)))
         }
         
         tableView.registerClass(ManInTheMiddleTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
@@ -39,16 +39,16 @@ class ManInTheMiddleTableViewController: UITableViewController {
         cipherChatData = ActiveUser.sharedInstance.loadManInTheMiddleData()
         self.tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cipherChatData!.count
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ManInTheMiddleTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ManInTheMiddleTableViewCell
         
@@ -56,7 +56,7 @@ class ManInTheMiddleTableViewController: UITableViewController {
         
         return cell
     }
-
+    
     // MARK: - Button Actions
     func didTapExitButton(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)

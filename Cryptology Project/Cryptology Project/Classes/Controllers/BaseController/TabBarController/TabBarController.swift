@@ -20,15 +20,21 @@ class TabBarController: UITabBarController {
         nav1.tabBarItem = UITabBarItem(title: "Messages", image: UIImage(named: "chat"), selectedImage: UIImage(named: "chat"))
         
         
-        let nav2 = NavigationController(rootViewController: UserViewController())
-        nav2.tabBarItem = UITabBarItem(title: "Account", image: UIImage(named: "user"), selectedImage: UIImage(named: "user"))
-
-        
         let manInTheMiddleTableViewController = ManInTheMiddleTableViewController()
         manInTheMiddleTableViewController.exitButton = false
-        let nav3 = NavigationController(rootViewController: manInTheMiddleTableViewController)
-        nav3.tabBarItem = UITabBarItem(title: "ManInTheMiddle", image: UIImage(named: "middleMan"), selectedImage: UIImage(named: "middleMan"))
+        let nav2 = NavigationController(rootViewController: manInTheMiddleTableViewController)
+        nav2.tabBarItem = UITabBarItem(title: "ManInTheMiddle", image: UIImage(named: "middleMan"), selectedImage: UIImage(named: "middleMan"))
         
-        self.viewControllers = [nav1, nav2, nav3]
+        
+        let steganographerViewController = SteganographerViewController()
+        steganographerViewController.exitButton = false
+        let nav3 = NavigationController(rootViewController: steganographerViewController)
+        nav3.tabBarItem = UITabBarItem(title: "Steganographer", image: UIImage(named:"steganographer") , selectedImage: UIImage(named: "steganographer"))
+        
+        
+        let nav4 = NavigationController(rootViewController: UserViewController())
+        nav4.tabBarItem = UITabBarItem(title: "Account", image: UIImage(named: "user"), selectedImage: UIImage(named: "user"))
+        
+        self.viewControllers = [nav1, nav2, nav3, nav4]
     }
 }

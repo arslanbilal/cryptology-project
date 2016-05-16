@@ -18,6 +18,7 @@ class LoginView: UIView, UITextFieldDelegate {
     let generatedCodeLabel = UILabel.newAutoLayoutView()
     let generatedCodeTextField = UITextField.newAutoLayoutView()
     let logButton = UIButton.newAutoLayoutView()
+    let steganographerButton = UIButton.newAutoLayoutView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +26,7 @@ class LoginView: UIView, UITextFieldDelegate {
         
         let generatedCodeViewWidth = UIScreen.mainScreen().bounds.width - 55
         let appnameLabelYPoint = ((UIScreen.mainScreen().bounds.height / 2.0) - 135) / 2.0
-        
+        let bottomButtonWidth = (UIScreen.mainScreen().bounds.width - 30) / 2.0
         
         let appNameLabel = UILabel.newAutoLayoutView()
         appNameLabel.textAlignment = .Center
@@ -120,7 +121,6 @@ class LoginView: UIView, UITextFieldDelegate {
         
         
         signInButton.backgroundColor = UIColor.loginButtonBacgrounColor()
-        signInButton.titleLabel?.textColor = UIColor.whiteColor()
         signInButton.setTitle("Sign in", forState: .Normal)
         signInButton.layer.cornerRadius = 5.0
         loginElementsView.addSubview(signInButton)
@@ -132,7 +132,6 @@ class LoginView: UIView, UITextFieldDelegate {
         
         
         signUpButton.backgroundColor = UIColor.outgoingMessageColor()
-        signUpButton.titleLabel?.textColor = UIColor.whiteColor()
         signUpButton.setTitle("Sign up", forState: .Normal)
         signUpButton.layer.cornerRadius = 5.0
         loginElementsView.addSubview(signUpButton)
@@ -144,16 +143,31 @@ class LoginView: UIView, UITextFieldDelegate {
         
         
         logButton.setImage(UIImage(named: "middleMan"), forState: .Normal)
-        logButton.backgroundColor = UIColor ( red: 0.0, green: 0.0, blue: 0.0, alpha: 0.6 )
+        logButton.backgroundColor = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.6)
         logButton.contentMode = .ScaleAspectFit
+        logButton.titleLabel?.adjustsFontSizeToFitWidth = true
         logButton.setTitle(" Man-in-the-Middle", forState: .Normal)
         logButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 15)
         logButton.layer.cornerRadius = 10
         self.addSubview(logButton)
         
         logButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
-        logButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        logButton.autoSetDimensionsToSize(CGSizeMake(200, 45))
+        logButton.autoPinEdgeToSuperviewEdge(.Left, withInset: 10)
+        logButton.autoSetDimensionsToSize(CGSizeMake(bottomButtonWidth, 45))
+        
+        
+        steganographerButton.setImage(UIImage(named: "steganographer"), forState: .Normal)
+        steganographerButton.backgroundColor = UIColor (red:0.0, green:0.0, blue:0.0, alpha:0.6)
+        steganographerButton.contentMode = .ScaleAspectFit
+        steganographerButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        steganographerButton.setTitle(" Steganographer", forState: .Normal)
+        steganographerButton.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 15)
+        steganographerButton.layer.cornerRadius = 10
+        self.addSubview(steganographerButton)
+        
+        steganographerButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
+        steganographerButton.autoPinEdgeToSuperviewEdge(.Right, withInset: 10)
+        steganographerButton.autoSetDimensionsToSize(CGSizeMake(bottomButtonWidth, 45))
     }
     
     required init?(coder aDecoder: NSCoder) {

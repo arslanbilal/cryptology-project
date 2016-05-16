@@ -22,11 +22,16 @@
 		774FBF931CE88CF700A382E2 /* JTSSimpleImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF8B1CE88CF700A382E2 /* JTSSimpleImageDownloader.m */; };
 		774FBF941CE88CF700A382E2 /* UIApplication+JTSImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF8D1CE88CF700A382E2 /* UIApplication+JTSImageViewController.m */; };
 		774FBF951CE88CF700A382E2 /* UIImage+JTSImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 774FBF8F1CE88CF700A382E2 /* UIImage+JTSImageEffects.m */; };
+		774FBFAE1CE918FA00A382E2 /* SteganographerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774FBFAD1CE918FA00A382E2 /* SteganographerViewController.swift */; };
+		774FBFB41CE9207200A382E2 /* CompareImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774FBFB31CE9207200A382E2 /* CompareImagesViewController.swift */; };
+		774FBFB61CE9208400A382E2 /* ShowTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774FBFB51CE9208400A382E2 /* ShowTextViewController.swift */; };
+		774FBFB81CE9209F00A382E2 /* HideTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774FBFB71CE9209F00A382E2 /* HideTextViewController.swift */; };
 		775CB2B21C98AD4A00A38280 /* MessagesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */; };
 		777685B51CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */; };
 		777685B71CAAC54100BD62B9 /* CipherMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777685B61CAAC54100BD62B9 /* CipherMessage.swift */; };
 		7794BF5A1CB883D000D0CF22 /* KeysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794BF591CB883D000D0CF22 /* KeysTableViewController.swift */; };
 		7794BF5C1CB8840A00D0CF22 /* KeyChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794BF5B1CB8840A00D0CF22 /* KeyChangeViewController.swift */; };
+		77AF1A381CEA4B8A00DFC4FF /* Steganographer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77AF1A371CEA4B8A00DFC4FF /* Steganographer.m */; };
 		77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BAF1FB1C9B2AAE00DFA5C3 /* UserTableViewCell.swift */; };
 		77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB111C95D68C00120A3D /* UIColorExtension.swift */; };
 		77C7AB2E1C95DE1B00120A3D /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C7AB261C95DE1B00120A3D /* ALView+PureLayout.m */; };
@@ -107,11 +112,17 @@
 		774FBF8D1CE88CF700A382E2 /* UIApplication+JTSImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JTSImageViewController.m"; sourceTree = "<group>"; };
 		774FBF8E1CE88CF700A382E2 /* UIImage+JTSImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JTSImageEffects.h"; sourceTree = "<group>"; };
 		774FBF8F1CE88CF700A382E2 /* UIImage+JTSImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JTSImageEffects.m"; sourceTree = "<group>"; };
+		774FBFAD1CE918FA00A382E2 /* SteganographerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SteganographerViewController.swift; path = Steganographer/SteganographerViewController.swift; sourceTree = "<group>"; };
+		774FBFB31CE9207200A382E2 /* CompareImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompareImagesViewController.swift; path = Steganographer/CompareImagesController/CompareImagesViewController.swift; sourceTree = "<group>"; };
+		774FBFB51CE9208400A382E2 /* ShowTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowTextViewController.swift; path = Steganographer/ShowTextController/ShowTextViewController.swift; sourceTree = "<group>"; };
+		774FBFB71CE9209F00A382E2 /* HideTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HideTextViewController.swift; path = Steganographer/HideTextController/HideTextViewController.swift; sourceTree = "<group>"; };
 		775CB2B11C98AD4A00A38280 /* MessagesListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewCell.swift; sourceTree = "<group>"; };
 		777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManInTheMiddleTableViewCell.swift; path = "ManInTheMiddle Cell/ManInTheMiddleTableViewCell.swift"; sourceTree = "<group>"; };
 		777685B61CAAC54100BD62B9 /* CipherMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CipherMessage.swift; sourceTree = "<group>"; };
 		7794BF591CB883D000D0CF22 /* KeysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeysTableViewController.swift; path = KeyController/KeysTableViewController.swift; sourceTree = "<group>"; };
 		7794BF5B1CB8840A00D0CF22 /* KeyChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyChangeViewController.swift; path = KeyController/KeyChangeController/KeyChangeViewController.swift; sourceTree = "<group>"; };
+		77AF1A361CEA4B8A00DFC4FF /* Steganographer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Steganographer.h; sourceTree = "<group>"; };
+		77AF1A371CEA4B8A00DFC4FF /* Steganographer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Steganographer.m; sourceTree = "<group>"; };
 		77BAF1FB1C9B2AAE00DFA5C3 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		77C7AB111C95D68C00120A3D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		77C7AB241C95DE1A00120A3D /* Cryptology Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cryptology Project-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -211,6 +222,41 @@
 			path = JTSImageViewController;
 			sourceTree = "<group>";
 		};
+		774FBFAC1CE918D800A382E2 /* Steganographer */ = {
+			isa = PBXGroup;
+			children = (
+				774FBFAF1CE9203100A382E2 /* HideTextController */,
+				774FBFB11CE9204F00A382E2 /* ShowTextController */,
+				774FBFB21CE9205600A382E2 /* CompareImagesController */,
+				774FBFAD1CE918FA00A382E2 /* SteganographerViewController.swift */,
+			);
+			name = Steganographer;
+			sourceTree = "<group>";
+		};
+		774FBFAF1CE9203100A382E2 /* HideTextController */ = {
+			isa = PBXGroup;
+			children = (
+				774FBFB71CE9209F00A382E2 /* HideTextViewController.swift */,
+			);
+			name = HideTextController;
+			sourceTree = "<group>";
+		};
+		774FBFB11CE9204F00A382E2 /* ShowTextController */ = {
+			isa = PBXGroup;
+			children = (
+				774FBFB51CE9208400A382E2 /* ShowTextViewController.swift */,
+			);
+			name = ShowTextController;
+			sourceTree = "<group>";
+		};
+		774FBFB21CE9205600A382E2 /* CompareImagesController */ = {
+			isa = PBXGroup;
+			children = (
+				774FBFB31CE9207200A382E2 /* CompareImagesViewController.swift */,
+			);
+			name = CompareImagesController;
+			sourceTree = "<group>";
+		};
 		775CB2B01C98AD2E00A38280 /* Messages List Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +271,15 @@
 				777685B41CAAC38700BD62B9 /* ManInTheMiddleTableViewCell.swift */,
 			);
 			name = "ManInTheMiddle Cell";
+			sourceTree = "<group>";
+		};
+		77AF1A351CEA4B8100DFC4FF /* Steganographer */ = {
+			isa = PBXGroup;
+			children = (
+				77AF1A361CEA4B8A00DFC4FF /* Steganographer.h */,
+				77AF1A371CEA4B8A00DFC4FF /* Steganographer.m */,
+			);
+			path = Steganographer;
 			sourceTree = "<group>";
 		};
 		77BAF1FA1C9B2A6E00DFA5C3 /* User Cell */ = {
@@ -379,6 +434,7 @@
 				77E96ADC1CB7E43600A209D7 /* LoginController */,
 				77E96ADE1CB7E43600A209D7 /* Message */,
 				77E96AE51CB7E43600A209D7 /* MiddleMan */,
+				774FBFAC1CE918D800A382E2 /* Steganographer */,
 				77E96AE81CB7E43600A209D7 /* User */,
 			);
 			path = Controllers;
@@ -399,6 +455,7 @@
 		77D086941C95D31700DFD8A8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				77AF1A351CEA4B8100DFC4FF /* Steganographer */,
 				77D086971C95D35E00DFD8A8 /* Helper.swift */,
 				77E96AFB1CB7FF8600A209D7 /* CaptchaGenerator.swift */,
 				77CA5CC61CB80A8A003CC313 /* MidSquareRandomNumberGenerator.swift */,
@@ -667,19 +724,23 @@
 				772C71F91CA936F60013B735 /* FBEncryptorAES.m in Sources */,
 				772C83041C9A410400A9541C /* RealmMessage.swift in Sources */,
 				772C71FA1CA936F60013B735 /* NSData+Base64.m in Sources */,
+				774FBFB81CE9209F00A382E2 /* HideTextViewController.swift in Sources */,
 				77D0866C1C95D1F500DFD8A8 /* AppDelegate.swift in Sources */,
 				772C72171CA946830013B735 /* RealmKey.swift in Sources */,
 				77E96AFC1CB7FF8600A209D7 /* CaptchaGenerator.swift in Sources */,
 				77F1FEC41C98EA9C00E9913A /* StringExtension.swift in Sources */,
+				77AF1A381CEA4B8A00DFC4FF /* Steganographer.m in Sources */,
 				774FBF941CE88CF700A382E2 /* UIApplication+JTSImageViewController.m in Sources */,
 				77C7AB301C95DE1B00120A3D /* NSLayoutConstraint+PureLayout.m in Sources */,
 				774FBF951CE88CF700A382E2 /* UIImage+JTSImageEffects.m in Sources */,
+				774FBFB61CE9208400A382E2 /* ShowTextViewController.swift in Sources */,
 				7794BF5C1CB8840A00D0CF22 /* KeyChangeViewController.swift in Sources */,
 				77E96AEC1CB7E43600A209D7 /* TabBarController.swift in Sources */,
 				77E202D51C977A5200FAAD74 /* MessagesTableViewCell.swift in Sources */,
 				772C83021C9A40ED00A9541C /* RealmUser.swift in Sources */,
 				77C7AB2F1C95DE1B00120A3D /* NSArray+PureLayout.m in Sources */,
 				7794BF5A1CB883D000D0CF22 /* KeysTableViewController.swift in Sources */,
+				774FBFB41CE9207200A382E2 /* CompareImagesViewController.swift in Sources */,
 				77E96AED1CB7E43600A209D7 /* LoginViewController.swift in Sources */,
 				77E202CB1C97542700FAAD74 /* LoginView.swift in Sources */,
 				77E96AF11CB7E43600A209D7 /* ManInTheMiddleTableViewController.swift in Sources */,
@@ -696,6 +757,7 @@
 				77BAF1FC1C9B2AAE00DFA5C3 /* UserTableViewCell.swift in Sources */,
 				77E96AEF1CB7E43600A209D7 /* MessagesListViewController.swift in Sources */,
 				7701563A1C9E1240001A4B1E /* Message.swift in Sources */,
+				774FBFAE1CE918FA00A382E2 /* SteganographerViewController.swift in Sources */,
 				77C7AB121C95D68C00120A3D /* UIColorExtension.swift in Sources */,
 				772C83081C9A4AF400A9541C /* ActiveUser.swift in Sources */,
 				774FBF921CE88CF700A382E2 /* JTSImageViewController.m in Sources */,

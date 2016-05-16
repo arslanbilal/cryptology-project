@@ -20,9 +20,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginView.signInButton.addTarget(self, action: #selector(LoginViewController.didTapSignInButton(_:)), forControlEvents: .TouchUpInside)
-        loginView.signUpButton.addTarget(self, action: #selector(LoginViewController.didTapSignUpButton(_:)), forControlEvents: .TouchUpInside)
-        loginView.logButton.addTarget(self, action: #selector(LoginViewController.didTapLogButton(_:)), forControlEvents: .TouchUpInside)
+        loginView.signInButton.addTarget(self, action: #selector(didTapSignInButton(_:)), forControlEvents: .TouchUpInside)
+        loginView.signUpButton.addTarget(self, action: #selector(didTapSignUpButton(_:)), forControlEvents: .TouchUpInside)
+        loginView.logButton.addTarget(self, action: #selector(didTapLogButton(_:)), forControlEvents: .TouchUpInside)
+        loginView.steganographerButton.addTarget(self, action: #selector(didTapSteganographerButton(_:)), forControlEvents: .TouchUpInside)
         self.view.addSubview(loginView)
         
         loginView.autoPinEdgesToSuperviewEdges()
@@ -120,6 +121,12 @@ class LoginViewController: UIViewController {
         let manInTheMiddleTableViewController = ManInTheMiddleTableViewController()
         manInTheMiddleTableViewController.exitButton = true
         self.presentViewController(NavigationController(rootViewController: manInTheMiddleTableViewController), animated: true, completion: nil)
+    }
+    
+    func didTapSteganographerButton(sender :UIBarButtonItem) {
+        let steganographerViewController = SteganographerViewController()
+        steganographerViewController.exitButton = true
+        self.presentViewController(NavigationController(rootViewController: steganographerViewController), animated: true, completion: nil)
     }
     
     // MARK: - AlertViewInitialise

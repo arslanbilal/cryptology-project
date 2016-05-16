@@ -9,7 +9,7 @@
 import UIKit
 
 class UserViewController: UIViewController {
-
+    
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class UserViewController: UIViewController {
         self.loadViews()
     }
     
-    // MARK: View Initialisation
+    // MARK: - View Initialisation
     func loadViews() {
         let passwordChangeButton = UIButton.newAutoLayoutView()
         passwordChangeButton.backgroundColor = UIColor.loginViewBackgroundColor()
