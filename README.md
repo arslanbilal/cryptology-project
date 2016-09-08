@@ -43,7 +43,7 @@ There are 4 classes that represent 4 tables in the Realm database.
 - Key: (*(int)* **id**, *(string)* key)
 - Chat: (*(Message)* **message**, *(User)* **fromUser**, *(User)* **toUser**, *(Key)* **key**)
 
-User, Message adn Key are have a relation with Chat. Table(Class) Relations:
+User, Message and Key are have a relation with Chat. Table(Class) Relations:
 
 - Chat - Message: one-to-one
 - Chat - User: many-to-many
