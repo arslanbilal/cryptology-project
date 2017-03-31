@@ -5,10 +5,11 @@
 </p>
 <h3>This repo includes "Cryptology Course" project(Encrypted Messaging App in iOS 8.0+)</h3>
 <hr>
+
 ## Summary:
 Simple iOS messaging application and working in locale [database][realm]. Messages are protected with AES Symmetric Encryption. Only messages owners can see their messages in the plain text format. Otherwise messages are encrypted. Man-in-the-Middle never see plain text. Password doesn't hold in DB. Password salt and hash are fields of user table in DB. Message keys can change from users.
 
-####Specifications:
+#### Specifications:
 	- User can login
 	- User can message other users
 	- User see only own messages
